@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chukwuemeka David Udezue | Blossom Graphviz Concept & Academy</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="master-header">
+        <div class="header-container">
+            <a href="#" class="logo-wrapper" onclick="switchView('home')">
+                <img src="Blossom Graphviz Concept Log.jpg" alt="Blossom Graphviz Concept Logo" class="logo-img" onerror="this.style.display='none'">
+                <span class="logo-text">Blossom Graphviz Concept</span>
+            </a>
+            
+            <button class="mobile-toggle" aria-label="Toggle navigation" onclick="toggleMobileMenu()">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <nav class="nav-menu" id="navMenu">
+                <a href="#home" class="nav-link active" onclick="switchView('home')">Home</a>
+                <a href="#authority" class="nav-link" onclick="switchView('authority')">Authority</a>
+                <a href="#services" class="nav-link" onclick="switchView('services')">Services</a>
+                <a href="#portfolio" class="nav-link" onclick="switchView('portfolio')">Portfolio</a>
+                <a href="#academy" class="nav-link" onclick="switchView('academy')">Academy</a>
+                <a href="#contact" class="nav-link" onclick="switchView('contact')">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-content">
+
+        <section id="home-view" class="view-section active-view">
+            <div class="hero-geometric-bg"></div>
+            <div class="container hero-container">
+                <div class="hero-content">
+                    <span class="hero-badge">Welcome to Executive Clarity</span>
+                    <h1 class="hero-headline">Transforming Data Into Decisions and Brands Into Experiences</h1>
+                    <p class="hero-subheadline">Blossom Graphviz Concept is a data-driven brand studio and analytics academy helping businesses, professionals, and aspiring analysts unlock growth through insight, design, and education.</p>
+                    <div class="hero-cta-group">
+                        <button class="btn btn-primary" onclick="switchView('portfolio')">
+                            <span>Explore Our Work</span> <i class="fas fa-arrow-right"></i>
+                        </button>
+                        <button class="btn btn-secondary" onclick="switchView('academy')">
+                            <span>Join BlossomViz Academy</span> <i class="fas fa-graduation-cap"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="authority-view" class="view-section">
+            <div class="container">
+                <div class="section-header-block">
+                    <span class="section-pretitle">The Founder</span>
+                    <h2 class="section-title">Authority & Leadership</h2>
+                    <div class="accent-line"></div>
+                </div>
+
+                <div class="split-profile-layout">
+                    <div class="profile-image-wrapper">
+                        <div class="geometric-border-accent"></div>
+                        <img src="me-reshaped.jpg" alt="Chukwuemeka David Udezue" class="profile-img" onerror="this.src='https://via.placeholder.com/500x600?text=Chukwuemeka+David+Udezue'">
+                    </div>
+                    <div class="profile-info-content">
+                        <h3 class="profile-name">Chukwuemeka David Udezue</h3>
+                        <p class="profile-role">Founder, Blossom Graphviz Concept & BlossomViz Academy</p>
+                        <blockquote class="story-hook-quote">
+                            <i class="fas fa-quote-left quote-icon"></i>
+                            "I help businesses and professionals transform information into insight, insight into strategy, and strategy into measurable growth."
+                        </blockquote>
+                        
+                        <div class="metrics-grid">
+                            <div class="metric-card">
+                                <div class="metric-icon"><i class="fas fa-briefcase"></i></div>
+                                <div class="metric-value">5+</div>
+                                <div class="metric-label">Years Experience</div>
+                            </div>
+                            <div class="metric-card">
+                                <div class="metric-icon"><i class="fas fa-layer-group"></i></div>
+                                <div class="metric-value">100+</div>
+                                <div class="metric-label">Projects Delivered</div>
+                            </div>
+                            <div class="metric-card">
+                                <div class="metric-icon"><i class="fas fa-user-graduate"></i></div>
+                                <div class="metric-value">80+</div>
+                                <div class="metric-label">Students Trained</div>
+                            </div>
+                            <div class="metric-card">
+                                <div class="metric-icon"><i class="fas fa-users-class"></i></div>
+                                <div class="metric-value">3</div>
+                                <div class="metric-label">Training Batches</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hybrid-ecosystem-block">
+                    <h3 class="block-title">About BGC & The Hybrid Architectural Ecosystem</h3>
+                    <p class="block-description">Blossom Graphviz Concept (BGC) functions as an interlocking framework where corporate analytics, high-end corporate identity modeling, and elite vocational mentorship fuel each other. We remove systemic ambiguity from raw business data and operational structures.</p>
+                    
+                    <div class="ecosystem-pillars">
+                        <div class="pillar-node">
+                            <div class="pillar-header">
+                                <i class="fas fa-chart-network"></i>
+                                <h4>Data Analytics</h4>
+                            </div>
+                            <p>Mining operational metrics to extract structural truths, transforming disparate spreadsheets into actionable architectures.</p>
+                        </div>
+                        <div class="pillar-node">
+                            <div class="pillar-header">
+                                <i class="fas fa-vector-square"></i>
+                                <h4>Visual Communication</h4>
+                            </div>
+                            <p>Crafting high-conversion graphic infrastructure and identity paradigms that capture enterprise prestige instantly.</p>
+                        </div>
+                        <div class="pillar-node">
+                            <div class="pillar-header">
+                                <i class="fas fa-lightbulb"></i>
+                                <h4>Business Intelligence</h4>
+                            </div>
+                            <p>Synthesizing historical operational vectors into dynamic forward-looking corporate strategies for scaling market share.</p>
+                        </div>
+                        <div class="pillar-node">
+                            <div class="pillar-header">
+                                <i class="fas fa-chalkboard-teacher"></i>
+                                <h4>Professional Training</h4>
+                            </div>
+                            <p>Deploying targeted curriculum architecture via BlossomViz Academy to cultivate the next wave of analytical minds.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="philosophy-callout-wrapper">
+                    <div class="diagonal-slash-accent"></div>
+                    <div class="philosophy-content">
+                        <span class="philosophy-label">Core Philosophy</span>
+                        <h4 class="philosophy-text">"Insight Births Creativity"</h4>
+                        <p class="philosophy-subtext">Every visual asset we engineer and every metrics framework we build originates from absolute, data-backed analytical clarity.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="services-view" class="view-section">
+            <div class="container">
+                <div class="section-header-block">
+                    <span class="section-pretitle">Capabilities Matrix</span>
+                    <h2 class="section-title">Engineered Enterprise Units</h2>
+                    <div class="accent-line"></div>
+                </div>
+
+                <div class="services-master-grid">
+                    <div class="service-unit-card">
+                        <div class="unit-banner-accent"></div>
+                        <div class="unit-icon-header">
+                            <i class="fas fa-analytics"></i>
+                            <h3>Data Analytics Unit</h3>
+                        </div>
+                        <p class="unit-summary">Systematic parsing and processing of structural enterprise records into actionable intelligence platforms.</p>
+                        <ul class="unit-spec-list">
+                            <li><i class="fas fa-square-poll-vertical"></i> Advanced Data Analytics</li>
+                            <li><i class="fas fa-objects-column"></i> Interactive Dashboard Development</li>
+                            <li><i class="fas fa-broom"></i> Data Cleaning & Integrity Architecture</li>
+                            <li><i class="fas fa-chart-pie"></i> Executive Data Visualization</li>
+                            <li><i class="fas fa-file-chart-column"></i> Dynamic Corporate Reporting</li>
+                        </ul>
+                    </div>
+
+                    <div class="service-unit-card">
+                        <div class="unit-banner-accent"></div>
+                        <div class="unit-icon-header">
+                            <i class="fas fa-bezier-curve"></i>
+                            <h3>Creative Design Unit</h3>
+                        </div>
+                        <p class="unit-summary">Translating brand strategy into sharp, high-end architectural graphics that capture attention instantly.</p>
+                        <ul class="unit-spec-list">
+                            <li><i class="fas fa-copyright"></i> Premium Brand Identity Blueprinting</li>
+                            <li><i class="fas fa-ad"></i> High-Conversion Marketing Design</li>
+                            <li><i class="fas fa-presentation-screen"></i> Elite Executive Presentation Design</li>
+                            <li><i class="fas fa-box-open"></i> Technical Product & FMCG Packaging</li>
+                        </ul>
+                    </div>
+
+                    <div class="service-unit-card">
+                        <div class="unit-banner-accent"></div>
+                        <div class="unit-icon-header">
+                            <i class="fas fa-school"></i>
+                            <h3>Training Unit</h3>
+                        </div>
+                        <p class="unit-summary">Vocational acceleration pathways built to transition students into enterprise-level market analysts.</p>
+                        <ul class="unit-spec-list">
+                            <li><i class="fas fa-book-intellectual"></i> Data Analytics Foundational Core</li>
+                            <li><i class="fas fa-robot"></i> AI Implementation for Analytics</li>
+                            <li><i class="fas fa-handshake-angle"></i> High-Touch Personalized Mentorship</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="portfolio-view" class="view-section">
+            <div class="container">
+                <div class="section-header-block">
+                    <span class="section-pretitle">Verified Deployments</span>
+                    <h2 class="section-title">Interactive Project Repository</h2>
+                    <div class="accent-line"></div>
+                </div>
+
+                <div class="portfolio-architecture-intro">
+                    <p>Navigate the official structural tracking architecture of Chukwuemeka David Udezue. Click the primary folder node selectors beneath to filter through dedicated child arrays and operational sub-cards.</p>
+                    <a href="https://drive.google.com/drive/folders/1l1KZHkVT90kdtHlUMJz5llFAtXGj2qoD" target="_blank" class="master-repo-btn">
+                        <i class="fab fa-google-drive"></i> Access Main Master Portfolio Drive
+                    </a>
+                </div>
+
+                <div class="folder-tree-tabs">
+                    <button class="folder-tab active" id="btn-analyst" onclick="filterPortfolio('analyst')">
+                        <i class="fas fa-folder-open"></i> DEEP LEVEL 1: ANALYST PROJECTS
+                    </button>
+                    <button class="folder-tab" id="btn-creative" onclick="filterPortfolio('creative')">
+                        <i class="fas fa-folder-open"></i> DEEP LEVEL 1: CREATIVE WORKS
+                    </button>
+                </div>
+
+                <div class="portfolio-display-grid">
+                    
+                    <div class="portfolio-card portfolio-item-node analyst-track">
+                        <div class="card-geometric-corner"></div>
+                        <div class="card-folder-badge"><i class="fas fa-folder"></i> Sub-Track</div>
+                        <h4 class="project-node-title">Excel and Data Architecture</h4>
+                        <p class="project-node-desc">Advanced workbook engineering, complex formulas matrix, and cleaning macros built for structural file management.</p>
+                        <a href="https://drive.google.com/drive/folders/1AcJqNCnnxQKcyMoun44z7VO_wBQoK1I8" target="_blank" class="node-redirect-link">
+                            <span>Open Data Directory</span> <i class="fas fa-external-link-alt"></i>
+                        </a>
+                    </div>
+
+                    <div class="portfolio-card portfolio-item-node analyst-track">
+                        <div class="card-geometric-corner"></div>
+                        <div class="card-folder-badge"><i class="fas fa-folder"></i> Sub-Track</div>
+                        <h4 class="project-node-title">Process and Methodology Templates</h4>
+                        <p class="project-node-desc">Structural operational blueprints, documentation guidelines, and process mapping sequences for pipelines.</p>
+                        <a href="https://drive.google.com/drive/folders/1yeEClswCpHkbb9OJ3cfe0EXtWTYYu94r" target="_blank" class="node-redirect-link">
+                            <span>Open Process Directory</span> <i class="fas fa-external-link-alt"></i>
+                        </a>
+                    </div>
+
+                    <div class="portfolio-card portfolio-item-node analyst-track">
+                        <div class="card-geometric-corner"></div>
+                        <div class="card-folder-badge"><i class="fas fa-folder"></i> Sub-Track</div>
+                        <h4 class="project-node-title">Interactive Performance Dashboards</h4>
+                        <p class="project-node-desc">Dynamic visualization nodes presenting immediate business intelligence and metrics tracking vectors.</p>
+                        <a href="https://drive.google.com/drive/folders/1NJAPUYzLM9tQXGdCX5R8gVyYoAhK8J3F" target="_blank" class="node-redirect-link">
+                            <span>Open Dashboards Directory</span> <i class="fas fa-external-link-alt"></i>
+                        </a>
+                    </div>
+
+                    <div class="portfolio-card portfolio-item-node analyst-track">
+                        <div class="card-geometric-corner"></div>
+                        <div class="card-folder-badge"><i class="fas fa-folder"></i> Sub-Track</div>
+                        <h4 class="project-node-title">Executive Reports & Presentations</h4>
+                        <p class="project-node-desc">High-level analytical summaries designed for stake-holder reviews, investment boards, and key operations.</p>
+                        <a href="https://drive.google.com/drive/folders/1AjArnPFYnwRwoY6xUV4SvKq4OHdR3Cgh" target="_blank" class="node-redirect-link">
+                            <span>Open Reports Directory</span> <i class="fas fa-external-link-alt"></i>
+                        </a>
+                    </div>
+
+                    <div class="portfolio-card portfolio-item-node creative-track hidden-track">
+                        <div class="card-geometric-corner"></div>
+                        <div class="card-folder-badge"><i class="fas fa-folder"></i> Sub-Track</div>
+                        <h4 class="project-node-title">Conference & Public Events Campaigns</h4>
+                        <p class="project-node-desc">High-impact visual communication infrastructure, marketing collateral, and stage assets for global forums.</p>
+                        <a href="https://drive.google.com/drive/folders/178WZbQuYTcW7eb2gEosgOouWNhBp50gq" target="_blank" class="node-redirect-link">
+                            <span>Open Campaigns Directory</span> <i class="fas fa-external-link-alt"></i>
+                        </a>
+                    </div>
+
+                    <div class="portfolio-card portfolio-item-node creative-track hidden-track">
+                        <div class="card-geometric-corner"></div>
+                        <div class="card-folder-badge"><i class="fas fa-folder"></i> Sub-Track</div>
+                        <h4 class="project-node-title">Corporate Identity and Stationery</h4>
+                        <p class="project-node-desc">Premium brand geometry layout guidelines, business cards, corporate letterheads, and unified styling assets.</p>
+                        <a href="https://drive.google.com/drive/folders/1Sj51XowCqIoUZinQFUNmQOcfdyh4ymsZ" target="_blank" class="node-redirect-link">
+                            <span>Open Identity Directory</span> <i class="fas fa-external-link-alt"></i>
+                        </a>
+                    </div>
+
+                    <div class="portfolio-card portfolio-item-node creative-track hidden-track">
+                        <div class="card-geometric-corner"></div>
+                        <div class="card-folder-badge"><i class="fas fa-folder"></i> Sub-Track</div>
+                        <h4 class="project-node-title">Educational and Youth Outreach</h4>
+                        <p class="project-node-desc">Creative layouts built intentionally for community integration, educational milestones, and student cohorts.</p>
+                        <a href="https://drive.google.com/drive/folders/1NZrTz_7pAjaP7IJEy933JbB1DHR5Y1-5" target="_blank" class="node-redirect-link">
+                            <span>Open Outreach Directory</span> <i class="fas fa-external-link-alt"></i>
+                        </a>
+                    </div>
+
+                    <div class="portfolio-card portfolio-item-node creative-track hidden-track">
+                        <div class="card-geometric-corner"></div>
+                        <div class="card-folder-badge"><i class="fas fa-folder"></i> Sub-Track</div>
+                        <h4 class="project-node-title">Product and FMCG Packaging Design</h4>
+                        <p class="project-node-desc">High-end print-ready geometry layouts, packaging lines, and visual labels engineered for shelf dominance.</p>
+                        <a href="https://drive.google.com/drive/folders/168CDw0LgI2-dqZZb-Wl9VMCwCspzsND0" target="_blank" class="node-redirect-link">
+                            <span>Open Packaging Directory</span> <i class="fas fa-external-link-alt"></i>
+                        </a>
+                    </div>
+
+                    <div class="portfolio-card portfolio-item-node creative-track hidden-track">
+                        <div class="card-geometric-corner"></div>
+                        <div class="card-folder-badge"><i class="fas fa-folder"></i> Sub-Track</div>
+                        <h4 class="project-node-title">Weekly Series & Social Countdown Assets</h4>
+                        <p class="project-node-desc">Optimized media grids, data-backed count down graphic schemas, and structured sequential narrative cards.</p>
+                        <a href="https://drive.google.com/drive/folders/1oxx18rA0sE2VA5bMRNcmLapsAdmSTnJV" target="_blank" class="node-redirect-link">
+                            <span>Open Social Directory</span> <i class="fas fa-external-link-alt"></i>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section id="academy-view" class="view-section">
+            <div class="container">
+                <div class="section-header-block">
+                    <span class="section-pretitle">Educational Center</span>
+                    <h2 class="section-title">BlossomViz Academy</h2>
+                    <div class="accent-line"></div>
+                </div>
+
+                <div class="academy-premium-grid">
+                    <div class="academy-info-pane">
+                        <span class="academy-badge">Now Boarding Next Cohort</span>
+                        <h3>Cultivating Data Leaders of Tomorrow</h3>
+                        <p>BlossomViz Academy provides a robust corporate training environment designed to elevate raw analytical reasoning into market-ready professional execution. We bypass speculative academic theory to anchor our students directly into actual practical production pipelines.</p>
+                        
+                        <div class="curriculum-highlights">
+                            <div class="highlight-item">
+                                <div class="h-icon"><i class="fas fa-shield-check"></i></div>
+                                <div class="h-text"><strong>Cohort Architecture:</strong> Multi-tiered structured training batches tracking distinct entry timelines.</div>
+                            </div>
+                            <div class="highlight-item">
+                                <div class="h-icon"><i class="fas fa-map-signs"></i></div>
+                                <div class="h-text"><strong>Career Pipeline:</strong> Immediate integration vectors bridging skill execution with placement models.</div>
+                            </div>
+                            <div class="highlight-item">
+                                <div class="h-icon"><i class="fas fa-network-wired"></i></div>
+                                <div class="h-text"><strong>Framework Matrix:</strong> Immersive hands-on manipulation of live corporate metrics sets.</div>
+                            </div>
+                        </div>
+
+                        <button class="btn btn-primary academy-cta" onclick="switchView('contact')">
+                            <span>Submit Registration Inquiry</span> <i class="fas fa-id-card"></i>
+                        </button>
+                    </div>
+
+                    <div class="academy-graphics-pane">
+                        <div class="geometric-shape-box">
+                            <div class="inner-geometric-mesh"></div>
+                            <span class="mesh-center-text">BlossomViz Framework</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonials-container-block">
+                    <h3 class="testimonials-header">Client & Student Testimonials</h3>
+                    <div class="testimonials-slider-grid">
+                        <div class="testimonial-card">
+                            <i class="fas fa-quote-right card-quote-bg"></i>
+                            <p class="testimonial-body">"Training under David completely re-architected my analytical methodology. The structural focus on transforming raw metrics into direct operational strategies gave me an unfair competitive edge."</p>
+                            <div class="testimonial-author">
+                                <div class="author-avatar"><i class="fas fa-user-tie"></i></div>
+                                <div class="author-details">
+                                    <h5>Alumni Analyst</h5>
+                                    <span>Batch 2 Cohort Graduate</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="testimonial-card">
+                            <i class="fas fa-quote-right card-quote-bg"></i>
+                            <p class="testimonial-body">"Blossom Graphviz Concept delivered a master brand asset structural revision that accurately reflected our market authority. Absolute precision, speed, and premium craftsmanship."</p>
+                            <div class="testimonial-author">
+                                <div class="author-avatar"><i class="fas fa-building"></i></div>
+                                <div class="author-details">
+                                    <h5>Enterprise Director</h5>
+                                    <span>Brand Identity Client</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="contact-view" class="view-section">
+            <div class="container">
+                <div class="section-header-block">
+                    <span class="section-pretitle">Initiate Engagement</span>
+                    <h2 class="section-title">Connect with Our Studio</h2>
+                    <div class="accent-line"></div>
+                </div>
+
+                <div class="contact-master-split">
+                    <div class="contact-details-panel">
+                        <h3>Let's Engineer Your Solutions</h3>
+                        <p>Whether you require deep corporate operational asset visualizations, comprehensive brand architecture redesigns, or access to our elite academy tracks, we are prepared to deploy.</p>
+                        
+                        <div class="communication-channels">
+                            <a href="mailto:davidudezue@gmail.com" class="channel-card">
+                                <div class="channel-icon"><i class="fas fa-user-envelope"></i></div>
+                                <div class="channel-text">
+                                    <span>Personal Communication</span>
+                                    <strong>davidudezue@gmail.com</strong>
+                                </div>
+                            </a>
+
+                            <a href="mailto:blossomgraphvizconcept@gmail.com" class="channel-card">
+                                <div class="channel-icon"><i class="fas fa-envelope-open-text"></i></div>
+                                <div class="channel-text">
+                                    <span>Business Matrix Email</span>
+                                    <strong>blossomgraphvizconcept@gmail.com</strong>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="social-architecture-block">
+                            <h4>Network Ecosystem Nodes</h4>
+                            <div class="social-icon-row">
+                                <a href="https://linkedin.com/in/udezue-david-732843246" target="_blank" class="social-node-link" title="LinkedIn Profile">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </a>
+                                <a href="https://www.facebook.com/share/18sk3JVreZ/" target="_blank" class="social-node-link" title="Facebook Page">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                                <a href="https://instagram.com/Davidudezue" target="_blank" class="social-node-link" title="Instagram Profile">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contact-form-panel">
+                        <form id="portfolioInquiryForm" onsubmit="handleFormSubmit(event)">
+                            <div class="form-group-row">
+                                <div class="form-field">
+                                    <label for="clientName">Full Identity Name</label>
+                                    <input type="text" id="clientName" required placeholder="John Doe">
+                                </div>
+                                <div class="form-field">
+                                    <label for="clientEmail">Communication Email</label>
+                                    <input type="email" id="clientEmail" required placeholder="john@enterprise.com">
+                                </div>
+                            </div>
+                            <div class="form-field">
+                                <label for="inquiryType">Engagement Vector</label>
+                                <select id="inquiryType" required>
+                                    <option value="" disabled selected>Select a path...</option>
+                                    <option value="analytics">Data Analytics Infrastructure Setup</option>
+                                    <option value="creative">Creative Brand Identity Modeling</option>
+                                    <option value="academy">BlossomViz Academy Cohort Entry</option>
+                                    <option value="consultation">Direct Strategic Consulting Session</option>
+                                </select>
+                            </div>
+                            <div class="form-field">
+                                <label for="clientMessage">Operational Scope / Requirements</label>
+                                <textarea id="clientMessage" rows="5" required placeholder="Detail the parameters of your project or professional goals..."></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary submit-form-btn">
+                                <span>Transmit Strategic Request</span> <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </form>
+                        <div id="formSuccessFeedback" class="form-success-feedback hidden-element">
+                            <i class="fas fa-check-circle"></i> Operational Request Sent Securely! We will contact you soon.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer-meta">
+        <div class="container footer-meta-container">
+            <p>&copy; 2026 Blossom Graphviz Concept. All Rights Reserved.</p>
+            <p class="tagline-signature">"Visual Excellence. Data-Driven Growth."</p>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/2348133742166" target="_blank" class="persistent-whatsapp-node" aria-label="Connect via WhatsApp">
+        <div class="whatsapp-badge-label">
+            <span class="label-status-dot"></span>
+            <span class="label-text-string">+234 813 374 2166</span>
+        </div>
+        <div class="whatsapp-icon-circle">
+            <i class="fab fa-whatsapp"></i>
+        </div>
+    </a>
+
+    <script>
+        function switchView(viewName) {
+            // Remove active status from all view panels
+            const views = document.querySelectorAll('.view-section');
+            views.forEach(view => {
+                view.classList.remove('active-view');
+            });
+
+            // Remove active status from all navigation links
+            const navLinks = document.querySelectorAll('.nav-link');
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+            });
+
+            // Target correct view panel and navigation link
+            const targetView = document.getElementById(`${viewName}-view`);
+            if(targetView) {
+                targetView.classList.add('active-view');
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+
+            // Highlight corresponding navigation anchor matching view state
+            navLinks.forEach(link => {
+                if(link.getAttribute('href') === `#${viewName}`) {
+                    link.classList.add('active');
+                }
+            });
+
+            // Auto collapse mobile drawer if active
+            const navMenu = document.getElementById('navMenu');
+            if(navMenu.classList.contains('mobile-active')) {
+                navMenu.classList.remove('mobile-active');
+            }
+        }
+
+        function toggleMobileMenu() {
+            const navMenu = document.getElementById('navMenu');
+            navMenu.classList.toggle('mobile-active');
+        }
+
+        function filterPortfolio(category) {
+            const tabs = document.querySelectorAll('.folder-tab');
+            tabs.forEach(tab => tab.classList.remove('active'));
+
+            const analystItems = document.querySelectorAll('.analyst-track');
+            const creativeItems = document.querySelectorAll('.creative-track');
+
+            if(category === 'analyst') {
+                document.getElementById('btn-analyst').classList.add('active');
+                analystItems.forEach(item => item.classList.remove('hidden-track'));
+                creativeItems.forEach(item => item.classList.add('hidden-track'));
+            } else if(category === 'creative') {
+                document.getElementById('btn-creative').classList.add('active');
+                analystItems.forEach(item => item.classList.add('hidden-track'));
+                creativeItems.forEach(item => item.classList.remove('hidden-track'));
+            }
+        }
+
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            document.getElementById('portfolioInquiryForm').reset();
+            const feedback = document.getElementById('formSuccessFeedback');
+            feedback.classList.remove('hidden-element');
+            setTimeout(() => {
+                feedback.classList.add('hidden-element');
+            }, 5000);
+        }
+
+        // Initialize view selection state based on URL hashes on load
+        window.addEventListener('DOMContentLoaded', () => {
+            const currentHash = window.location.hash.replace('#', '');
+            if(['home', 'authority', 'services', 'portfolio', 'academy', 'contact'].includes(currentHash)) {
+                switchView(currentHash);
+            }
+        });
+    </script>
+</body>
+</html>
