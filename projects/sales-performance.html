@@ -20,13 +20,9 @@
   --page: #071225;
 }
 
-* {
-  box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
-html {
-  scroll-behavior: smooth;
-}
+html { scroll-behavior: smooth; }
 
 body {
   margin: 0;
@@ -35,13 +31,9 @@ body {
   font: 16px/1.65 system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
 }
 
-body.lightbox-open {
-  overflow: hidden;
-}
+body.lightbox-open { overflow: hidden; }
 
-a {
-  color: #f0cb79;
-}
+a { color: #f0cb79; }
 
 a:focus-visible,
 button:focus-visible {
@@ -49,9 +41,7 @@ button:focus-visible {
   outline-offset: 3px;
 }
 
-button {
-  font: inherit;
-}
+button { font: inherit; }
 
 .wrap {
   width: min(1120px,92%);
@@ -161,9 +151,7 @@ button {
   margin-top: 7px;
 }
 
-section {
-  padding: 30px 0 42px;
-}
+section { padding: 30px 0 42px; }
 
 h2 {
   font-size: clamp(1.55rem,3vw,2.25rem);
@@ -176,9 +164,7 @@ h3 {
   font-size: 1.13rem;
 }
 
-.muted {
-  color: var(--muted);
-}
+.muted { color: var(--muted); }
 
 .grid2 {
   display: grid;
@@ -186,13 +172,9 @@ h3 {
   gap: 18px;
 }
 
-.bullet {
-  padding-left: 20px;
-}
+.bullet { padding-left: 20px; }
 
-.bullet li {
-  margin: 8px 0;
-}
+.bullet li { margin: 8px 0; }
 
 .shot {
   width: 100%;
@@ -214,13 +196,9 @@ h3 {
   border-bottom: 1px solid rgba(255,255,255,.1);
 }
 
-.finding:last-child {
-  border-bottom: 0;
-}
+.finding:last-child { border-bottom: 0; }
 
-.finding strong {
-  color: #f1ce7b;
-}
+.finding strong { color: #f1ce7b; }
 
 .process {
   display: grid;
@@ -291,9 +269,7 @@ footer {
   transition: transform .2s ease, border-color .2s ease;
 }
 
-.image-open:hover .shot {
-  border-color: var(--gold);
-}
+.image-open:hover .shot { border-color: var(--gold); }
 
 .zoom-hint {
   display: block;
@@ -326,9 +302,7 @@ footer {
 }
 
 .download-btn:hover,
-.btn:hover {
-  filter: brightness(1.08);
-}
+.btn:hover { filter: brightness(1.08); }
 
 .download-btn.secondary {
   background: transparent;
@@ -348,9 +322,7 @@ footer {
   justify-content: center;
 }
 
-.lightbox.is-open {
-  display: flex;
-}
+.lightbox.is-open { display: flex; }
 
 .lightbox-content {
   display: flex;
@@ -428,31 +400,21 @@ footer {
 }
 
 @media(max-width:760px) {
-  .metrics {
-    grid-template-columns: repeat(2,minmax(0,1fr));
-  }
+  .metrics { grid-template-columns: repeat(2,minmax(0,1fr)); }
 
   .grid2,
-  .process {
-    grid-template-columns: 1fr;
-  }
+  .process { grid-template-columns: 1fr; }
 
-  .hero {
-    padding-top: 45px;
-  }
+  .hero { padding-top: 45px; }
 
   .topbar .wrap {
     align-items: flex-start;
     flex-direction: column;
   }
 
-  .lightbox {
-    padding: 12px;
-  }
+  .lightbox { padding: 12px; }
 
-  .lightbox-toolbar {
-    align-items: flex-start;
-  }
+  .lightbox-toolbar { align-items: flex-start; }
 
   .lightbox-image {
     max-width: 100%;
@@ -461,18 +423,12 @@ footer {
 }
 
 @media(max-width:380px) {
-  .metrics {
-    grid-template-columns: 1fr;
-  }
+  .metrics { grid-template-columns: 1fr; }
 
   .image-actions,
-  .lightbox-controls {
-    width: 100%;
-  }
+  .lightbox-controls { width: 100%; }
 
-  .download-btn {
-    flex: 1;
-  }
+  .download-btn { flex: 1; }
 }
 </style>
 
@@ -520,20 +476,20 @@ footer {
 
 <div class="metrics">
   <div class="metric">
+    <strong>₦3.34M</strong>
+    <span>Total Recorded Sales Value</span>
+  </div>
+  <div class="metric">
+    <strong>434</strong>
+    <span>Total Units Sold</span>
+  </div>
+  <div class="metric">
     <strong>30</strong>
-    <span>Transactions reviewed</span>
+    <span>Transactions Analysed</span>
   </div>
   <div class="metric">
-    <strong>9</strong>
-    <span>Product types in the dataset</span>
-  </div>
-  <div class="metric">
-    <strong>2</strong>
-    <span>Branch locations</span>
-  </div>
-  <div class="metric">
-    <strong>3</strong>
-    <span>Customer segments</span>
+    <strong>₦111.3K</strong>
+    <span>Average Transaction Value</span>
   </div>
 </div>
 ```
@@ -548,8 +504,8 @@ footer {
 ```
 <p class="muted">
   The objective was to organise sales records into an executive-friendly
-  report that supports monitoring of revenue, quantity sold, product
-  contribution, customer mix, and branch performance. The dashboard
+  report that supports monitoring of recorded sales value, quantity sold,
+  product contribution, customer mix, and branch performance. The dashboard
   includes interactive selections so users can explore the data by
   customer type, transaction, date, and branch.
 </p>
@@ -558,8 +514,8 @@ footer {
   <article class="panel">
     <h3>Business questions</h3>
     <ul class="bullet">
-      <li>Which products contribute the most revenue?</li>
-      <li>How is recorded revenue distributed across branches?</li>
+      <li>Which products contribute the most recorded sales value?</li>
+      <li>How is recorded sales value distributed across branches?</li>
       <li>Which customer segments account for the largest share of sales?</li>
       <li>What summary indicators should managers monitor?</li>
     </ul>
@@ -570,7 +526,7 @@ footer {
     <ul class="bullet">
       <li>30 recorded transactions covering 3–17 January 2025.</li>
       <li>Analysis is descriptive and limited to the supplied records.</li>
-      <li>Revenue is not the same as profit; cost and margin data were not provided in this workbook.</li>
+      <li>Sales value is not the same as profit; cost and margin data were not provided in this workbook.</li>
       <li>The period is short and should not be treated as a long-term trend.</li>
     </ul>
   </article>
@@ -691,7 +647,7 @@ footer {
 </div>
 
 <p class="muted" style="margin-top:18px">
-  The case study describes the validation work performed on the supplied
+  This case study describes the validation performed on the supplied
   workbook. Additional Power Query, DAX, or data-modelling techniques
   should only be claimed where they can be confirmed against the original
   Power BI file.
@@ -703,36 +659,95 @@ footer {
 
 <section>
   <div class="wrap">
-    <h2>Verified findings from the supplied workbook</h2>
+    <h2>Key Findings &amp; Business Insights</h2>
 
 ```
+<p class="muted">
+  The findings below describe the supplied transaction records for
+  3–17 January 2025. Category percentages are calculated against the
+  reported total sales value of ₦3,339,100 and should be reconciled
+  against the original workbook before publication.
+</p>
+
 <div class="panel">
+
   <div class="finding">
-    <strong>Branch comparison:</strong> Masaka accounts for the larger
-    share of recorded revenue in the reviewed period.
+    <strong>01 · Branch performance</strong>
+    <p>
+      Masaka recorded sales value of ₦1,980,700, approximately 59.32%
+      of the reported total. The other branch accounted for ₦1,358,400,
+      or approximately 40.68%.
+    </p>
+    <p class="muted">
+      <strong>Business implication:</strong>
+      Compare transaction counts, product mix, units sold, and average
+      transaction value between branches to investigate the difference.
+    </p>
   </div>
 
   <div class="finding">
-    <strong>Product mix:</strong> Dangote Cement is the highest-revenue
-    product in the supplied transaction records.
+    <strong>02 · Product contribution</strong>
+    <p>
+      Dangote Cement generated a reported sales value of ₦887,500,
+      approximately 26.58% of total recorded sales value.
+    </p>
+    <p class="muted">
+      <strong>Business implication:</strong>
+      Review sales volume, stock availability, pricing, and purchasing
+      patterns before making inventory or promotional decisions.
+    </p>
   </div>
 
   <div class="finding">
-    <strong>Customer mix:</strong> Contractors are the highest-revenue
-    customer segment in the supplied records.
+    <strong>03 · Customer segment contribution</strong>
+    <p>
+      Contractors generated a reported sales value of ₦1,352,400,
+      approximately 40.50% of total recorded sales value.
+    </p>
+    <p class="muted">
+      <strong>Business implication:</strong>
+      Examine repeat purchases, order frequency, and product preferences
+      to identify opportunities to strengthen customer relationships.
+    </p>
   </div>
 
   <div class="finding">
-    <strong>Data quality:</strong> The transaction totals reconcile
-    arithmetically, but some statements in the workbook's original
-    written summary do not match the underlying data.
+    <strong>04 · Average transaction value</strong>
+    <p>
+      Using the reported total of ₦3,339,100 across 30 transactions,
+      the average transaction value is approximately ₦111,303.33.
+    </p>
+    <p class="muted">
+      <strong>Business implication:</strong>
+      Monitor average transaction value alongside transaction count
+      and units sold to understand changes in recorded sales value.
+    </p>
   </div>
+
+  <div class="finding">
+    <strong>05 · Data validation</strong>
+    <p>
+      The supplied transaction totals were checked against quantity
+      multiplied by unit price. Arithmetic consistency is useful,
+      but it does not independently establish data completeness or
+      the accuracy of the underlying business records.
+    </p>
+    <p class="muted">
+      <strong>Business implication:</strong>
+      Retain validation checks and reconcile dashboard totals with
+      the source workbook before decisions are made.
+    </p>
+  </div>
+
 </div>
 
-<p class="muted" style="margin-top:15px">
-  Commercial figures not necessary to explain the findings have been
-  omitted from this public case study.
-</p>
+<div class="notice">
+  <strong>Interpretation note:</strong>
+  The analysis covers a short observation period. It does not establish
+  long-term trends, profitability, causation, or future performance.
+  Validate the category figures against the original transaction data
+  before relying on them for business decisions.
+</div>
 ```
 
   </div>
@@ -740,16 +755,75 @@ footer {
 
 <section>
   <div class="wrap">
-    <h2>Recommended next steps</h2>
+    <h2>Management Recommendations</h2>
 
 ```
-<ul class="bullet">
-  <li>Ensure the published screenshots and transaction-derived findings remain within the scope of the company's permission.</li>
-  <li>Correct the written executive summary so all percentages and product totals reconcile with the transaction table.</li>
-  <li>Review the average transaction value measure and confirm whether it is calculated per transaction or per other unit.</li>
-  <li>Consider adding date-range filtering, clearer number formatting, and more restrained visual styling.</li>
-  <li>Keep the final case study and supporting screenshots available through the portfolio website.</li>
-</ul>
+<p class="muted">
+  These are proposed follow-up actions based on the observed results,
+  not claims that the actions have already been implemented.
+</p>
+
+<div class="grid2">
+
+  <article class="panel">
+    <h3>01 · Review branch performance</h3>
+    <p>
+      Compare transaction counts, units sold, product mix, and average
+      transaction value between Masaka and the other branch.
+    </p>
+    <p class="muted">
+      <strong>Purpose:</strong>
+      Investigate the factors associated with the difference in recorded
+      sales value between the branches.
+    </p>
+  </article>
+
+  <article class="panel">
+    <h3>02 · Monitor product contribution</h3>
+    <p>
+      Review sales volume, inventory availability, pricing, and purchasing
+      patterns for Dangote Cement and the other products.
+    </p>
+    <p class="muted">
+      <strong>Purpose:</strong>
+      Support evidence-based inventory and product-management decisions.
+    </p>
+  </article>
+
+  <article class="panel">
+    <h3>03 · Understand customer segments</h3>
+    <p>
+      Compare transaction frequency, order size, product preferences,
+      and repeat-purchase behaviour across the three customer segments.
+    </p>
+    <p class="muted">
+      <strong>Purpose:</strong>
+      Identify opportunities to improve customer relationships and
+      develop more targeted sales strategies.
+    </p>
+  </article>
+
+  <article class="panel">
+    <h3>04 · Expand the reporting period</h3>
+    <p>
+      Add more historical transactions and report on a consistent
+      weekly or monthly basis.
+    </p>
+    <p class="muted">
+      <strong>Purpose:</strong>
+      Enable more reliable trend analysis, period comparisons, and
+      monitoring of changes in business performance.
+    </p>
+  </article>
+
+</div>
+
+<div class="notice">
+  <strong>Financial reporting limitation:</strong>
+  Before evaluating profitability, incorporate validated cost data and
+  define the appropriate profit and margin measures. Recorded sales
+  value alone does not establish profitability.
+</div>
 
 <div class="actions">
   <a class="btn" href="../index.html#portfolio-view">Explore my portfolio</a>
@@ -839,7 +913,6 @@ footer {
     lightboxImage.src = imagePath;
     lightboxImage.alt = previewImage ? previewImage.alt : imageTitle;
     lightboxTitle.textContent = imageTitle;
-
     lightboxDownload.href = imagePath;
 
     if (imagePath.includes("Page1-Complete")) {
