@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="A Power BI sales performance analysis case study covering revenue, product mix, branch performance, customer segments, and data validation.">
+<title>Sales Performance Analysis | Chukwuemeka David Udezue</title>
+<style>
+:root{--navy:#0c1a3a;--navy2:#12264b;--brown:#602702;--gold:#d7ad55;--ink:#eaf0fb;--muted:#b8c4d8;--panel:#12213c;--line:rgba(215,173,85,.28);--page:#071225}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--page);color:var(--ink);font:16px/1.65 system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
+a{color:#f0cb79}a:focus-visible,button:focus-visible{outline:3px solid #f0cb79;outline-offset:3px}
+.wrap{width:min(1120px,92%);margin:auto}.topbar{border-bottom:1px solid var(--line);background:#09172d}.topbar .wrap{display:flex;justify-content:space-between;align-items:center;gap:18px;padding:17px 0}.brand{font-weight:800;letter-spacing:.02em}.back{font-size:.94rem;text-decoration:none}
+.hero{padding:66px 0 42px;background:radial-gradient(ellipse at 90% 0%,rgba(215,173,85,.12),transparent 45%),linear-gradient(135deg,#0c1a3a,#081226)}
+.eyebrow{text-transform:uppercase;letter-spacing:.16em;font-size:.76rem;color:var(--gold);font-weight:800}.hero h1{font-size:clamp(2.1rem,5vw,4.1rem);line-height:1.08;max-width:850px;margin:14px 0}.lead{max-width:790px;color:var(--muted);font-size:1.1rem}
+.tags{display:flex;flex-wrap:wrap;gap:9px;margin:24px 0}.tag{border:1px solid var(--line);border-radius:999px;padding:6px 12px;color:#f5e7c6;font-size:.84rem}
+.notice{margin-top:25px;padding:14px 17px;border-left:3px solid var(--gold);background:rgba(215,173,85,.08);color:#f4e6c3}
+.metrics{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin:28px 0 48px}.metric,.panel{background:var(--panel);border:1px solid var(--line);border-radius:15px;padding:20px}.metric strong{display:block;font-size:1.55rem;color:var(--gold);line-height:1.2}.metric span{display:block;color:var(--muted);font-size:.9rem;margin-top:7px}
+section{padding:30px 0 42px}h2{font-size:clamp(1.55rem,3vw,2.25rem);line-height:1.2;margin:0 0 16px}h3{margin:0 0 9px;font-size:1.13rem}.muted{color:var(--muted)}.grid2{display:grid;grid-template-columns:1fr 1fr;gap:18px}.bullet{padding-left:20px}.bullet li{margin:8px 0}.shot{width:100%;display:block;border-radius:12px;border:1px solid var(--line);background:#fff}.caption{font-size:.86rem;color:var(--muted);margin:9px 0 0}.finding{padding:16px 0;border-bottom:1px solid rgba(255,255,255,.1)}.finding:last-child{border-bottom:0}.finding strong{color:#f1ce7b}.process{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.step{padding:17px;border:1px solid var(--line);border-radius:12px;background:rgba(18,33,60,.6)}.step b{color:var(--gold);display:block;margin-bottom:6px}
+footer{border-top:1px solid var(--line);padding:24px 0;color:var(--muted);font-size:.9rem}.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}.btn{display:inline-block;border-radius:9px;padding:11px 16px;text-decoration:none;font-weight:750;background:var(--gold);color:#10192a}.btn.secondary{background:transparent;border:1px solid var(--line);color:var(--ink)}
+@media(max-width:760px){.metrics{grid-template-columns:repeat(2,minmax(0,1fr))}.grid2,.process{grid-template-columns:1fr}.hero{padding-top:45px}.topbar .wrap{align-items:flex-start;flex-direction:column}}
+@media(max-width:380px){.metrics{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header class="topbar"><div class="wrap"><div class="brand">CHUKWUEMEKA DAVID UDEZUE <span style="color:var(--gold)">/ DATA ANALYTICS</span></div><a class="back" href="../index.html">← Back to portfolio</a></div></header>
+<main>
+<section class="hero"><div class="wrap">
+<div class="eyebrow">Power BI Case Study · Sales & Business Intelligence</div>
+<h1>Sales Performance Analysis & Executive Dashboard</h1>
+<p class="lead">A transaction-level sales analysis designed to make revenue performance easier to monitor across products, customer groups, and branch locations.</p>
+<div class="tags"><span class="tag">Microsoft Power BI</span><span class="tag">KPI Reporting</span><span class="tag">Revenue Analysis</span><span class="tag">Data Validation</span></div>
+<div class="notice"><strong>Publication note:</strong> This is an anonymised draft prepared from real company transactions. The client identity and detailed commercial figures should remain unpublished until the company has explicitly approved portfolio use.</div>
+<div class="metrics">
+<div class="metric"><strong>30</strong><span>Transactions reviewed</span></div>
+<div class="metric"><strong>9</strong><span>Product types in the dataset</span></div>
+<div class="metric"><strong>2</strong><span>Branch locations</span></div>
+<div class="metric"><strong>3</strong><span>Customer segments</span></div>
+</div>
+</div></section>
+<section><div class="wrap">
+<h2>Project objective</h2>
+<p class="muted">The objective was to organise sales records into an executive-friendly report that supports monitoring of revenue, quantity sold, product contribution, customer mix, and branch performance. The dashboard includes interactive selections so users can explore the data by customer type, transaction, date, and branch.</p>
+<div class="grid2" style="margin-top:22px">
+<article class="panel"><h3>Business questions</h3><ul class="bullet"><li>Which products contribute the most revenue?</li><li>How is recorded revenue distributed across branches?</li><li>Which customer segments account for the largest share of sales?</li><li>What summary indicators should managers monitor?</li></ul></article>
+<article class="panel"><h3>Scope and limitations</h3><ul class="bullet"><li>30 recorded transactions covering 3–17 January 2025.</li><li>Analysis is descriptive and limited to the supplied records.</li><li>Revenue is not the same as profit; cost and margin data were not provided in this workbook.</li><li>The period is short and should not be treated as a long-term trend.</li></ul></article>
+</div>
+</div></section>
+<section><div class="wrap">
+<h2>Dashboard preview</h2><p class="muted">The screenshots below show the two report pages. The client label has been masked in this draft; detailed values remain subject to publication approval.</p>
+<div class="grid2">
+<article class="panel"><h3>01 · Executive overview</h3><img class="shot" src="../assets/images/sales-dashboard-overview-draft.jpg" alt="Anonymised preview of the sales performance executive dashboard"><p class="caption">Executive KPIs and slicers for customer type, transaction, and date.</p></article>
+<article class="panel"><h3>02 · Revenue breakdown</h3><img class="shot" src="../assets/images/sales-revenue-analysis-draft.jpg" alt="Preview of revenue by product, customer type, average transaction value, and branch"><p class="caption">Revenue by product, customer segment, and branch, with an average transaction value indicator.</p></article>
+</div>
+</div></section>
+<section><div class="wrap">
+<h2>Data preparation and validation</h2>
+<div class="process">
+<div class="step"><b>01 · Structure</b>Reviewed the structured transaction table and its fields: date, product, quantity, unit price, branch, customer type, and total.</div>
+<div class="step"><b>02 · Quality checks</b>Checked the 30 transaction totals against quantity × unit price. All supplied records passed this arithmetic check.</div>
+<div class="step"><b>03 · Reconciliation</b>Compared the executive-summary narrative with the underlying records and identified mismatched product and customer-segment claims for correction.</div>
+</div>
+<p class="muted" style="margin-top:18px">The final published version should describe only the tools and transformations actually performed. The available workbook supports the validation steps above; any additional Power Query, DAX, or modelling claims should be confirmed against the original Power BI file.</p>
+</div></section>
+<section><div class="wrap">
+<h2>Verified findings from the supplied workbook</h2>
+<div class="panel">
+<div class="finding"><strong>Branch comparison:</strong> Masaka accounts for the larger share of recorded revenue in the reviewed period.</div>
+<div class="finding"><strong>Product mix:</strong> Dangote Cement is the highest-revenue product in the supplied transaction records.</div>
+<div class="finding"><strong>Customer mix:</strong> Contractors are the highest-revenue customer segment in the supplied records.</div>
+<div class="finding"><strong>Data quality:</strong> The transaction totals reconcile arithmetically, but some statements in the workbook's original written summary do not match the underlying data.</div>
+</div>
+<p class="muted" style="margin-top:15px">Specific commercial amounts and the company name have been intentionally omitted from this draft pending explicit publication approval.</p>
+</div></section>
+<section><div class="wrap">
+<h2>Recommended next steps</h2><ul class="bullet"><li>Confirm that the company authorises publication of its name, transaction-derived figures, and dashboard screenshots.</li><li>Correct the written executive summary so all percentages and product totals reconcile with the transaction table.</li><li>Review the average transaction value measure and confirm whether it is calculated per transaction or per other unit.</li><li>Consider adding date-range filtering, clearer number formatting, and more restrained visual styling.</li><li>When approved, publish the final case study and supporting screenshots on the portfolio website rather than linking to Google Drive.</li></ul>
+<div class="actions"><a class="btn" href="../index.html#portfolio-view">Explore my portfolio</a><a class="btn secondary" href="../index.html#contact-view">Contact me</a></div>
+</div></section>
+</main>
+<footer><div class="wrap">Prepared by Chukwuemeka David Udezue · Data Analytics & Business Intelligence · Confidentiality-conscious draft</div></footer>
+</body></html>
