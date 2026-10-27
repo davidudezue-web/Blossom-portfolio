@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="description" content="A practical Power BI and Power Query workflow documenting data import, source inspection, data loading, cleaning, and preparation for business intelligence analysis.">
+
+<title>Analytical Process Documentation | Craftmeal</title>
+
+<style>
+:root {
+    --navy: #0C1A3A;
+    --brown: #602702;
+    --gold: #D6AD60;
+    --background: #F4F6FA;
+    --white: #FFFFFF;
+    --text: #263247;
+    --muted: #657187;
+    --border: #DFE4EC;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--background);
+    color: var(--text);
+    line-height: 1.7;
+}
+
+header {
+    background: var(--navy);
+    color: var(--white);
+    padding: 18px 6%;
+}
+
+.header-inner {
+    max-width: 1100px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.brand {
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.brand span {
+    color: var(--gold);
+}
+
+header a {
+    color: var(--white);
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.hero {
+    background: linear-gradient(135deg, var(--navy), #20375F);
+    color: var(--white);
+    padding: 65px 6%;
+}
+
+.hero-inner {
+    max-width: 1000px;
+    margin: auto;
+}
+
+.eyebrow {
+    color: var(--gold);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+}
+
+h1 {
+    font-size: clamp(32px, 5vw, 46px);
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    color: #E0E7F2;
+    max-width: 780px;
+    font-size: 17px;
+}
+
+.tags {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 24px;
+}
+
+.tags span {
+    border: 1px solid rgba(255,255,255,.3);
+    border-radius: 25px;
+    padding: 6px 12px;
+    font-size: 12px;
+}
+
+main {
+    max-width: 1050px;
+    margin: 38px auto;
+    padding: 0 20px;
+}
+
+.section {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 28px;
+    margin-bottom: 24px;
+    box-shadow: 0 5px 18px rgba(12,26,58,.04);
+}
+
+h2 {
+    color: var(--navy);
+    font-size: 24px;
+    margin-bottom: 15px;
+    line-height: 1.35;
+}
+
+h3 {
+    color: var(--brown);
+    font-size: 18px;
+    margin-bottom: 8px;
+}
+
+p {
+    margin-bottom: 13px;
+}
+
+ul {
+    padding-left: 23px;
+    margin: 10px 0;
+}
+
+li {
+    margin-bottom: 7px;
+}
+
+.process-step {
+    padding: 24px 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.process-step:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.step-label {
+    display: inline-block;
+    background: #F2E7DC;
+    color: var(--brown);
+    border-radius: 5px;
+    padding: 5px 10px;
+    font-size: 12px;
+    font-weight: 800;
+    margin-bottom: 12px;
+}
+
+.process-image {
+    margin-top: 18px;
+    border: 1px solid var(--border);
+    border-radius: 9px;
+    overflow: hidden;
+    background: #F8F9FB;
+}
+
+.process-image img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.image-caption {
+    padding: 12px 15px;
+    font-size: 13px;
+    color: var(--muted);
+    background: #FAFBFD;
+}
+
+.note {
+    background: #FAF5EF;
+    border-left: 4px solid var(--brown);
+    padding: 16px 18px;
+    margin-top: 18px;
+    font-size: 14px;
+}
+
+.cta {
+    background: var(--navy);
+    color: var(--white);
+    padding: 32px;
+    border-radius: 12px;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.cta h2 {
+    color: var(--white);
+}
+
+.cta p {
+    color: #DCE4F1;
+}
+
+.button {
+    display: inline-block;
+    margin: 7px 4px;
+    padding: 12px 18px;
+    border-radius: 6px;
+    background: var(--gold);
+    color: var(--navy);
+    text-decoration: none;
+    font-weight: 800;
+    font-size: 14px;
+}
+
+.button.secondary {
+    background: transparent;
+    border: 1px solid #AEBBD0;
+    color: var(--white);
+}
+
+footer {
+    text-align: center;
+    color: var(--muted);
+    padding: 25px 20px;
+    font-size: 13px;
+}
+
+footer strong {
+    color: var(--navy);
+}
+
+@media (max-width: 650px) {
+    .hero {
+        padding: 45px 6%;
+    }
+
+    .section {
+        padding: 20px;
+    }
+
+    .process-step {
+        padding: 20px 0;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="header-inner">
+        <div class="brand">CRAFT<span>MEAL</span></div>
+        <a href="../index.html">← Back to Portfolio</a>
+    </div>
+</header>
+
+<section class="hero">
+    <div class="hero-inner">
+        <div class="eyebrow">Practical Project Documentation</div>
+
+        <h1>Analytical Process Documentation</h1>
+
+        <p>
+            A step-by-step record of the data preparation workflow in
+            Microsoft Power BI, from connecting to an Excel source file
+            through inspecting, loading, and preparing data in Power Query.
+        </p>
+
+        <div class="tags">
+            <span>Microsoft Power BI</span>
+            <span>Power Query</span>
+            <span>Excel Data Source</span>
+            <span>Data Preparation</span>
+        </div>
+    </div>
+</section>
+
+<main>
+
+<section class="section">
+    <h2>1. Project Overview</h2>
+
+    <p>
+        A reliable business intelligence report begins with a clear
+        understanding of its source data. Before building measures or
+        visualizations, an analyst must connect to the source, inspect
+        the available fields, and prepare the data for analysis.
+    </p>
+
+    <p>
+        This page documents the initial stages of a practical Power BI
+        workflow using screenshots from the project process.
+    </p>
+
+    <h3>Objectives</h3>
+
+    <ul>
+        <li>Connect Power BI Desktop to an Excel dataset.</li>
+        <li>Locate and select the appropriate source file.</li>
+        <li>Inspect the available tables and data preview.</li>
+        <li>Load the data into the Power Query environment.</li>
+        <li>Document the data preparation stage before analysis.</li>
+    </ul>
+
+    <div class="note">
+        <strong>Scope:</strong> The screenshots document the initial
+        source connection and preparation workflow. They should not
+        be interpreted as proof that every possible data quality issue
+        was found or resolved.
+    </div>
+</section>
+
+<section class="section">
+    <h2>2. Documented Workflow</h2>
+
+    <div class="process-step">
+        <span class="step-label">STEP 01</span>
+        <h3>Open the Get Data Menu</h3>
+
+        <p>
+            Begin in Power BI Desktop and open the data connection
+            options. The Get Data menu provides access to supported
+            sources, including Excel workbooks.
+        </p>
+
+        <div class="process-image">
+            <img
+                src="../assets/images/process/Step1-PowerBI-GetData-Menu.png"
+                alt="Power BI Desktop Get Data menu"
+                loading="lazy">
+            <div class="image-caption">
+                Figure 1: Opening the data connection options in Power BI Desktop.
+            </div>
+        </div>
+    </div>
+
+    <div class="process-step">
+        <span class="step-label">STEP 02</span>
+        <h3>Select the Source Workbook</h3>
+
+        <p>
+            Locate the Excel workbook using the file selection window.
+            Choosing the correct source file is essential because the
+            subsequent preview and analysis depend on the selected data.
+        </p>
+
+        <div class="process-image">
+            <img
+                src="../assets/images/process/Step2-FileExplorer-SelectingDataset.png"
+                alt="File Explorer showing selection of the source dataset"
+                loading="lazy">
+            <div class="image-caption">
+                Figure 2: Locating and selecting the Excel source file.
+            </div>
+        </div>
+    </div>
+
+    <div class="process-step">
+        <span class="step-label">STEP 03</span>
+        <h3>Connect to the Excel File</h3>
+
+        <p>
+            Select the workbook to establish the connection between
+            Power BI and the source data. This makes the workbook's
+            available tables and sheets accessible for inspection.
+        </p>
+
+        <div class="process-image">
+            <img
+                src="../assets/images/process/Step3-PowerBI-ConnectingToExcel.png"
+                alt="Power BI connecting to an Excel workbook"
+                loading="lazy">
+            <div class="image-caption">
+                Figure 3: Establishing the connection to the Excel workbook.
+            </div>
+        </div>
+    </div>
+
+    <div class="process-step">
+        <span class="step-label">STEP 04</span>
+        <h3>Inspect the Navigator Preview</h3>
+
+        <p>
+            Review the available tables or sheets in the Navigator
+            window. Inspecting the preview helps identify the relevant
+            data source before loading it into the preparation workflow.
+        </p>
+
+        <div class="process-image">
+            <img
+                src="../assets/images/process/Step4-Navigator-PreviewRawData.png"
+                alt="Power BI Navigator displaying a preview of the source data"
+                loading="lazy">
+            <div class="image-caption">
+                Figure 4: Reviewing the available source data before loading.
+            </div>
+        </div>
+    </div>
+
+    <div class="process-step">
+        <span class="step-label">STEP 05</span>
+        <h3>Review the Queries in Power Query</h3>
+
+        <p>
+            After the source is brought into the preparation environment,
+            review the available queries. Power Query supports structured
+            transformation steps before data is used in a report.
+        </p>
+
+        <div class="process-image">
+            <img
+                src="../assets/images/process/Step5-PowerQuery-TwoQueriesLoaded.png"
+                alt="Power Query Editor showing two loaded queries"
+                loading="lazy">
+            <div class="image-caption">
+                Figure 5: Reviewing the queries available in Power Query.
+            </div>
+        </div>
+    </div>
+
+    <div class="process-step">
+        <span class="step-label">STEP 06</span>
+        <h3>Prepare and Clean the Data</h3>
+
+        <p>
+            Use the Power Query environment to inspect columns and
+            determine which transformations are required. Depending
+            on the actual source data, preparation may include setting
+            data types, standardizing values, checking missing fields,
+            and investigating possible duplicates.
+        </p>
+
+        <p>
+            Each transformation should be appropriate to the data and
+            should be validated before the prepared data is used for
+            calculations or reporting.
+        </p>
+
+        <div class="process-image">
+            <img
+                src="../assets/images/process/Step6-PowerQuery-DataCleaning.png"
+                alt="Power Query Editor during the data cleaning stage"
+                loading="lazy">
+            <div class="image-caption">
+                Figure 6: Working in Power Query during data preparation.
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <h2>3. Why This Process Matters</h2>
+
+    <p>
+        The data connection and preparation stages establish the
+        foundation for the analytical work that follows. Errors or
+        inconsistencies introduced at this stage can affect measures,
+        totals, comparisons, and dashboard interpretations.
+    </p>
+
+    <ul>
+        <li>
+            <strong>Source awareness:</strong> Understand where the
+            analytical data originates.
+        </li>
+        <li>
+            <strong>Data structure:</strong> Identify the tables,
+            columns, and fields available for analysis.
+        </li>
+        <li>
+            <strong>Preparation:</strong> Apply appropriate transformations
+            before developing the report.
+        </li>
+        <li>
+            <strong>Validation:</strong> Check that important values and
+            record counts remain consistent with the source.
+        </li>
+        <li>
+            <strong>Reproducibility:</strong> Use documented steps to
+            make the preparation workflow easier to review and repeat.
+        </li>
+    </ul>
+</section>
+
+<section class="section">
+    <h2>4. Next Stage: Analysis and Reporting</h2>
+
+    <p>
+        Once the dataset has been prepared and validated, it can be
+        used for appropriate analytical calculations and reporting.
+        The next stages may include defining measures, examining
+        performance patterns, building dashboard visuals, and
+        communicating findings to decision-makers.
+    </p>
+
+    <p>
+        The actual analytical conclusions must be supported by
+        verified results from the dataset. This documentation page
+        focuses on the workflow rather than claiming unverified
+        business outcomes.
+    </p>
+</section>
+
+<section class="cta">
+    <h2>Continue to the Sales Performance Project</h2>
+
+    <p>
+        Explore the related case study connecting data analysis,
+        performance measures, and business reporting.
+    </p>
+
+    <a class="button" href="sales-performance.html">
+        View Sales Performance Analysis
+    </a>
+
+    <a class="button secondary" href="../index.html">
+        Return to Portfolio
+    </a>
+</section>
+
+</main>
+
+<footer>
+    <p><strong>Craftmeal</strong></p>
+    <p>Visual Excellence. Data-Driven Growth.</p>
+    <p>Data Analytics · Business Intelligence · Creative Design</p>
+</footer>
+
+</body>
+</html>
