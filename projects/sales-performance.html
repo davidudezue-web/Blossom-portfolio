@@ -4,7 +4,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="A Power BI sales analytics case study demonstrating KPI reporting, revenue analysis, branch and product performance, customer segmentation, and data validation.">
+<meta name="description" content="A Power BI sales performance case study showcasing executive KPI reporting, revenue analysis, branch and product performance, customer segmentation, and data validation.">
+<meta name="author" content="Chukwuemeka David Udezue">
 <title>Sales Performance Analysis | Chukwuemeka David Udezue</title>
 
 <style>
@@ -76,17 +77,17 @@ footer{border-top:1px solid var(--line);padding:24px 0;color:var(--muted);font-s
 .lightbox-image{display:block;max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain;border-radius:5px;background:#fff}
 .lightbox-note{color:var(--muted);font-size:.84rem;text-align:center;margin:0}
 @media(max-width:760px){
-.metrics{grid-template-columns:repeat(2,minmax(0,1fr))}
-.grid2,.process{grid-template-columns:1fr}
-.hero{padding-top:45px}
-.topbar .wrap{align-items:flex-start;flex-direction:column}
-.lightbox{padding:12px}
-.lightbox-toolbar{align-items:flex-start}
+  .metrics{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .grid2,.process{grid-template-columns:1fr}
+  .hero{padding-top:45px}
+  .topbar .wrap{align-items:flex-start;flex-direction:column}
+  .lightbox{padding:12px}
+  .lightbox-toolbar{align-items:flex-start}
 }
 @media(max-width:380px){
-.metrics{grid-template-columns:1fr}
-.image-actions,.lightbox-controls{width:100%}
-.download-btn{flex:1}
+  .metrics{grid-template-columns:1fr}
+  .image-actions,.lightbox-controls{width:100%}
+  .download-btn{flex:1}
 }
 </style>
 
@@ -115,7 +116,9 @@ footer{border-top:1px solid var(--line);padding:24px 0;color:var(--muted);font-s
     <span class="tag">Business Intelligence</span>
   </div>
 
-  <div class="notice"><strong>Publication note:</strong> This case study presents an anonymised analysis of company transactions. Company identity and commercial information are handled in accordance with the publication permission obtained for this project.</div>
+  <div class="notice">
+    <strong>Publication note:</strong> This case study presents an anonymised analysis of company transactions. Company identity and commercial information are handled in accordance with the publication permission obtained for this project.
+  </div>
 
   <div class="metrics">
     <div class="metric"><strong>₦3.34M</strong><span>Total Recorded Sales Value</span></div>
@@ -167,7 +170,9 @@ footer{border-top:1px solid var(--line);padding:24px 0;color:var(--muted);font-s
         <span class="zoom-hint">🔍 Click image to enlarge</span>
       </button>
       <p class="caption">Executive KPIs and interactive filters for exploring transaction records.</p>
-      <div class="image-actions"><a class="download-btn" href="../assets/images/Tofred-Dashboard-Page1-Complete.png" download="Tofred-Dashboard-Page1-Complete.png">⬇ Download Dashboard</a></div>
+      <div class="image-actions">
+        <a class="download-btn" href="../assets/images/Tofred-Dashboard-Page1-Complete.png" download="Tofred-Dashboard-Page1-Complete.png">⬇ Download Dashboard</a>
+      </div>
     </article>
 
 ```
@@ -178,7 +183,9 @@ footer{border-top:1px solid var(--line);padding:24px 0;color:var(--muted);font-s
     <span class="zoom-hint">🔍 Click image to enlarge</span>
   </button>
   <p class="caption">Revenue breakdowns by branch, product, customer type, and month.</p>
-  <div class="image-actions"><a class="download-btn" href="../assets/images/Tofred-Dashboard-Page2-Charts%20%281%29.png" download="Tofred-Dashboard-Page2-Charts.png">⬇ Download Dashboard</a></div>
+  <div class="image-actions">
+    <a class="download-btn" href="../assets/images/Tofred-Dashboard-Page2-Charts%20%281%29.png" download="Tofred-Dashboard-Page2-Charts.png">⬇ Download Dashboard</a>
+  </div>
 </article>
 ```
 
@@ -201,37 +208,46 @@ footer{border-top:1px solid var(--line);padding:24px 0;color:var(--muted);font-s
 <section>
 <div class="wrap">
   <h2>Key Findings and Business Insights</h2>
-  <p class="muted">The dashboard enables comparison of recorded sales value across branches, products, customer segments, and dates. The following are the principal analysis areas; exact category totals and percentages should be verified against the final Power BI report and source workbook before publication.</p>
+  <p class="muted">The analysis covers 30 recorded transactions from 3–17 January 2025. The category figures below have been verified against the supplied transaction records and are calculated against total recorded sales value of ₦3,339,100.</p>
 
   <div class="panel">
     <div class="finding">
       <strong>01 · Branch Performance</strong>
-      <p>Compare recorded sales value between Masaka and New Nyanya to identify differences in branch-level performance.</p>
-      <p class="muted"><strong>Business implication:</strong> Investigate transaction counts, units sold, product mix, and average transaction value before drawing conclusions about the reasons for any difference.</p>
+      <p>Masaka recorded sales value of ₦1,980,700, approximately 59.32% of total recorded sales value. New Nyanya accounted for ₦1,358,400, approximately 40.68%.</p>
+      <p class="muted"><strong>Business implication:</strong> Compare transaction counts, units sold, product mix, and average transaction value between branches to investigate the difference in recorded sales value.</p>
     </div>
-    <div class="finding">
-      <strong>02 · Product Contribution</strong>
-      <p>Use the product revenue breakdown to identify which building materials contribute most to recorded sales value.</p>
-      <p class="muted"><strong>Business implication:</strong> Consider sales volume, inventory availability, pricing, and purchasing patterns when reviewing product performance.</p>
-    </div>
-    <div class="finding">
-      <strong>03 · Customer Segment Analysis</strong>
-      <p>Compare recorded sales across customer types, including Contractors, Individuals, and Iron Benders.</p>
-      <p class="muted"><strong>Business implication:</strong> Examine order frequency, order size, and product preferences to identify opportunities to strengthen customer relationships.</p>
-    </div>
-    <div class="finding">
-      <strong>04 · Transaction Value</strong>
-      <p>The reported total sales value of ₦3,339,100 across 30 transactions gives an average transaction value of approximately ₦111,303.33.</p>
-      <p class="muted"><strong>Business implication:</strong> Monitor average transaction value alongside transaction count and units sold to understand changes in recorded sales performance.</p>
-    </div>
-    <div class="finding">
-      <strong>05 · Data Quality</strong>
-      <p>Checking transaction totals against quantity multiplied by unit price helps identify arithmetic inconsistencies in the supplied records.</p>
-      <p class="muted"><strong>Business implication:</strong> Retain validation checks and reconcile report totals with source records before using the results to support business decisions.</p>
-    </div>
+
+```
+<div class="finding">
+  <strong>02 · Product Contribution</strong>
+  <p>Dangote Cement generated recorded sales value of ₦887,500, approximately 26.58% of the total.</p>
+  <p class="muted"><strong>Business implication:</strong> Review sales volume, inventory availability, pricing, and purchasing patterns when making product-management decisions.</p>
+</div>
+
+<div class="finding">
+  <strong>03 · Customer Segment Contribution</strong>
+  <p>Contractors generated recorded sales value of ₦1,352,400, approximately 40.50% of the total.</p>
+  <p class="muted"><strong>Business implication:</strong> Examine order frequency, order size, and product preferences to identify opportunities to strengthen customer relationships.</p>
+</div>
+
+<div class="finding">
+  <strong>04 · Average Transaction Value</strong>
+  <p>Total recorded sales value of ₦3,339,100 across 30 transactions gives an average transaction value of approximately ₦111,303.33.</p>
+  <p class="muted"><strong>Business implication:</strong> Monitor average transaction value alongside transaction count and units sold to assess changes in recorded sales performance.</p>
+</div>
+
+<div class="finding">
+  <strong>05 · Data Validation</strong>
+  <p>The 30 transaction totals passed the arithmetic check against quantity multiplied by unit price.</p>
+  <p class="muted"><strong>Business implication:</strong> Maintain validation checks and reconcile dashboard totals with source records. Arithmetic consistency alone does not prove completeness or overall data accuracy.</p>
+</div>
+```
+
   </div>
 
-  <div class="notice"><strong>Interpretation note:</strong> This analysis covers a short observation period. It does not establish long-term trends, profitability, causation, or future performance. Validate all category-level figures against the original transaction data before relying on them for decisions.</div>
+  <div class="notice">
+    <strong>Interpretation note:</strong> The analysis covers a short observation period. It does not establish long-term trends, profitability, causation, or future performance. Recorded sales value should not be interpreted as profit.
+  </div>
 </div>
 </section>
 
@@ -243,24 +259,30 @@ footer{border-top:1px solid var(--line);padding:24px 0;color:var(--muted);font-s
   <div class="grid2">
     <article class="panel">
       <h3>01 · Review Branch Performance</h3>
-      <p>Compare transaction counts, units sold, product mix, and average transaction value across branches.</p>
+      <p>Compare transaction counts, units sold, product mix, and average transaction value across Masaka and New Nyanya.</p>
       <p class="muted"><strong>Purpose:</strong> Investigate the factors associated with differences in recorded sales value.</p>
     </article>
-    <article class="panel">
-      <h3>02 · Monitor Product Contribution</h3>
-      <p>Review sales volume, inventory availability, pricing, and purchasing patterns for high-contributing products.</p>
-      <p class="muted"><strong>Purpose:</strong> Support evidence-based inventory and product-management decisions.</p>
-    </article>
-    <article class="panel">
-      <h3>03 · Understand Customer Segments</h3>
-      <p>Compare transaction frequency, order size, product preferences, and repeat-purchase behaviour across customer types.</p>
-      <p class="muted"><strong>Purpose:</strong> Identify opportunities to improve customer relationships and target sales activities.</p>
-    </article>
-    <article class="panel">
-      <h3>04 · Expand the Reporting Period</h3>
-      <p>Add more historical transactions and report consistently by week or month.</p>
-      <p class="muted"><strong>Purpose:</strong> Enable more reliable trend analysis and comparisons across reporting periods.</p>
-    </article>
+
+```
+<article class="panel">
+  <h3>02 · Monitor Product Contribution</h3>
+  <p>Review sales volume, inventory availability, pricing, and purchasing patterns for Dangote Cement and other products.</p>
+  <p class="muted"><strong>Purpose:</strong> Support evidence-based inventory and product-management decisions.</p>
+</article>
+
+<article class="panel">
+  <h3>03 · Understand Customer Segments</h3>
+  <p>Compare transaction frequency, order size, product preferences, and repeat-purchase behaviour across customer types.</p>
+  <p class="muted"><strong>Purpose:</strong> Identify opportunities to improve customer relationships and target sales activities.</p>
+</article>
+
+<article class="panel">
+  <h3>04 · Expand the Reporting Period</h3>
+  <p>Add more historical transactions and report consistently by week or month.</p>
+  <p class="muted"><strong>Purpose:</strong> Enable more reliable trend analysis and comparisons across reporting periods.</p>
+</article>
+```
+
   </div>
 
   <div class="notice"><strong>Financial reporting limitation:</strong> Validated cost data is required to calculate profitability and profit margins. Recorded sales value alone does not establish profitability.</div>
@@ -307,12 +329,14 @@ footer{border-top:1px solid var(--line);padding:24px 0;color:var(--muted);font-s
     const imagePath=button.dataset.image;
     const imageTitle=button.dataset.title;
     const previewImage=button.querySelector("img");
+
     previouslyFocusedElement=document.activeElement;
     lightboxImage.src=imagePath;
     lightboxImage.alt=previewImage?previewImage.alt:imageTitle;
     lightboxTitle.textContent=imageTitle;
     lightboxDownload.href=imagePath;
     lightboxDownload.download=imagePath.includes("Page1-Complete")?"Tofred-Dashboard-Page1-Complete.png":"Tofred-Dashboard-Page2-Charts.png";
+
     lightbox.classList.add("is-open");
     lightbox.setAttribute("aria-hidden","false");
     document.body.classList.add("lightbox-open");
@@ -331,10 +355,13 @@ footer{border-top:1px solid var(--line);padding:24px 0;color:var(--muted);font-s
   imageButtons.forEach(function(button){
     button.addEventListener("click",function(){openLightbox(button);});
   });
+
   closeButton.addEventListener("click",closeLightbox);
+
   lightbox.addEventListener("click",function(event){
     if(event.target===lightbox) closeLightbox();
   });
+
   document.addEventListener("keydown",function(event){
     if(event.key==="Escape"&&lightbox.classList.contains("is-open")) closeLightbox();
   });
