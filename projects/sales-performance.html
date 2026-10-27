@@ -1,372 +1,1171 @@
-<!doctype html>
-
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="A Power BI sales performance case study showcasing executive KPI reporting, revenue analysis, branch and product performance, customer segmentation, and data validation.">
-<meta name="author" content="Chukwuemeka David Udezue">
-<title>Sales Performance Analysis | Chukwuemeka David Udezue</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<style>
-:root {
-  --navy:#0c1a3a;
-  --gold:#d7ad55;
-  --ink:#eaf0fb;
-  --muted:#b8c4d8;
-  --panel:#12213c;
-  --line:rgba(215,173,85,.28);
-  --page:#071225;
-}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;background:var(--page);color:var(--ink);font:16px/1.65 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}
-body.lightbox-open{overflow:hidden}
-a{color:#f0cb79}
-a:focus-visible,button:focus-visible{outline:3px solid #f0cb79;outline-offset:3px}
-button{font:inherit}
-.wrap{width:min(1120px,92%);margin:auto}
-.topbar{border-bottom:1px solid var(--line);background:#09172d}
-.topbar .wrap{display:flex;justify-content:space-between;align-items:center;gap:18px;padding:17px 0}
-.brand{font-weight:800;letter-spacing:.02em}
-.back{font-size:.94rem;text-decoration:none}
-.hero{padding:66px 0 42px;background:radial-gradient(ellipse at 90% 0%,rgba(215,173,85,.12),transparent 45%),linear-gradient(135deg,#0c1a3a,#081226)}
-.eyebrow{text-transform:uppercase;letter-spacing:.16em;font-size:.76rem;color:var(--gold);font-weight:800}
-h1{font-size:clamp(2.1rem,5vw,4.1rem);line-height:1.08;max-width:850px;margin:14px 0}
-.lead{max-width:790px;color:var(--muted);font-size:1.1rem}
-.tags{display:flex;flex-wrap:wrap;gap:9px;margin:24px 0}
-.tag{border:1px solid var(--line);border-radius:999px;padding:6px 12px;color:#f5e7c6;font-size:.84rem}
-.notice{margin-top:25px;padding:14px 17px;border-left:3px solid var(--gold);background:rgba(215,173,85,.08);color:#f4e6c3}
-.metrics{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin:28px 0 48px}
-.metric,.panel{background:var(--panel);border:1px solid var(--line);border-radius:15px;padding:20px}
-.metric strong{display:block;font-size:1.55rem;color:var(--gold);line-height:1.2}
-.metric span{display:block;color:var(--muted);font-size:.9rem;margin-top:7px}
-section{padding:30px 0 42px}
-h2{font-size:clamp(1.55rem,3vw,2.25rem);line-height:1.2;margin:0 0 16px}
-h3{margin:0 0 9px;font-size:1.13rem}
-.muted,.caption{color:var(--muted)}
-.grid2{display:grid;grid-template-columns:1fr 1fr;gap:18px}
-.bullet{padding-left:20px}
-.bullet li{margin:8px 0}
-.shot{width:100%;height:auto;display:block;border-radius:12px;border:1px solid var(--line);background:#fff}
-.caption{font-size:.86rem;margin:9px 0 0}
-.finding{padding:16px 0;border-bottom:1px solid rgba(255,255,255,.1)}
-.finding:last-child{border-bottom:0}
-.finding strong{color:#f1ce7b}
-.process{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
-.step{padding:17px;border:1px solid var(--line);border-radius:12px;background:rgba(18,33,60,.6)}
-.step b{color:var(--gold);display:block;margin-bottom:6px}
-footer{border-top:1px solid var(--line);padding:24px 0;color:var(--muted);font-size:.9rem}
-.actions,.image-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:18px}
-.btn,.download-btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border-radius:9px;padding:11px 16px;text-decoration:none;font-weight:750;background:var(--gold);color:#10192a;border:1px solid transparent;cursor:pointer}
-.btn.secondary,.download-btn.secondary{background:transparent;border-color:var(--line);color:var(--ink)}
-.btn:hover,.download-btn:hover{filter:brightness(1.08)}
-.image-open{display:block;width:100%;padding:0;margin:0;border:0;border-radius:12px;background:transparent;cursor:zoom-in;text-align:left}
-.image-open .shot{transition:border-color .2s ease}
-.image-open:hover .shot{border-color:var(--gold)}
-.zoom-hint{display:block;margin-top:8px;color:var(--gold);font-size:.88rem;font-weight:700}
-.download-btn{font-size:.92rem;padding:10px 14px}
-.lightbox{display:none;position:fixed;inset:0;z-index:9999;padding:24px;background:rgba(2,7,18,.96);align-items:center;justify-content:center}
-.lightbox.is-open{display:flex}
-.lightbox-content{display:flex;flex-direction:column;align-items:center;gap:14px;width:100%;height:100%;min-height:0}
-.lightbox-toolbar{display:flex;justify-content:space-between;align-items:center;gap:12px;width:min(1200px,100%);flex-wrap:wrap}
-.lightbox-title{font-size:.95rem;font-weight:700}
-.lightbox-controls{display:flex;flex-wrap:wrap;gap:10px}
-.lightbox-close{min-width:44px;min-height:44px;padding:8px 14px;border:1px solid rgba(255,255,255,.3);border-radius:8px;background:#182644;color:#fff;font-weight:750;cursor:pointer}
-.lightbox-image-wrap{flex:1;display:flex;align-items:center;justify-content:center;width:100%;min-height:0;overflow:auto}
-.lightbox-image{display:block;max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain;border-radius:5px;background:#fff}
-.lightbox-note{color:var(--muted);font-size:.84rem;text-align:center;margin:0}
-@media(max-width:760px){
-  .metrics{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .grid2,.process{grid-template-columns:1fr}
-  .hero{padding-top:45px}
-  .topbar .wrap{align-items:flex-start;flex-direction:column}
-  .lightbox{padding:12px}
-  .lightbox-toolbar{align-items:flex-start}
-}
-@media(max-width:380px){
-  .metrics{grid-template-columns:1fr}
-  .image-actions,.lightbox-controls{width:100%}
-  .download-btn{flex:1}
-}
-</style>
+  <meta name="description" content="Sales Performance Analysis and Power BI Executive Dashboard case study by Chukwuemeka David Udezue. Explore recorded sales value, branch performance, product contribution, customer segments, data validation, and business recommendations.">
 
+  <meta name="author" content="Chukwuemeka David Udezue">
+  <meta name="theme-color" content="#0C1A3A">
+
+  <title>Sales Performance Analysis | Chukwuemeka David Udezue</title>
+
+  <style>
+    :root {
+      --navy: #0C1A3A;
+      --navy-light: #172b52;
+      --brown: #602702;
+      --gold: #d5a64a;
+      --background: #f4f6fa;
+      --surface: #ffffff;
+      --text: #263248;
+      --muted: #647086;
+      --border: #dce3ed;
+      --success: #176b45;
+      --shadow: 0 8px 28px rgba(12, 26, 58, 0.08);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--background);
+      color: var(--text);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.7;
+    }
+
+    a {
+      color: #174d9a;
+      overflow-wrap: anywhere;
+    }
+
+    a:focus-visible,
+    button:focus-visible {
+      outline: 3px solid var(--gold);
+      outline-offset: 3px;
+    }
+
+    .topbar {
+      background: var(--navy);
+      color: #ffffff;
+      padding: 22px 20px;
+    }
+
+    .topbar-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    .brand {
+      font-weight: 800;
+      letter-spacing: 1.1px;
+      font-size: 0.98rem;
+    }
+
+    .brand span {
+      display: block;
+      color: #dce5f5;
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 1.5px;
+      margin-top: 2px;
+    }
+
+    .topbar a {
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    .container {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 34px 22px 60px;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-bottom: 24px;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, var(--navy), var(--navy-light));
+      color: #ffffff;
+      border-radius: 18px;
+      padding: 42px 38px;
+      box-shadow: var(--shadow);
+      margin-bottom: 28px;
+    }
+
+    .eyebrow {
+      color: #e6c16f;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-weight: 800;
+      font-size: 0.78rem;
+      margin: 0 0 12px;
+    }
+
+    h1 {
+      font-size: clamp(2rem, 5vw, 3.25rem);
+      line-height: 1.15;
+      margin: 0 0 18px;
+      max-width: 850px;
+    }
+
+    .hero-description {
+      max-width: 850px;
+      color: #e2e8f2;
+      font-size: 1.08rem;
+      margin: 0 0 22px;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+      margin-top: 22px;
+    }
+
+    .tag {
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      background: rgba(255, 255, 255, 0.08);
+      color: #ffffff;
+      padding: 7px 12px;
+      border-radius: 30px;
+      font-size: 0.84rem;
+      font-weight: 700;
+    }
+
+    .publication-note {
+      margin-top: 24px;
+      padding: 14px 16px;
+      border-left: 4px solid var(--gold);
+      background: rgba(255, 255, 255, 0.08);
+      color: #edf1f8;
+      border-radius: 0 8px 8px 0;
+      font-size: 0.91rem;
+    }
+
+    .documentation-card {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-left: 5px solid var(--gold);
+      border-radius: 14px;
+      padding: 25px;
+      margin: 0 0 30px;
+      box-shadow: var(--shadow);
+    }
+
+    .documentation-card h2 {
+      margin-top: 0;
+      color: var(--navy);
+      font-size: 1.4rem;
+    }
+
+    .documentation-card p {
+      color: var(--muted);
+      margin-bottom: 18px;
+    }
+
+    .button {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 18px;
+      border-radius: 8px;
+      background: var(--navy);
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: 800;
+      border: 1px solid var(--navy);
+      transition: transform 0.2s ease, background 0.2s ease;
+    }
+
+    .button:hover {
+      background: var(--navy-light);
+      transform: translateY(-2px);
+    }
+
+    .button-secondary {
+      background: #ffffff;
+      color: var(--navy);
+    }
+
+    .button-secondary:hover {
+      background: #edf1f7;
+      color: var(--navy);
+    }
+
+    .kpi-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 16px;
+      margin: 28px 0;
+    }
+
+    .kpi-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 23px 20px;
+      box-shadow: var(--shadow);
+      min-width: 0;
+    }
+
+    .kpi-value {
+      display: block;
+      color: var(--navy);
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 9px;
+    }
+
+    .kpi-label {
+      color: var(--muted);
+      font-size: 0.91rem;
+      font-weight: 700;
+    }
+
+    .section {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 30px;
+      margin-top: 26px;
+      box-shadow: var(--shadow);
+    }
+
+    .section h2 {
+      color: var(--navy);
+      font-size: clamp(1.45rem, 3vw, 1.9rem);
+      line-height: 1.3;
+      margin: 0 0 18px;
+    }
+
+    .section h3 {
+      color: var(--navy);
+      font-size: 1.12rem;
+      margin: 0 0 9px;
+    }
+
+    .section p {
+      margin-top: 0;
+    }
+
+    .muted {
+      color: var(--muted);
+    }
+
+    .question-list {
+      padding-left: 22px;
+    }
+
+    .question-list li {
+      margin-bottom: 8px;
+    }
+
+    .limitation-box {
+      background: #fff8e8;
+      border: 1px solid #eed9a5;
+      border-radius: 10px;
+      padding: 17px 19px;
+      margin-top: 20px;
+    }
+
+    .limitation-box strong {
+      color: var(--brown);
+    }
+
+    .dashboard-card {
+      border: 1px solid var(--border);
+      border-radius: 13px;
+      overflow: hidden;
+      margin-top: 24px;
+      background: #ffffff;
+    }
+
+    .dashboard-card-header {
+      padding: 18px 20px;
+      background: #f7f9fc;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .dashboard-card-header h3 {
+      margin: 0 0 4px;
+    }
+
+    .dashboard-card-header p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .image-button {
+      display: block;
+      width: 100%;
+      border: 0;
+      padding: 0;
+      margin: 0;
+      background: #e9edf4;
+      cursor: zoom-in;
+    }
+
+    .dashboard-image {
+      display: block;
+      width: 100%;
+      height: auto;
+      min-height: 150px;
+      object-fit: contain;
+      background: #ffffff;
+    }
+
+    .image-hint {
+      display: block;
+      padding: 11px 18px;
+      background: #ffffff;
+      color: var(--muted);
+      font-size: 0.85rem;
+      text-align: center;
+      border-top: 1px solid var(--border);
+    }
+
+    .dashboard-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      padding: 16px 18px;
+    }
+
+    .dashboard-actions .button {
+      font-size: 0.9rem;
+      padding: 10px 14px;
+    }
+
+    .process-grid,
+    .insights-grid,
+    .recommendations-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 22px;
+    }
+
+    .info-card {
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px;
+      background: #ffffff;
+    }
+
+    .number-label {
+      display: inline-block;
+      color: var(--brown);
+      font-size: 0.82rem;
+      font-weight: 800;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 9px;
+    }
+
+    .info-card p:last-child {
+      margin-bottom: 0;
+    }
+
+    .insight-card {
+      border-top: 4px solid var(--navy);
+    }
+
+    .implication {
+      border-top: 1px solid var(--border);
+      padding-top: 12px;
+      margin-top: 12px;
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
+    .interpretation-note {
+      margin-top: 22px;
+      padding: 16px 18px;
+      background: #f0f4fa;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      font-size: 0.93rem;
+    }
+
+    .closing {
+      margin-top: 32px;
+      background: var(--navy);
+      color: #ffffff;
+      border-radius: 16px;
+      padding: 30px;
+      text-align: center;
+    }
+
+    .closing h2 {
+      margin-top: 0;
+      font-size: 1.7rem;
+    }
+
+    .closing p {
+      color: #dce5f5;
+      max-width: 700px;
+      margin: 0 auto 20px;
+    }
+
+    .closing-actions {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .closing .button {
+      background: #ffffff;
+      color: var(--navy);
+      border-color: #ffffff;
+    }
+
+    .closing .button:hover {
+      background: #eaf0f8;
+    }
+
+    footer {
+      text-align: center;
+      padding: 28px 18px;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    /* Dashboard image lightbox */
+
+    .lightbox {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      inset: 0;
+      background: rgba(4, 10, 25, 0.94);
+      padding: 55px 18px 24px;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .lightbox.is-open {
+      display: flex;
+    }
+
+    .lightbox-content {
+      max-width: 1200px;
+      max-height: 100%;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .lightbox-image {
+      display: block;
+      max-width: 100%;
+      max-height: calc(100vh - 125px);
+      width: auto;
+      height: auto;
+      object-fit: contain;
+      background: #ffffff;
+      border-radius: 5px;
+    }
+
+    .lightbox-caption {
+      color: #ffffff;
+      margin-top: 12px;
+      text-align: center;
+      font-size: 0.92rem;
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: 10px;
+      right: 22px;
+      background: transparent;
+      border: 0;
+      color: #ffffff;
+      font-size: 42px;
+      line-height: 1;
+      cursor: pointer;
+      padding: 5px 10px;
+    }
+
+    @media (max-width: 850px) {
+      .kpi-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .hero {
+        padding: 32px 25px;
+      }
+
+      .section {
+        padding: 24px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        padding: 22px 14px 40px;
+      }
+
+      .hero {
+        padding: 28px 21px;
+        border-radius: 13px;
+      }
+
+      .kpi-grid,
+      .process-grid,
+      .insights-grid,
+      .recommendations-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .kpi-card {
+        padding: 19px;
+      }
+
+      .section {
+        padding: 20px 17px;
+      }
+
+      .documentation-card {
+        padding: 21px 18px;
+      }
+
+      .dashboard-actions {
+        flex-direction: column;
+      }
+
+      .dashboard-actions .button {
+        width: 100%;
+      }
+
+      .closing {
+        padding: 25px 18px;
+      }
+
+      .lightbox {
+        padding: 55px 8px 18px;
+      }
+
+      .lightbox-image {
+        max-height: calc(100vh - 115px);
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
 </head>
 
 <body>
-<header class="topbar">
-  <div class="wrap">
-    <div class="brand">CHUKWUEMEKA DAVID UDEZUE <span style="color:var(--gold)">/ DATA ANALYTICS</span></div>
-    <a class="back" href="../index.html">← Back to portfolio</a>
-  </div>
-</header>
 
-<main>
-<section class="hero">
-<div class="wrap">
-  <div class="eyebrow">Power BI Case Study · Sales &amp; Business Intelligence</div>
-  <h1>Sales Performance Analysis &amp; Executive Dashboard</h1>
-  <p class="lead">A transaction-level sales analysis designed to make revenue performance easier to monitor across products, customer groups, and branch locations.</p>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="brand">
+        CHUKWUEMEKA DAVID UDEZUE
+        <span>DATA ANALYTICS &amp; BUSINESS INTELLIGENCE</span>
+      </div>
 
-  <div class="tags">
-    <span class="tag">Microsoft Power BI</span>
-    <span class="tag">KPI Reporting</span>
-    <span class="tag">Revenue Analysis</span>
-    <span class="tag">Data Validation</span>
-    <span class="tag">Business Intelligence</span>
-  </div>
+      <a href="../index.html#portfolio-view">Back to Portfolio ↗</a>
+    </div>
+  </header>
 
-  <div class="notice">
-    <strong>Publication note:</strong> This case study presents an anonymised analysis of company transactions. Company identity and commercial information are handled in accordance with the publication permission obtained for this project.
-  </div>
+  <main class="container">
 
-  <div class="metrics">
-    <div class="metric"><strong>₦3.34M</strong><span>Total Recorded Sales Value</span></div>
-    <div class="metric"><strong>434</strong><span>Total Units Sold</span></div>
-    <div class="metric"><strong>30</strong><span>Transactions Analysed</span></div>
-    <div class="metric"><strong>₦111.3K</strong><span>Average Transaction Value</span></div>
-  </div>
-</div>
-</section>
+    <a class="back-link" href="../index.html">
+      ← Back to portfolio
+    </a>
 
-<section>
-<div class="wrap">
-  <h2>Project Objective</h2>
-  <p class="muted">The objective was to organise sales records into an executive-friendly Power BI report that supports monitoring of recorded sales value, quantity sold, product contribution, customer mix, and branch performance. Interactive filters allow users to explore the data by customer type, transaction, date, and branch.</p>
+    <section class="hero">
+      <p class="eyebrow">Power BI Case Study · Sales &amp; Business Intelligence</p>
 
-  <div class="grid2" style="margin-top:22px">
-    <article class="panel">
+      <h1>Sales Performance Analysis &amp; Executive Dashboard</h1>
+
+      <p class="hero-description">
+        A transaction-level sales analysis designed to make recorded sales
+        performance easier to monitor across products, customer groups,
+        and branch locations.
+      </p>
+
+      <div class="tags" aria-label="Project skills">
+        <span class="tag">Microsoft Power BI</span>
+        <span class="tag">KPI Reporting</span>
+        <span class="tag">Sales Analysis</span>
+        <span class="tag">Data Validation</span>
+        <span class="tag">Business Intelligence</span>
+      </div>
+
+      <div class="publication-note">
+        <strong>Publication note:</strong>
+        This case study presents an anonymised analysis of company transactions.
+        Company identity and commercial information are handled in accordance
+        with the publication permission obtained for this project.
+      </div>
+    </section>
+
+    <!-- PROJECT DOCUMENTATION LINK -->
+    <section class="documentation-card" id="project-documentation">
+      <h2>Project Documentation</h2>
+
+      <p>
+        Review the supporting case study documentation for the project scope,
+        data validation approach, key findings, business recommendations,
+        and analytical limitations.
+      </p>
+
+      <a
+        class="button"
+        href="../assets/documents/Sales_Performance_Analysis_Case_Study.md"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        View Project Documentation →
+      </a>
+    </section>
+
+    <!-- KEY PERFORMANCE INDICATORS -->
+    <section class="kpi-grid" aria-label="Project key performance indicators">
+
+      <div class="kpi-card">
+        <span class="kpi-value">₦3.34M</span>
+        <span class="kpi-label">Total Recorded Sales Value</span>
+      </div>
+
+      <div class="kpi-card">
+        <span class="kpi-value">434</span>
+        <span class="kpi-label">Total Units Sold</span>
+      </div>
+
+      <div class="kpi-card">
+        <span class="kpi-value">30</span>
+        <span class="kpi-label">Transactions Analysed</span>
+      </div>
+
+      <div class="kpi-card">
+        <span class="kpi-value">₦111.3K</span>
+        <span class="kpi-label">Average Transaction Value</span>
+      </div>
+
+    </section>
+
+    <!-- PROJECT OBJECTIVE -->
+    <section class="section">
+      <h2>Project Objective</h2>
+
+      <p>
+        The objective was to organise sales records into an executive-friendly
+        Power BI report that supports monitoring of recorded sales value,
+        quantity sold, product contribution, customer mix, and branch
+        performance. Interactive filters allow users to explore the data
+        by customer type, transaction, date, and branch.
+      </p>
+
       <h3>Business Questions</h3>
-      <ul class="bullet">
+
+      <ul class="question-list">
         <li>Which products contribute most to recorded sales value?</li>
-        <li>How is sales value distributed across branches?</li>
+        <li>How is recorded sales value distributed across branches?</li>
         <li>Which customer segments account for the largest share of recorded sales?</li>
         <li>Which performance indicators should managers monitor?</li>
       </ul>
-    </article>
-    <article class="panel">
-      <h3>Scope and Limitations</h3>
-      <ul class="bullet">
-        <li>30 recorded transactions covering 3–17 January 2025.</li>
-        <li>Descriptive analysis limited to the supplied records.</li>
-        <li>Sales value is not profit; cost and margin data were not provided.</li>
-        <li>The observation period is short and should not be treated as a long-term trend.</li>
-      </ul>
-    </article>
-  </div>
-</div>
-</section>
 
-<section>
-<div class="wrap">
-  <h2>Dashboard Preview</h2>
-  <p class="muted">Select a dashboard image to enlarge it, or download the image for offline review.</p>
-
-  <div class="grid2">
-    <article class="panel">
-      <h3>01 · Executive Overview</h3>
-      <button class="image-open" type="button" data-image="../assets/images/Tofred-Dashboard-Page1-Complete.png" data-title="Executive Overview Dashboard" aria-label="Enlarge the executive overview dashboard">
-        <img class="shot" src="../assets/images/Tofred-Dashboard-Page1-Complete.png" alt="Sales performance executive dashboard showing key performance indicators and filters" loading="lazy">
-        <span class="zoom-hint">🔍 Click image to enlarge</span>
-      </button>
-      <p class="caption">Executive KPIs and interactive filters for exploring transaction records.</p>
-      <div class="image-actions">
-        <a class="download-btn" href="../assets/images/Tofred-Dashboard-Page1-Complete.png" download="Tofred-Dashboard-Page1-Complete.png">⬇ Download Dashboard</a>
+      <div class="limitation-box">
+        <strong>Scope and limitations</strong>
+        <ul>
+          <li>30 recorded transactions covering 3–17 January 2025.</li>
+          <li>Descriptive analysis limited to the supplied records.</li>
+          <li>Sales value is not profit; cost and margin data were not provided.</li>
+          <li>The observation period is short and should not be treated as a long-term trend.</li>
+        </ul>
       </div>
-    </article>
+    </section>
 
-```
-<article class="panel">
-  <h3>02 · Performance and Trends</h3>
-  <button class="image-open" type="button" data-image="../assets/images/Tofred-Dashboard-Page2-Charts%20%281%29.png" data-title="Performance and Trends Dashboard" aria-label="Enlarge the performance and trends dashboard">
-    <img class="shot" src="../assets/images/Tofred-Dashboard-Page2-Charts%20%281%29.png" alt="Sales analytics dashboard showing revenue by branch, product, customer type, and month" loading="lazy">
-    <span class="zoom-hint">🔍 Click image to enlarge</span>
-  </button>
-  <p class="caption">Revenue breakdowns by branch, product, customer type, and month.</p>
-  <div class="image-actions">
-    <a class="download-btn" href="../assets/images/Tofred-Dashboard-Page2-Charts%20%281%29.png" download="Tofred-Dashboard-Page2-Charts.png">⬇ Download Dashboard</a>
-  </div>
-</article>
-```
+    <!-- DASHBOARD PREVIEW -->
+    <section class="section" id="dashboard">
+      <h2>Dashboard Preview</h2>
 
-  </div>
-</div>
-</section>
+      <p class="muted">
+        Select a dashboard image to enlarge it, or use the download button
+        to save the image for offline review.
+      </p>
 
-<section>
-<div class="wrap">
-  <h2>Data Preparation and Validation</h2>
-  <div class="process">
-    <div class="step"><b>01 · Data Structure</b>Reviewed the transaction table and its fields, including date, product, quantity, unit price, branch, customer type, and transaction total.</div>
-    <div class="step"><b>02 · Arithmetic Checks</b>Checked the 30 transaction totals against quantity multiplied by unit price. The supplied records passed this arithmetic check.</div>
-    <div class="step"><b>03 · Reconciliation</b>Compared summary claims with the transaction records and identified product and customer-segment claims requiring correction.</div>
-  </div>
-  <p class="muted" style="margin-top:18px">Arithmetic consistency does not independently establish that the source records are complete or accurate. Technical methods such as Power Query transformations, DAX measures, and data modelling should only be claimed where confirmed in the Power BI project.</p>
-</div>
-</section>
+      <article class="dashboard-card">
+        <div class="dashboard-card-header">
+          <h3>01 · Executive Overview</h3>
+          <p>Executive KPIs and filters for exploring transaction records.</p>
+        </div>
 
-<section>
-<div class="wrap">
-  <h2>Key Findings and Business Insights</h2>
-  <p class="muted">The analysis covers 30 recorded transactions from 3–17 January 2025. The category figures below have been verified against the supplied transaction records and are calculated against total recorded sales value of ₦3,339,100.</p>
+        <button
+          class="image-button"
+          type="button"
+          data-lightbox="assets/images/Tofred-Dashboard-Page1-Complete.png"
+          data-caption="Sales Performance Analysis — Executive Overview"
+          aria-label="Enlarge executive overview dashboard image"
+        >
+          <img
+            class="dashboard-image"
+            src="../assets/images/Tofred-Dashboard-Page1-Complete.png"
+            alt="Sales performance executive dashboard showing key performance indicators and filters"
+            loading="lazy"
+          >
+          <span class="image-hint">🔍 Click image to enlarge</span>
+        </button>
 
-  <div class="panel">
-    <div class="finding">
-      <strong>01 · Branch Performance</strong>
-      <p>Masaka recorded sales value of ₦1,980,700, approximately 59.32% of total recorded sales value. New Nyanya accounted for ₦1,358,400, approximately 40.68%.</p>
-      <p class="muted"><strong>Business implication:</strong> Compare transaction counts, units sold, product mix, and average transaction value between branches to investigate the difference in recorded sales value.</p>
-    </div>
+        <div class="dashboard-actions">
+          <a
+            class="button button-secondary"
+            href="../assets/images/Tofred-Dashboard-Page1-Complete.png"
+            download="Sales-Performance-Executive-Overview.png"
+          >
+            ↓ Download Dashboard
+          </a>
+        </div>
+      </article>
 
-```
-<div class="finding">
-  <strong>02 · Product Contribution</strong>
-  <p>Dangote Cement generated recorded sales value of ₦887,500, approximately 26.58% of the total.</p>
-  <p class="muted"><strong>Business implication:</strong> Review sales volume, inventory availability, pricing, and purchasing patterns when making product-management decisions.</p>
-</div>
+      <article class="dashboard-card">
+        <div class="dashboard-card-header">
+          <h3>02 · Performance and Trends</h3>
+          <p>Recorded sales breakdowns by branch, product, and customer type.</p>
+        </div>
 
-<div class="finding">
-  <strong>03 · Customer Segment Contribution</strong>
-  <p>Contractors generated recorded sales value of ₦1,352,400, approximately 40.50% of the total.</p>
-  <p class="muted"><strong>Business implication:</strong> Examine order frequency, order size, and product preferences to identify opportunities to strengthen customer relationships.</p>
-</div>
+        <button
+          class="image-button"
+          type="button"
+          data-lightbox="assets/images/Tofred-Dashboard-Page2-Charts%20%281%29.png"
+          data-caption="Sales Performance Analysis — Performance Breakdown"
+          aria-label="Enlarge performance dashboard image"
+        >
+          <img
+            class="dashboard-image"
+            src="../assets/images/Tofred-Dashboard-Page2-Charts%20%281%29.png"
+            alt="Sales analytics dashboard showing recorded sales by branch, product, and customer type"
+            loading="lazy"
+          >
+          <span class="image-hint">🔍 Click image to enlarge</span>
+        </button>
 
-<div class="finding">
-  <strong>04 · Average Transaction Value</strong>
-  <p>Total recorded sales value of ₦3,339,100 across 30 transactions gives an average transaction value of approximately ₦111,303.33.</p>
-  <p class="muted"><strong>Business implication:</strong> Monitor average transaction value alongside transaction count and units sold to assess changes in recorded sales performance.</p>
-</div>
+        <div class="dashboard-actions">
+          <a
+            class="button button-secondary"
+            href="../assets/images/Tofred-Dashboard-Page2-Charts%20%281%29.png"
+            download="Sales-Performance-Breakdown.png"
+          >
+            ↓ Download Dashboard
+          </a>
+        </div>
+      </article>
+    </section>
 
-<div class="finding">
-  <strong>05 · Data Validation</strong>
-  <p>The 30 transaction totals passed the arithmetic check against quantity multiplied by unit price.</p>
-  <p class="muted"><strong>Business implication:</strong> Maintain validation checks and reconcile dashboard totals with source records. Arithmetic consistency alone does not prove completeness or overall data accuracy.</p>
-</div>
-```
+    <!-- DATA PREPARATION -->
+    <section class="section">
+      <h2>Data Preparation and Validation</h2>
 
-  </div>
+      <div class="process-grid">
 
-  <div class="notice">
-    <strong>Interpretation note:</strong> The analysis covers a short observation period. It does not establish long-term trends, profitability, causation, or future performance. Recorded sales value should not be interpreted as profit.
-  </div>
-</div>
-</section>
+        <article class="info-card">
+          <span class="number-label">01 · Data Structure</span>
+          <h3>Transaction Fields</h3>
+          <p>
+            Reviewed the transaction table and its fields, including date,
+            product, quantity, unit price, branch, customer type,
+            and transaction total.
+          </p>
+        </article>
 
-<section>
-<div class="wrap">
-  <h2>Management Recommendations</h2>
-  <p class="muted">These are proposed follow-up actions based on the analysis, not claims that the actions have already been implemented.</p>
+        <article class="info-card">
+          <span class="number-label">02 · Arithmetic Checks</span>
+          <h3>Transaction Validation</h3>
+          <p>
+            Checked the 30 transaction totals against quantity multiplied
+            by unit price. The supplied records passed this arithmetic check.
+          </p>
+        </article>
 
-  <div class="grid2">
-    <article class="panel">
-      <h3>01 · Review Branch Performance</h3>
-      <p>Compare transaction counts, units sold, product mix, and average transaction value across Masaka and New Nyanya.</p>
-      <p class="muted"><strong>Purpose:</strong> Investigate the factors associated with differences in recorded sales value.</p>
-    </article>
+        <article class="info-card">
+          <span class="number-label">03 · Reconciliation</span>
+          <h3>Summary Verification</h3>
+          <p>
+            Compared summary claims with the transaction records and
+            identified product and customer-segment claims requiring correction.
+          </p>
+        </article>
 
-```
-<article class="panel">
-  <h3>02 · Monitor Product Contribution</h3>
-  <p>Review sales volume, inventory availability, pricing, and purchasing patterns for Dangote Cement and other products.</p>
-  <p class="muted"><strong>Purpose:</strong> Support evidence-based inventory and product-management decisions.</p>
-</article>
+        <article class="info-card">
+          <span class="number-label">04 · Quality Limitation</span>
+          <h3>Interpretation of Checks</h3>
+          <p>
+            Arithmetic consistency does not independently establish that
+            the source records are complete or accurate.
+          </p>
+        </article>
 
-<article class="panel">
-  <h3>03 · Understand Customer Segments</h3>
-  <p>Compare transaction frequency, order size, product preferences, and repeat-purchase behaviour across customer types.</p>
-  <p class="muted"><strong>Purpose:</strong> Identify opportunities to improve customer relationships and target sales activities.</p>
-</article>
-
-<article class="panel">
-  <h3>04 · Expand the Reporting Period</h3>
-  <p>Add more historical transactions and report consistently by week or month.</p>
-  <p class="muted"><strong>Purpose:</strong> Enable more reliable trend analysis and comparisons across reporting periods.</p>
-</article>
-```
-
-  </div>
-
-  <div class="notice"><strong>Financial reporting limitation:</strong> Validated cost data is required to calculate profitability and profit margins. Recorded sales value alone does not establish profitability.</div>
-
-  <div class="actions">
-    <a class="btn" href="../index.html#portfolio-view">Explore My Portfolio</a>
-    <a class="btn secondary" href="../index.html#contact-view">Contact Me</a>
-  </div>
-</div>
-</section>
-</main>
-
-<footer>
-  <div class="wrap">Prepared by Chukwuemeka David Udezue · Data Analytics &amp; Business Intelligence</div>
-</footer>
-
-<div class="lightbox" id="dashboardLightbox" role="dialog" aria-modal="true" aria-label="Enlarged dashboard image viewer" aria-hidden="true">
-  <div class="lightbox-content">
-    <div class="lightbox-toolbar">
-      <span class="lightbox-title" id="lightboxTitle">Dashboard Preview</span>
-      <div class="lightbox-controls">
-        <a class="download-btn" id="lightboxDownload" href="#" download>⬇ Download Image</a>
-        <button class="lightbox-close" id="lightboxClose" type="button" aria-label="Close enlarged image">✕ Close</button>
       </div>
+
+      <div class="interpretation-note">
+        <strong>Technical transparency:</strong>
+        Technical methods such as Power Query transformations, DAX measures,
+        and data modelling should only be claimed where confirmed in the
+        Power BI project.
+      </div>
+    </section>
+
+    <!-- KEY FINDINGS -->
+    <section class="section">
+      <h2>Key Findings and Business Insights</h2>
+
+      <p>
+        The analysis covers 30 recorded transactions from 3–17 January 2025.
+        The category figures below have been verified against the supplied
+        transaction records and are calculated against total recorded sales
+        value of ₦3,339,100.
+      </p>
+
+      <div class="insights-grid">
+
+        <article class="info-card insight-card">
+          <span class="number-label">Finding 01</span>
+          <h3>Branch Performance</h3>
+
+          <p>
+            Masaka recorded sales value of ₦1,980,700, approximately 59.32%
+            of total recorded sales value. New Nyanya accounted for
+            ₦1,358,400, approximately 40.68%.
+          </p>
+
+          <p class="implication">
+            <strong>Business implication:</strong>
+            Compare transaction counts, units sold, product mix, and average
+            transaction value between branches to investigate the difference
+            in recorded sales value.
+          </p>
+        </article>
+
+        <article class="info-card insight-card">
+          <span class="number-label">Finding 02</span>
+          <h3>Product Contribution</h3>
+
+          <p>
+            Dangote Cement generated recorded sales value of ₦887,500,
+            approximately 26.58% of the total.
+          </p>
+
+          <p class="implication">
+            <strong>Business implication:</strong>
+            Review sales volume, inventory availability, pricing, and
+            purchasing patterns when making product-management decisions.
+          </p>
+        </article>
+
+        <article class="info-card insight-card">
+          <span class="number-label">Finding 03</span>
+          <h3>Customer Segment Contribution</h3>
+
+          <p>
+            Contractors generated recorded sales value of ₦1,352,400,
+            approximately 40.50% of the total.
+          </p>
+
+          <p class="implication">
+            <strong>Business implication:</strong>
+            Examine order frequency, order size, and product preferences
+            to identify opportunities to strengthen customer relationships.
+          </p>
+        </article>
+
+        <article class="info-card insight-card">
+          <span class="number-label">Finding 04</span>
+          <h3>Average Transaction Value</h3>
+
+          <p>
+            Total recorded sales value of ₦3,339,100 across 30 transactions
+            gives an average transaction value of approximately ₦111,303.33.
+          </p>
+
+          <p class="implication">
+            <strong>Business implication:</strong>
+            Monitor average transaction value alongside transaction count
+            and units sold to assess changes in recorded sales performance.
+          </p>
+        </article>
+
+        <article class="info-card insight-card">
+          <span class="number-label">Finding 05</span>
+          <h3>Data Validation</h3>
+
+          <p>
+            The 30 transaction totals passed the arithmetic check against
+            quantity multiplied by unit price.
+          </p>
+
+          <p class="implication">
+            <strong>Business implication:</strong>
+            Maintain validation checks and reconcile dashboard totals with
+            source records. Arithmetic consistency alone does not prove
+            completeness or overall data accuracy.
+          </p>
+        </article>
+
+      </div>
+
+      <div class="interpretation-note">
+        <strong>Interpretation note:</strong>
+        The analysis covers a short observation period. It does not establish
+        long-term trends, profitability, causation, or future performance.
+        Recorded sales value should not be interpreted as profit.
+      </div>
+    </section>
+
+    <!-- MANAGEMENT RECOMMENDATIONS -->
+    <section class="section">
+      <h2>Management Recommendations</h2>
+
+      <p class="muted">
+        These are proposed follow-up actions based on the analysis,
+        not claims that the actions have already been implemented.
+      </p>
+
+      <div class="recommendations-grid">
+
+        <article class="info-card">
+          <span class="number-label">Recommendation 01</span>
+          <h3>Review Branch Performance</h3>
+
+          <p>
+            Compare transaction counts, units sold, product mix, and average
+            transaction value across Masaka and New Nyanya.
+          </p>
+
+          <p class="implication">
+            <strong>Purpose:</strong>
+            Investigate the factors associated with differences in recorded
+            sales value.
+          </p>
+        </article>
+
+        <article class="info-card">
+          <span class="number-label">Recommendation 02</span>
+          <h3>Monitor Product Contribution</h3>
+
+          <p>
+            Review sales volume, inventory availability, pricing, and
+            purchasing patterns for Dangote Cement and other products.
+          </p>
+
+          <p class="implication">
+            <strong>Purpose:</strong>
+            Support evidence-based inventory and product-management decisions.
+          </p>
+        </article>
+
+        <article class="info-card">
+          <span class="number-label">Recommendation 03</span>
+          <h3>Understand Customer Segments</h3>
+
+          <p>
+            Compare transaction frequency, order size, product preferences,
+            and repeat-purchase behaviour across customer types.
+          </p>
+
+          <p class="implication">
+            <strong>Purpose:</strong>
+            Identify opportunities to improve customer relationships and
+            target sales activities.
+          </p>
+        </article>
+
+        <article class="info-card">
+          <span class="number-label">Recommendation 04</span>
+          <h3>Expand the Reporting Period</h3>
+
+          <p>
+            Add more historical transactions and report consistently
+            by week or month.
+          </p>
+
+          <p class="implication">
+            <strong>Purpose:</strong>
+            Enable more reliable trend analysis and comparisons across
+            reporting periods.
+          </p>
+        </article>
+
+      </div>
+
+      <div class="limitation-box">
+        <strong>Financial reporting limitation:</strong>
+        Validated cost data is required to calculate profitability and
+        profit margins. Recorded sales value alone does not establish
+        profitability.
+      </div>
+    </section>
+
+    <!-- CONTACT AND PORTFOLIO -->
+    <section class="closing">
+      <h2>Interested in My Analytical Work?</h2>
+
+      <p>
+        I work on data analysis, business intelligence, reporting,
+        and data-driven business problem-solving. Explore my portfolio
+        or get in touch to discuss relevant opportunities.
+      </p>
+
+      <div class="closing-actions">
+        <a
+          class="button"
+          href="../index.html#portfolio-view"
+        >
+          Explore My Portfolio
+        </a>
+
+        <a
+          class="button"
+          href="../index.html#contact-view"
+        >
+          Contact Me
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>
+      Prepared by Chukwuemeka David Udezue · Data Analytics &amp; Business Intelligence
+    </p>
+    <p>Visual Excellence. Data-Driven Growth.</p>
+  </footer>
+
+  <!-- IMAGE ENLARGEMENT LIGHTBOX -->
+  <div
+    class="lightbox"
+    id="dashboardLightbox"
+    role="dialog"
+    aria-modal="true"
+    aria-label="Enlarged dashboard image"
+    aria-hidden="true"
+  >
+    <button
+      class="lightbox-close"
+      id="lightboxClose"
+      type="button"
+      aria-label="Close enlarged image"
+    >
+      &times;
+    </button>
+
+    <div class="lightbox-content">
+      <img
+        class="lightbox-image"
+        id="lightboxImage"
+        src=""
+        alt=""
+      >
+
+      <div class="lightbox-caption" id="lightboxCaption"></div>
     </div>
-    <div class="lightbox-image-wrap">
-      <img class="lightbox-image" id="lightboxImage" src="" alt="">
-    </div>
-    <p class="lightbox-note">Press Esc or select Close to return to the project page.</p>
   </div>
-</div>
 
-<script>
-(function(){
-  const lightbox=document.getElementById("dashboardLightbox");
-  const lightboxImage=document.getElementById("lightboxImage");
-  const lightboxTitle=document.getElementById("lightboxTitle");
-  const lightboxDownload=document.getElementById("lightboxDownload");
-  const closeButton=document.getElementById("lightboxClose");
-  const imageButtons=document.querySelectorAll(".image-open");
-  let previouslyFocusedElement=null;
+  <script>
+    (function () {
+      const lightbox = document.getElementById("dashboardLightbox");
+      const lightboxImage = document.getElementById("lightboxImage");
+      const lightboxCaption = document.getElementById("lightboxCaption");
+      const closeButton = document.getElementById("lightboxClose");
+      const imageButtons = document.querySelectorAll("[data-lightbox]");
 
-  function openLightbox(button){
-    const imagePath=button.dataset.image;
-    const imageTitle=button.dataset.title;
-    const previewImage=button.querySelector("img");
+      let previouslyFocusedElement = null;
 
-    previouslyFocusedElement=document.activeElement;
-    lightboxImage.src=imagePath;
-    lightboxImage.alt=previewImage?previewImage.alt:imageTitle;
-    lightboxTitle.textContent=imageTitle;
-    lightboxDownload.href=imagePath;
-    lightboxDownload.download=imagePath.includes("Page1-Complete")?"Tofred-Dashboard-Page1-Complete.png":"Tofred-Dashboard-Page2-Charts.png";
+      function openLightbox(button) {
+        const imagePath = button.getAttribute("data-lightbox");
+        const caption = button.getAttribute("data-caption") || "Dashboard preview";
+        const image = button.querySelector("img");
 
-    lightbox.classList.add("is-open");
-    lightbox.setAttribute("aria-hidden","false");
-    document.body.classList.add("lightbox-open");
-    closeButton.focus();
-  }
+        previouslyFocusedElement = document.activeElement;
 
-  function closeLightbox(){
-    lightbox.classList.remove("is-open");
-    lightbox.setAttribute("aria-hidden","true");
-    document.body.classList.remove("lightbox-open");
-    lightboxImage.src="";
-    lightboxImage.alt="";
-    if(previouslyFocusedElement) previouslyFocusedElement.focus();
-  }
+        lightboxImage.src = new URL(imagePath, document.baseURI).href;
+        lightboxImage.alt = image ? image.alt : caption;
+        lightboxCaption.textContent = caption;
 
-  imageButtons.forEach(function(button){
-    button.addEventListener("click",function(){openLightbox(button);});
-  });
+        lightbox.classList.add("is-open");
+        lightbox.setAttribute("aria-hidden", "false");
+        document.body.style.overflow = "hidden";
 
-  closeButton.addEventListener("click",closeLightbox);
+        closeButton.focus();
+      }
 
-  lightbox.addEventListener("click",function(event){
-    if(event.target===lightbox) closeLightbox();
-  });
+      function closeLightbox() {
+        if (!lightbox.classList.contains("is-open")) {
+          return;
+        }
 
-  document.addEventListener("keydown",function(event){
-    if(event.key==="Escape"&&lightbox.classList.contains("is-open")) closeLightbox();
-  });
-})();
-</script>
+        lightbox.classList.remove("is-open");
+        lightbox.setAttribute("aria-hidden", "true");
+        lightboxImage.src = "";
+        lightboxCaption.textContent = "";
+        document.body.style.overflow = "";
+
+        if (previouslyFocusedElement) {
+          previouslyFocusedElement.focus();
+        }
+      }
+
+      imageButtons.forEach(function (button) {
+        button.addEventListener("click", function () {
+          openLightbox(button);
+        });
+      });
+
+      closeButton.addEventListener("click", closeLightbox);
+
+      lightbox.addEventListener("click", function (event) {
+        if (event.target === lightbox) {
+          closeLightbox();
+        }
+      });
+
+      document.addEventListener("keydown", function (event) {
+        if (
+          event.key === "Escape" &&
+          lightbox.classList.contains("is-open")
+        ) {
+          closeLightbox();
+        }
+      });
+    })();
+  </script>
 
 </body>
 </html>
