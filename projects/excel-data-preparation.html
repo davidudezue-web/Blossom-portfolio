@@ -1,0 +1,360 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Excel and data preparation case study demonstrating data validation, cleaning, transformation, and preparation for business intelligence reporting.">
+  <title>Excel & Data Preparation | Craftmeal</title>
+
+  <style>
+    :root {
+      --navy: #0C1A3A;
+      --brown: #602702;
+      --gold: #D6A84F;
+      --light: #F4F6FA;
+      --white: #FFFFFF;
+      --text: #253047;
+      --muted: #657087;
+      --border: #E0E5EE;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--light);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    header {
+      background: var(--navy);
+      color: var(--white);
+      padding: 22px 7%;
+    }
+
+    header a {
+      color: var(--white);
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    main {
+      max-width: 1050px;
+      margin: 40px auto;
+      padding: 0 22px;
+    }
+
+    .hero {
+      background: var(--navy);
+      color: var(--white);
+      border-radius: 16px;
+      padding: 42px;
+      border-bottom: 5px solid var(--gold);
+    }
+
+    .eyebrow {
+      color: var(--gold);
+      text-transform: uppercase;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 2px;
+    }
+
+    h1 {
+      font-size: clamp(30px, 5vw, 46px);
+      line-height: 1.2;
+      margin: 14px 0;
+    }
+
+    h2 {
+      color: var(--navy);
+      margin-top: 38px;
+      line-height: 1.3;
+    }
+
+    .hero p {
+      max-width: 760px;
+      color: #E3E8F2;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+      margin-top: 22px;
+    }
+
+    .tag {
+      border: 1px solid #66738D;
+      border-radius: 20px;
+      padding: 5px 12px;
+      font-size: 13px;
+    }
+
+    .panel {
+      background: var(--white);
+      padding: 25px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      margin-top: 22px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      margin-top: 18px;
+    }
+
+    .card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 21px;
+    }
+
+    .card h3 {
+      color: var(--navy);
+      margin-top: 0;
+    }
+
+    .number {
+      color: var(--brown);
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .note {
+      border-left: 4px solid var(--gold);
+      padding: 15px 18px;
+      background: #FFF9EC;
+      margin-top: 20px;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 24px;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 12px 18px;
+      background: var(--gold);
+      color: var(--navy);
+      border-radius: 7px;
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    .button.secondary {
+      background: transparent;
+      border: 1px solid var(--gold);
+      color: var(--white);
+    }
+
+    li {
+      margin-bottom: 9px;
+    }
+
+    footer {
+      text-align: center;
+      color: var(--muted);
+      padding: 28px 15px;
+      font-size: 14px;
+    }
+
+    @media (max-width: 600px) {
+      .hero {
+        padding: 27px 22px;
+      }
+
+      main {
+        margin-top: 22px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <a href="../index.html">← Back to Craftmeal Portfolio</a>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="eyebrow">Data Analytics Case Study</div>
+
+      <h1>Excel & Data Preparation</h1>
+
+      <p>
+        Preparing business transaction data for reliable analysis requires
+        more than opening a spreadsheet. This project documents the data
+        preparation workflow supporting a sales performance analysis,
+        from initial inspection to validation and reporting readiness.
+      </p>
+
+      <div class="tags">
+        <span class="tag">Microsoft Excel</span>
+        <span class="tag">Data Quality</span>
+        <span class="tag">Data Validation</span>
+        <span class="tag">Power Query</span>
+        <span class="tag">Power BI Preparation</span>
+      </div>
+
+      <div class="actions">
+        <a class="button" href="sales-performance.html">
+          View Sales Performance Case Study
+        </a>
+
+        <a class="button secondary" href="../index.html">
+          Return to Portfolio
+        </a>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>01. Project Objective</h2>
+
+      <p>
+        Establish a structured and verifiable preparation process for
+        transaction data before using it to calculate sales KPIs, compare
+        performance, and build business intelligence reports.
+      </p>
+
+      <p>
+        The focus is data reliability: understanding the source structure,
+        checking field consistency, validating records, and preparing
+        suitable fields for downstream analysis.
+      </p>
+    </section>
+
+    <section>
+      <h2>02. Data Preparation Workflow</h2>
+
+      <div class="grid">
+        <article class="card">
+          <div class="number">STAGE 01</div>
+          <h3>Source Inspection</h3>
+          <p>
+            Inspect workbook sheets, column headers, field types, record
+            structure, and the suitability of the source data for analysis.
+          </p>
+        </article>
+
+        <article class="card">
+          <div class="number">STAGE 02</div>
+          <h3>Data Quality Checks</h3>
+          <p>
+            Check for missing values, duplicate records, inconsistent
+            categories, invalid entries, and unexpected data types.
+          </p>
+        </article>
+
+        <article class="card">
+          <div class="number">STAGE 03</div>
+          <h3>Cleaning & Transformation</h3>
+          <p>
+            Apply appropriate cleaning and transformation steps, standardize
+            fields where necessary, and preserve the meaning of source data.
+          </p>
+        </article>
+
+        <article class="card">
+          <div class="number">STAGE 04</div>
+          <h3>Validation</h3>
+          <p>
+            Recheck record counts, numeric fields, dates, and summary totals
+            to identify discrepancies before analysis.
+          </p>
+        </article>
+
+        <article class="card">
+          <div class="number">STAGE 05</div>
+          <h3>Analysis Readiness</h3>
+          <p>
+            Organize the prepared data for consistent aggregation, KPI
+            calculations, comparisons, and reporting.
+          </p>
+        </article>
+
+        <article class="card">
+          <div class="number">STAGE 06</div>
+          <h3>Business Intelligence</h3>
+          <p>
+            Use validated data as the foundation for sales performance
+            measures, visual reporting, and business interpretation.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>03. Tools & Techniques</h2>
+
+      <ul>
+        <li><strong>Microsoft Excel:</strong> spreadsheet inspection,
+          structured data review, and validation.</li>
+        <li><strong>Power Query:</strong> repeatable data-cleaning and
+          transformation workflows where applicable.</li>
+        <li><strong>Data validation:</strong> checking the consistency
+          and plausibility of fields and summary figures.</li>
+        <li><strong>Power BI:</strong> downstream KPI calculations,
+          visual analysis, and performance reporting.</li>
+      </ul>
+    </section>
+
+    <section class="panel">
+      <h2>04. Quality Assurance</h2>
+
+      <p>
+        A reliable analytical workflow should preserve source data, make
+        transformations traceable, and reconcile calculated totals against
+        the relevant records. Any unexplained discrepancies should be
+        investigated before findings are presented to decision-makers.
+      </p>
+
+      <div class="note">
+        <strong>Data integrity:</strong> The original transaction workbook
+        is not published on this page. This public case study describes the
+        analytical workflow without exposing potentially confidential
+        company records.
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>05. Connection to Business Insights</h2>
+
+      <p>
+        Data preparation supports the quality of the final analysis.
+        Once the data has been checked and prepared, the next step is to
+        evaluate revenue, transaction activity, product performance, and
+        other relevant indicators in context.
+      </p>
+
+      <p>
+        The related sales performance case study demonstrates how prepared
+        data can support business intelligence reporting and communicate
+        findings to stakeholders.
+      </p>
+
+      <div class="actions">
+        <a class="button" href="sales-performance.html">
+          Explore the Sales Analysis
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <strong>Craftmeal</strong> · Visual Excellence. Data-Driven Growth.
+  </footer>
+</body>
+</html>
+```
