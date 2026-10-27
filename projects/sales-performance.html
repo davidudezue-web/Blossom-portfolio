@@ -1,4 +1,5 @@
 <!doctype html>
+
 <html lang="en">
 <head>
 <meta charset="utf-8">
@@ -19,13 +20,9 @@
   --page: #071225;
 }
 
-* {
-  box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
-html {
-  scroll-behavior: smooth;
-}
+html { scroll-behavior: smooth; }
 
 body {
   margin: 0;
@@ -34,9 +31,7 @@ body {
   font: 16px/1.65 system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
 }
 
-a {
-  color: #f0cb79;
-}
+a { color: #f0cb79; }
 
 a:focus-visible,
 button:focus-visible {
@@ -152,9 +147,7 @@ button:focus-visible {
   margin-top: 7px;
 }
 
-section {
-  padding: 30px 0 42px;
-}
+section { padding: 30px 0 42px; }
 
 h2 {
   font-size: clamp(1.55rem, 3vw, 2.25rem);
@@ -167,9 +160,7 @@ h3 {
   font-size: 1.13rem;
 }
 
-.muted {
-  color: var(--muted);
-}
+.muted { color: var(--muted); }
 
 .grid2 {
   display: grid;
@@ -177,13 +168,8 @@ h3 {
   gap: 18px;
 }
 
-.bullet {
-  padding-left: 20px;
-}
-
-.bullet li {
-  margin: 8px 0;
-}
+.bullet { padding-left: 20px; }
+.bullet li { margin: 8px 0; }
 
 .shot {
   width: 100%;
@@ -192,6 +178,13 @@ h3 {
   border-radius: 12px;
   border: 1px solid var(--line);
   background: #fff;
+  cursor: zoom-in;
+  transition: transform .2s ease, border-color .2s ease;
+}
+
+.shot:hover {
+  border-color: var(--gold);
+  transform: translateY(-2px);
 }
 
 .caption {
@@ -205,13 +198,8 @@ h3 {
   border-bottom: 1px solid rgba(255,255,255,.1);
 }
 
-.finding:last-child {
-  border-bottom: 0;
-}
-
-.finding strong {
-  color: #f1ce7b;
-}
+.finding:last-child { border-bottom: 0; }
+.finding strong { color: #f1ce7b; }
 
 .process {
   display: grid;
@@ -254,6 +242,12 @@ footer {
   font-weight: 750;
   background: var(--gold);
   color: #10192a;
+  border: 1px solid var(--gold);
+  cursor: pointer;
+  font: inherit;
+  font-weight: 750;
+  font-size: .94rem;
+  text-align: center;
 }
 
 .btn.secondary {
@@ -262,32 +256,110 @@ footer {
   color: var(--ink);
 }
 
+.image-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin-top: 14px;
+}
+
+.image-actions .btn {
+  padding: 8px 12px;
+  font-size: .88rem;
+}
+
+.image-actions .btn:disabled {
+  opacity: .65;
+  cursor: wait;
+}
+
+.case-link {
+  display: inline-block;
+  margin-top: 14px;
+  overflow-wrap: anywhere;
+}
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 65px 18px 24px;
+  background: rgba(2, 7, 18, .96);
+}
+
+.lightbox.open { display: flex; }
+
+.lightbox img {
+  display: block;
+  max-width: 100%;
+  max-height: calc(100vh - 115px);
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border: 1px solid rgba(215,173,85,.45);
+  border-radius: 8px;
+  background: #fff;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 14px;
+  right: 18px;
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  background: #12213c;
+  color: #fff;
+  font-size: 1.8rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.lightbox-download {
+  position: absolute;
+  top: 19px;
+  left: 18px;
+  text-decoration: none;
+  border-radius: 8px;
+  background: var(--gold);
+  color: #10192a;
+  padding: 8px 13px;
+  font-weight: 750;
+}
+
+.lightbox-caption {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  right: 10px;
+  color: var(--muted);
+  text-align: center;
+  font-size: .85rem;
+}
+
+body.lightbox-open { overflow: hidden; }
+
 @media (max-width: 760px) {
-  .metrics {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .grid2,
-  .process {
-    grid-template-columns: 1fr;
-  }
-
-  .hero {
-    padding-top: 45px;
-  }
-
+  .metrics { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .grid2, .process { grid-template-columns: 1fr; }
+  .hero { padding-top: 45px; }
   .topbar .wrap {
     align-items: flex-start;
     flex-direction: column;
   }
+  .lightbox { padding-left: 10px; padding-right: 10px; }
 }
 
 @media (max-width: 380px) {
-  .metrics {
-    grid-template-columns: 1fr;
-  }
+  .metrics { grid-template-columns: 1fr; }
+  .image-actions .btn { width: 100%; }
 }
 </style>
+
 </head>
 
 <body>
@@ -298,7 +370,6 @@ footer {
       CHUKWUEMEKA DAVID UDEZUE
       <span style="color:var(--gold)">/ DATA ANALYTICS</span>
     </div>
-
     <a class="back" href="../index.html">← Back to portfolio</a>
   </div>
 </header>
@@ -307,237 +378,261 @@ footer {
 
   <section class="hero">
     <div class="wrap">
+      <div class="eyebrow">Power BI Case Study · Sales & Business Intelligence</div>
 
-      <div class="eyebrow">
-        Power BI Case Study · Sales & Business Intelligence
-      </div>
+```
+  <h1>Sales Performance Analysis & Executive Dashboard</h1>
 
-      <h1>Sales Performance Analysis & Executive Dashboard</h1>
+  <p class="lead">
+    A transaction-level sales analysis designed to make revenue performance
+    easier to monitor across products, customer groups, and branch locations.
+  </p>
 
-      <p class="lead">
-        A transaction-level sales analysis designed to make revenue performance
-        easier to monitor across products, customer groups, and branch locations.
-      </p>
+  <div class="tags">
+    <span class="tag">Microsoft Power BI</span>
+    <span class="tag">KPI Reporting</span>
+    <span class="tag">Revenue Analysis</span>
+    <span class="tag">Data Validation</span>
+  </div>
 
-      <div class="tags">
-        <span class="tag">Microsoft Power BI</span>
-        <span class="tag">KPI Reporting</span>
-        <span class="tag">Revenue Analysis</span>
-        <span class="tag">Data Validation</span>
-      </div>
+  <div class="notice">
+    <strong>Publication note:</strong>
+    This case study presents an anonymised analysis of company transactions.
+    The company identity and commercial information are handled in accordance
+    with the publication permission obtained for this project.
+  </div>
 
-      <div class="notice">
-        <strong>Publication note:</strong>
-        This case study presents an anonymised analysis of company transactions.
-        The company identity and commercial information are handled in accordance
-        with the publication permission obtained for this project.
-      </div>
-
-      <div class="metrics">
-        <div class="metric">
-          <strong>30</strong>
-          <span>Transactions reviewed</span>
-        </div>
-
-        <div class="metric">
-          <strong>9</strong>
-          <span>Product types in the dataset</span>
-        </div>
-
-        <div class="metric">
-          <strong>2</strong>
-          <span>Branch locations</span>
-        </div>
-
-        <div class="metric">
-          <strong>3</strong>
-          <span>Customer segments</span>
-        </div>
-      </div>
-
+  <div class="metrics">
+    <div class="metric">
+      <strong>₦3,339,100</strong>
+      <span>Total recorded revenue</span>
     </div>
+    <div class="metric">
+      <strong>30</strong>
+      <span>Transactions reviewed</span>
+    </div>
+    <div class="metric">
+      <strong>9</strong>
+      <span>Product types in the dataset</span>
+    </div>
+    <div class="metric">
+      <strong>2</strong>
+      <span>Branch locations</span>
+    </div>
+  </div>
+</div>
+```
+
   </section>
 
   <section>
     <div class="wrap">
-
       <h2>Project objective</h2>
 
-      <p class="muted">
-        The objective was to organise sales records into an executive-friendly
-        report that supports monitoring of revenue, quantity sold, product
-        contribution, customer mix, and branch performance. The dashboard
-        includes interactive selections so users can explore the data by
-        customer type, transaction, date, and branch.
-      </p>
+```
+  <p class="muted">
+    The objective was to organise sales records into an executive-friendly
+    report that supports monitoring of revenue, quantity sold, product
+    contribution, customer mix, and branch performance. The dashboard
+    includes interactive selections so users can explore the data by
+    customer type, transaction, date, and branch.
+  </p>
 
-      <div class="grid2" style="margin-top:22px">
+  <div class="grid2" style="margin-top:22px">
+    <article class="panel">
+      <h3>Business questions</h3>
+      <ul class="bullet">
+        <li>Which products contribute the most revenue?</li>
+        <li>How is recorded revenue distributed across branches?</li>
+        <li>Which customer segments account for the largest share of sales?</li>
+        <li>What summary indicators should managers monitor?</li>
+      </ul>
+    </article>
 
-        <article class="panel">
-          <h3>Business questions</h3>
-          <ul class="bullet">
-            <li>Which products contribute the most revenue?</li>
-            <li>How is recorded revenue distributed across branches?</li>
-            <li>Which customer segments account for the largest share of sales?</li>
-            <li>What summary indicators should managers monitor?</li>
-          </ul>
-        </article>
+    <article class="panel">
+      <h3>Scope and limitations</h3>
+      <ul class="bullet">
+        <li>30 recorded transactions covering 3–17 January 2025.</li>
+        <li>Analysis is descriptive and limited to the supplied records.</li>
+        <li>Revenue is not the same as profit; cost and margin data were not provided in this workbook.</li>
+        <li>The period is short and should not be treated as a long-term trend.</li>
+      </ul>
+    </article>
+  </div>
+</div>
+```
 
-        <article class="panel">
-          <h3>Scope and limitations</h3>
-          <ul class="bullet">
-            <li>30 recorded transactions covering 3–17 January 2025.</li>
-            <li>Analysis is descriptive and limited to the supplied records.</li>
-            <li>Revenue is not the same as profit; cost and margin data were not provided in this workbook.</li>
-            <li>The period is short and should not be treated as a long-term trend.</li>
-          </ul>
-        </article>
-
-      </div>
-    </div>
   </section>
 
   <section>
     <div class="wrap">
-
       <h2>Dashboard preview</h2>
-
       <p class="muted">
-        The screenshots below show the two report pages from the sales
-        performance analysis.
+        Select a dashboard image to enlarge it. Use the download buttons to
+        save the original screenshots.
       </p>
 
-      <div class="grid2">
+```
+  <div class="grid2">
+    <article class="panel">
+      <h3>01 · Executive overview</h3>
 
-        <article class="panel">
-          <h3>01 · Executive overview</h3>
+      <img
+        class="shot zoomable"
+        src="../assets/images/Tofred-Dashboard-Updated-Page1.png.png"
+        alt="Sales performance executive dashboard showing key performance indicators and transaction filters"
+        data-title="Executive Overview Dashboard"
+        loading="lazy"
+      >
 
-          <img
-            class="shot"
-            src="../assets/images/Tofred-Dashboard-Updated-Page1.png.png"
-            alt="Sales performance executive dashboard showing key performance indicators and transaction filters"
-            loading="lazy"
-          >
+      <p class="caption">
+        Executive KPIs and slicers for customer type, transaction, and date.
+      </p>
 
-          <p class="caption">
-            Executive KPIs and slicers for customer type, transaction, and date.
-          </p>
-        </article>
-
-        <article class="panel">
-          <h3>02 · Revenue breakdown</h3>
-
-          <img
-            class="shot"
-            src="../assets/images/Tofred-Dashboard-Updated-Page2.png.png"
-            alt="Sales revenue analysis dashboard showing product, customer segment, transaction value, and branch breakdowns"
-            loading="lazy"
-          >
-
-          <p class="caption">
-            Revenue by product, customer segment, and branch, with an average
-            transaction value indicator.
-          </p>
-        </article>
-
+      <div class="image-actions">
+        <button class="btn" type="button" data-download="../assets/images/Tofred-Dashboard-Updated-Page1.png.png" data-filename="Tofred-Dashboard-Executive-Overview.png">
+          Download image
+        </button>
+        <button class="btn secondary zoom-button" type="button" data-image="../assets/images/Tofred-Dashboard-Updated-Page1.png.png" data-title="Executive Overview Dashboard">
+          Zoom image
+        </button>
       </div>
-    </div>
+    </article>
+
+    <article class="panel">
+      <h3>02 · Revenue breakdown</h3>
+
+      <img
+        class="shot zoomable"
+        src="../assets/images/Tofred-Dashboard-Updated-Page2.png.png"
+        alt="Sales revenue analysis dashboard showing product, customer segment, transaction value, and branch breakdowns"
+        data-title="Revenue Breakdown Dashboard"
+        loading="lazy"
+      >
+
+      <p class="caption">
+        Revenue by product, customer segment, and branch, with an average
+        transaction value indicator.
+      </p>
+
+      <div class="image-actions">
+        <button class="btn" type="button" data-download="../assets/images/Tofred-Dashboard-Updated-Page2.png.png" data-filename="Tofred-Dashboard-Revenue-Breakdown.png">
+          Download image
+        </button>
+        <button class="btn secondary zoom-button" type="button" data-image="../assets/images/Tofred-Dashboard-Updated-Page2.png.png" data-title="Revenue Breakdown Dashboard">
+          Zoom image
+        </button>
+      </div>
+    </article>
+  </div>
+</div>
+```
+
   </section>
 
   <section>
     <div class="wrap">
-
       <h2>Data preparation and validation</h2>
 
-      <div class="process">
-
-        <div class="step">
-          <b>01 · Structure</b>
-          Reviewed the structured transaction table and its fields: date,
-          product, quantity, unit price, branch, customer type, and total.
-        </div>
-
-        <div class="step">
-          <b>02 · Quality checks</b>
-          Checked the 30 transaction totals against quantity × unit price.
-          All supplied records passed this arithmetic check.
-        </div>
-
-        <div class="step">
-          <b>03 · Reconciliation</b>
-          Compared the executive-summary narrative with the underlying records
-          and identified mismatched product and customer-segment claims for correction.
-        </div>
-
-      </div>
-
-      <p class="muted" style="margin-top:18px">
-        The case study describes the validation work performed on the supplied
-        workbook. Additional Power Query, DAX, or data-modelling techniques
-        should only be claimed where they can be confirmed against the original
-        Power BI file.
-      </p>
-
+```
+  <div class="process">
+    <div class="step">
+      <b>01 · Structure</b>
+      Reviewed the structured transaction table and its fields: date,
+      product, quantity, unit price, branch, customer type, and total.
     </div>
+
+    <div class="step">
+      <b>02 · Quality checks</b>
+      Checked the 30 transaction totals against quantity × unit price.
+      All supplied records passed this arithmetic check.
+    </div>
+
+    <div class="step">
+      <b>03 · Reconciliation</b>
+      Compared the executive-summary narrative with the underlying records
+      and identified mismatched product and customer-segment claims for correction.
+    </div>
+  </div>
+
+  <p class="muted" style="margin-top:18px">
+    The case study describes the validation work performed on the supplied
+    workbook. Additional Power Query, DAX, or data-modelling techniques
+    should only be claimed where they can be confirmed against the original
+    Power BI file.
+  </p>
+</div>
+```
+
   </section>
 
   <section>
     <div class="wrap">
-
       <h2>Verified findings from the supplied workbook</h2>
 
-      <div class="panel">
-
-        <div class="finding">
-          <strong>Branch comparison:</strong>
-          Masaka accounts for the larger share of recorded revenue in the reviewed period.
-        </div>
-
-        <div class="finding">
-          <strong>Product mix:</strong>
-          Dangote Cement is the highest-revenue product in the supplied transaction records.
-        </div>
-
-        <div class="finding">
-          <strong>Customer mix:</strong>
-          Contractors are the highest-revenue customer segment in the supplied records.
-        </div>
-
-        <div class="finding">
-          <strong>Data quality:</strong>
-          The transaction totals reconcile arithmetically, but some statements
-          in the workbook's original written summary do not match the underlying data.
-        </div>
-
-      </div>
-
-      <p class="muted" style="margin-top:15px">
-        Commercial figures not necessary to explain the findings have been
-        omitted from this public case study.
-      </p>
-
+```
+  <div class="panel">
+    <div class="finding">
+      <strong>Branch comparison:</strong>
+      Masaka accounts for the larger share of recorded revenue in the reviewed period.
     </div>
+
+    <div class="finding">
+      <strong>Product mix:</strong>
+      Dangote Cement is the highest-revenue product in the supplied transaction records.
+    </div>
+
+    <div class="finding">
+      <strong>Customer mix:</strong>
+      Contractors are the highest-revenue customer segment in the supplied records.
+    </div>
+
+    <div class="finding">
+      <strong>Data quality:</strong>
+      The transaction totals reconcile arithmetically, but some statements
+      in the workbook's original written summary do not match the underlying data.
+    </div>
+  </div>
+
+  <p class="muted" style="margin-top:15px">
+    Commercial figures not necessary to explain the findings have been
+    omitted from this public case study.
+  </p>
+</div>
+```
+
   </section>
 
   <section>
     <div class="wrap">
-
       <h2>Recommended next steps</h2>
 
-      <ul class="bullet">
-        <li>Ensure the published screenshots and transaction-derived findings remain within the scope of the company's permission.</li>
-        <li>Correct the written executive summary so all percentages and product totals reconcile with the transaction table.</li>
-        <li>Review the average transaction value measure and confirm whether it is calculated per transaction or per other unit.</li>
-        <li>Consider adding date-range filtering, clearer number formatting, and more restrained visual styling.</li>
-        <li>Keep the final case study and supporting screenshots available through the portfolio website.</li>
-      </ul>
+```
+  <ul class="bullet">
+    <li>Ensure the published screenshots and transaction-derived findings remain within the scope of the company's permission.</li>
+    <li>Correct the written executive summary so all percentages and product totals reconcile with the transaction table.</li>
+    <li>Review the average transaction value measure and confirm whether it is calculated per transaction or per other unit.</li>
+    <li>Consider adding date-range filtering, clearer number formatting, and more restrained visual styling.</li>
+    <li>Keep the final case study and supporting screenshots available through the portfolio website.</li>
+  </ul>
 
-      <div class="actions">
-        <a class="btn" href="../index.html#portfolio-view">Explore my portfolio</a>
-        <a class="btn secondary" href="../index.html#contact-view">Contact me</a>
-      </div>
+  <h3 style="margin-top:26px">Project documentation</h3>
+  <p class="muted">
+    The written case study can be made available here once its file has been
+    confirmed in the repository.
+  </p>
 
-    </div>
+  <a class="case-link" href="../assets/documents/Sales_Performance_Analysis_Case_Study.md">
+    Read the detailed case study →
+  </a>
+
+  <div class="actions">
+    <a class="btn" href="../index.html">Return to my portfolio</a>
+    <a class="btn secondary" href="../index.html#contact-view">Contact me</a>
+  </div>
+</div>
+```
+
   </section>
 
 </main>
@@ -547,6 +642,106 @@ footer {
     Prepared by Chukwuemeka David Udezue · Data Analytics & Business Intelligence
   </div>
 </footer>
+
+<div class="lightbox" id="image-lightbox" role="dialog" aria-modal="true" aria-label="Enlarged dashboard image">
+  <a class="lightbox-download" id="lightbox-download" href="#" download>Download image</a>
+  <button class="lightbox-close" id="lightbox-close" type="button" aria-label="Close enlarged image">&times;</button>
+  <img id="lightbox-image" src="" alt="">
+  <div class="lightbox-caption" id="lightbox-caption"></div>
+</div>
+
+<script>
+(function () {
+  "use strict";
+
+  const lightbox = document.getElementById("image-lightbox");
+  const lightboxImage = document.getElementById("lightbox-image");
+  const lightboxCaption = document.getElementById("lightbox-caption");
+  const lightboxDownload = document.getElementById("lightbox-download");
+  const closeButton = document.getElementById("lightbox-close");
+
+  function openLightbox(src, title, alt) {
+    lightboxImage.src = src;
+    lightboxImage.alt = alt || title || "Enlarged dashboard screenshot";
+    lightboxCaption.textContent = title || "";
+    lightboxDownload.href = src;
+    lightboxDownload.setAttribute("download", "");
+    lightbox.classList.add("open");
+    document.body.classList.add("lightbox-open");
+    closeButton.focus();
+  }
+
+  function closeLightbox() {
+    lightbox.classList.remove("open");
+    document.body.classList.remove("lightbox-open");
+    lightboxImage.src = "";
+  }
+
+  document.querySelectorAll(".zoomable").forEach(function (img) {
+    img.addEventListener("click", function () {
+      openLightbox(img.src, img.dataset.title, img.alt);
+    });
+  });
+
+  document.querySelectorAll(".zoom-button").forEach(function (button) {
+    button.addEventListener("click", function () {
+      const img = button.closest(".panel").querySelector(".zoomable");
+      openLightbox(img.src, button.dataset.title, img.alt);
+    });
+  });
+
+  closeButton.addEventListener("click", closeLightbox);
+
+  lightbox.addEventListener("click", function (event) {
+    if (event.target === lightbox) closeLightbox();
+  });
+
+  document.addEventListener("keydown", function (event) {
+    if (event.key === "Escape" && lightbox.classList.contains("open")) {
+      closeLightbox();
+    }
+  });
+
+  document.querySelectorAll("[data-download]").forEach(function (button) {
+    button.addEventListener("click", async function () {
+      const path = button.dataset.download;
+      const filename = button.dataset.filename || "dashboard.png";
+      const originalText = button.textContent;
+
+      button.disabled = true;
+      button.textContent = "Preparing download…";
+
+      try {
+        const response = await fetch(path);
+
+        if (!response.ok) {
+          throw new Error("Image could not be retrieved.");
+        }
+
+        const blob = await response.blob();
+        const objectUrl = URL.createObjectURL(blob);
+        const link = document.createElement("a");
+
+        link.href = objectUrl;
+        link.download = filename;
+        document.body.appendChild(link);
+        link.click();
+        link.remove();
+
+        setTimeout(function () {
+          URL.revokeObjectURL(objectUrl);
+        }, 1500);
+      } catch (error) {
+        window.open(path, "_blank", "noopener");
+        alert("The image was opened in a new tab. If it does not download automatically, right-click the image and choose Save image as.");
+      } finally {
+        button.disabled = false;
+        button.textContent = originalText;
+      }
+    });
+  });
+})();
+</script>
 
 </body>
 </html>
