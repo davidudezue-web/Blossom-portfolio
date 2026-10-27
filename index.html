@@ -500,419 +500,663 @@
      PROJECTS
 ===================================================== -->
 
+```html
+<!-- =====================================================
+     PROJECTS
+===================================================== -->
+
 <section id="portfolio-view" class="view-section">
 
-```
-<div class="container">
+    <div class="container">
 
-    <div class="section-header-block">
-        <span class="section-pretitle">Selected Work and Case Studies</span>
-        <h2 class="section-title">Projects</h2>
-        <div class="accent-line"></div>
-    </div>
+        <div class="section-header-block">
+            <span class="section-pretitle">Selected Work and Case Studies</span>
+            <h2 class="section-title">Projects</h2>
+            <div class="accent-line"></div>
+        </div>
 
-    <div class="portfolio-architecture-intro">
+        <div class="portfolio-architecture-intro">
 
-        <p>
-            Explore selected analytical projects, business
-            performance reporting, supporting resources, and
-            creative work. Each category helps you find work
-            relevant to your interests.
-        </p>
+            <p>
+                Explore selected analytical projects, business
+                performance reporting, analytical workflows,
+                and creative work. Each project demonstrates
+                practical skills in data analysis, visualization,
+                documentation, or professional communication.
+            </p>
 
-        <p>
-            Project findings are based on the data and scope
-            described in each case study. Sales values are
-            not described as profit unless relevant cost data
-            is available to support that conclusion.
-        </p>
+            <p>
+                Project findings are based on the data and scope
+                described in each case study. Sales values are
+                not described as profit unless relevant cost data
+                is available to support that conclusion.
+            </p>
 
-    </div>
+        </div>
 
-    <div class="portfolio-category-controls"
-         role="group"
-         aria-label="Filter projects by category"
-         style="display:flex;flex-wrap:wrap;gap:12px;margin:25px 0;">
+        <!-- PROJECT CATEGORY FILTERS -->
 
-        <button type="button"
-                class="btn btn-primary"
-                data-project-filter="all"
-                aria-pressed="true"
-                onclick="filterPortfolio('all')">
-            All Projects
-        </button>
+        <div class="portfolio-category-controls"
+             role="group"
+             aria-label="Filter projects by category"
+             style="display:flex;flex-wrap:wrap;gap:12px;margin:25px 0;">
 
-        <button type="button"
-                class="btn btn-secondary"
-                data-project-filter="analytics"
-                aria-pressed="false"
-                onclick="filterPortfolio('analytics')">
-            <i class="fas fa-chart-line"></i>
-            Data Analytics
-        </button>
+            <button type="button"
+                    class="btn btn-primary"
+                    data-project-filter="all"
+                    aria-pressed="true"
+                    onclick="filterPortfolio('all')">
+                All Projects
+            </button>
 
-        <button type="button"
-                class="btn btn-secondary"
-                data-project-filter="dashboards"
-                aria-pressed="false"
-                onclick="filterPortfolio('dashboards')">
-            <i class="fas fa-chart-column"></i>
-            Dashboards
-        </button>
-
-        <button type="button"
-                class="btn btn-secondary"
-                data-project-filter="creative"
-                aria-pressed="false"
-                onclick="filterPortfolio('creative')">
-            <i class="fas fa-palette"></i>
-            Creative Design
-        </button>
-
-        <button type="button"
-                class="btn btn-secondary"
-                data-project-filter="documents"
-                aria-pressed="false"
-                onclick="filterPortfolio('documents')">
-            <i class="fas fa-file-lines"></i>
-            Documents &amp; Reports
-        </button>
-
-    </div>
-
-    <div class="portfolio-display-grid" id="portfolioProjectsGrid">
-
-        <div class="portfolio-card portfolio-item-node"
-             data-category="analytics">
-
-            <div class="card-geometric-corner"></div>
-
-            <div class="card-folder-badge">
+            <button type="button"
+                    class="btn btn-secondary"
+                    data-project-filter="analytics"
+                    aria-pressed="false"
+                    onclick="filterPortfolio('analytics')">
                 <i class="fas fa-chart-line"></i>
                 Data Analytics
-            </div>
+            </button>
 
-            <h4 class="project-node-title">
-                Sales Performance Analysis
-            </h4>
-
-            <p class="project-node-desc">
-                A Power BI case study examining recorded sales
-                value, transaction activity, average transaction
-                value, branch performance, product contribution,
-                and customer segments using a dataset covering
-                3–17 January 2025.
-            </p>
-
-            <p class="project-node-desc">
-                Includes data validation, KPI reporting,
-                interactive visualizations, findings,
-                recommendations, and documented limitations.
-            </p>
-
-            <a href="projects/sales-performance.html"
-               class="node-redirect-link">
-                <span>View Full Case Study</span>
-                <i class="fas fa-arrow-right"></i>
-            </a>
-
-            <a href="assets/documents/Sales_Performance_Analysis_Case_Study.md"
-               target="_blank"
-               rel="noopener noreferrer"
-               class="node-redirect-link">
-                <span>Read Case Study Documentation</span>
-                <i class="fas fa-file-lines"></i>
-            </a>
-        </div>
-
-        <div class="portfolio-card portfolio-item-node"
-             data-category="analytics">
-
-            <div class="card-geometric-corner"></div>
-
-            <div class="card-folder-badge">
-                <i class="fas fa-file-excel"></i>
-                Data Analytics
-            </div>
-
-            <h4 class="project-node-title">
-                Excel and Data Preparation
-            </h4>
-
-            <p class="project-node-desc">
-                Spreadsheet-based analytical resources,
-                data preparation work, formulas, and
-                workbook examples.
-            </p>
-
-            <a href="https://drive.google.com/drive/folders/1AcJqNCnnxQKcyMoun44z7VO_wBQoK1I8"
-               target="_blank"
-               rel="noopener noreferrer"
-               class="node-redirect-link">
-                <span>View Excel Resources</span>
-                <i class="fas fa-external-link-alt"></i>
-            </a>
-        </div>
-
-        <div class="portfolio-card portfolio-item-node"
-             data-category="analytics">
-
-            <div class="card-geometric-corner"></div>
-
-            <div class="card-folder-badge">
-                <i class="fas fa-database"></i>
-                Data Analytics
-            </div>
-
-            <h4 class="project-node-title">
-                Analytical Processes and Documentation
-            </h4>
-
-            <p class="project-node-desc">
-                Analytical workflows, process documentation,
-                methodology resources, and supporting materials.
-            </p>
-
-            <a href="https://drive.google.com/drive/folders/1yeEClswCpHkbb9OJ3cfe0EXtWTYYu94r"
-               target="_blank"
-               rel="noopener noreferrer"
-               class="node-redirect-link">
-                <span>View Process Resources</span>
-                <i class="fas fa-external-link-alt"></i>
-            </a>
-        </div>
-
-        <div class="portfolio-card portfolio-item-node"
-             data-category="dashboards">
-
-            <div class="card-geometric-corner"></div>
-
-            <div class="card-folder-badge">
+            <button type="button"
+                    class="btn btn-secondary"
+                    data-project-filter="dashboards"
+                    aria-pressed="false"
+                    onclick="filterPortfolio('dashboards')">
                 <i class="fas fa-chart-column"></i>
                 Dashboards
-            </div>
+            </button>
 
-            <h4 class="project-node-title">
-                Dashboards and Performance Reporting
-            </h4>
-
-            <p class="project-node-desc">
-                Dashboard and reporting materials demonstrating
-                how data can be organized and presented for
-                business performance review.
-            </p>
-
-            <a href="https://drive.google.com/drive/folders/1NJAPUYzLM9tQXGdCX5R8gVyYoAhK8J3F"
-               target="_blank"
-               rel="noopener noreferrer"
-               class="node-redirect-link">
-                <span>View Dashboard Resources</span>
-                <i class="fas fa-external-link-alt"></i>
-            </a>
-        </div>
-
-        <div class="portfolio-card portfolio-item-node"
-             data-category="documents">
-
-            <div class="card-geometric-corner"></div>
-
-            <div class="card-folder-badge">
-                <i class="fas fa-file-lines"></i>
-                Documents &amp; Reports
-            </div>
-
-            <h4 class="project-node-title">
-                Analytical Reports and Presentations
-            </h4>
-
-            <p class="project-node-desc">
-                Reporting and presentation resources for
-                communicating findings, performance
-                information, and analytical results.
-            </p>
-
-            <a href="https://drive.google.com/drive/folders/1AjArnPFYnwRwoY6xUV4SvKq4OHdR3Cgh"
-               target="_blank"
-               rel="noopener noreferrer"
-               class="node-redirect-link">
-                <span>View Report Resources</span>
-                <i class="fas fa-external-link-alt"></i>
-            </a>
-        </div>
-
-        <div class="portfolio-card portfolio-item-node"
-             data-category="creative">
-
-            <div class="card-geometric-corner"></div>
-
-            <div class="card-folder-badge">
+            <button type="button"
+                    class="btn btn-secondary"
+                    data-project-filter="creative"
+                    aria-pressed="false"
+                    onclick="filterPortfolio('creative')">
                 <i class="fas fa-palette"></i>
                 Creative Design
-            </div>
+            </button>
 
-            <h4 class="project-node-title">
-                Campaign and Event Design
-            </h4>
+            <button type="button"
+                    class="btn btn-secondary"
+                    data-project-filter="documents"
+                    aria-pressed="false"
+                    onclick="filterPortfolio('documents')">
+                <i class="fas fa-file-lines"></i>
+                Documents &amp; Reports
+            </button>
 
-            <p class="project-node-desc">
-                Selected campaign and event design resources,
-                visual communication materials, and promotional assets.
-            </p>
-
-            <a href="https://drive.google.com/drive/folders/178WZbQuYTcW7eb2gEosgOouWNhBp50gq"
-               target="_blank"
-               rel="noopener noreferrer"
-               class="node-redirect-link">
-                <span>View Campaign Work</span>
-                <i class="fas fa-external-link-alt"></i>
-            </a>
         </div>
 
-        <div class="portfolio-card portfolio-item-node"
-             data-category="creative">
+        <div class="portfolio-display-grid" id="portfolioProjectsGrid">
 
-            <div class="card-geometric-corner"></div>
+            <!-- PROJECT 1: SALES PERFORMANCE ANALYSIS -->
 
-            <div class="card-folder-badge">
-                <i class="fas fa-swatchbook"></i>
-                Creative Design
+            <div class="portfolio-card portfolio-item-node"
+                 data-category="analytics">
+
+                <div class="card-geometric-corner"></div>
+
+                <div class="card-folder-badge">
+                    <i class="fas fa-chart-line"></i>
+                    Data Analytics
+                </div>
+
+                <h4 class="project-node-title">
+                    Sales Performance Analysis
+                </h4>
+
+                <p class="project-node-desc">
+                    A Power BI case study examining recorded sales
+                    value, transaction activity, average transaction
+                    value, branch performance, product contribution,
+                    and customer segments using a dataset covering
+                    3–17 January 2025.
+                </p>
+
+                <p class="project-node-desc">
+                    Includes data validation, KPI reporting,
+                    interactive visualizations, findings,
+                    recommendations, and documented limitations.
+                </p>
+
+                <a href="projects/sales-performance.html"
+                   class="node-redirect-link">
+                    <span>View Full Case Study</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+
+                <a href="assets/documents/Sales_Performance_Analysis_Case_Study.md"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="node-redirect-link">
+                    <span>Read Case Study Documentation</span>
+                    <i class="fas fa-file-lines"></i>
+                </a>
+
             </div>
 
-            <h4 class="project-node-title">
-                Brand Identity and Corporate Design
-            </h4>
 
-            <p class="project-node-desc">
-                Selected brand identity, stationery,
-                corporate communication, and visual identity designs.
-            </p>
+            <!-- PROJECT 2: EXCEL AND DATA PREPARATION -->
 
-            <a href="https://drive.google.com/drive/folders/1Sj51XowCqIoUZinQFUNmQOcfdyh4ymsZ"
-               target="_blank"
-               rel="noopener noreferrer"
-               class="node-redirect-link">
-                <span>View Brand Design Work</span>
-                <i class="fas fa-external-link-alt"></i>
-            </a>
+            <div class="portfolio-card portfolio-item-node"
+                 data-category="analytics">
+
+                <div class="card-geometric-corner"></div>
+
+                <div class="card-folder-badge">
+                    <i class="fas fa-file-excel"></i>
+                    Data Analytics
+                </div>
+
+                <h4 class="project-node-title">
+                    Excel and Data Preparation
+                </h4>
+
+                <p class="project-node-desc">
+                    Practical work involving spreadsheet-based
+                    analysis, data organization, preparation,
+                    validation, formulas, and workbook-based
+                    analytical tasks.
+                </p>
+
+                <p class="project-node-desc">
+                    This area focuses on preparing reliable data
+                    for analysis and reporting. Supporting
+                    examples will be presented directly on this
+                    website as portfolio assets become available.
+                </p>
+
+            </div>
+
+
+            <!-- PROJECT 3: ANALYTICAL PROCESSES AND DOCUMENTATION -->
+
+            <div class="portfolio-card portfolio-item-node"
+                 data-category="analytics">
+
+                <div class="card-geometric-corner"></div>
+
+                <div class="card-folder-badge">
+                    <i class="fas fa-database"></i>
+                    Data Analytics
+                </div>
+
+                <h4 class="project-node-title">
+                    Analytical Processes and Documentation
+                </h4>
+
+                <p class="project-node-desc">
+                    A documented Power BI workflow showing how
+                    source data is connected, inspected, loaded,
+                    and prepared for analysis. The screenshots
+                    demonstrate the initial data preparation
+                    and cleaning stages.
+                </p>
+
+                <div style="
+                    display:grid;
+                    grid-template-columns:repeat(2,minmax(0,1fr));
+                    gap:14px;
+                    margin-top:20px;
+                ">
+
+                    <!-- STEP 1 -->
+
+                    <figure style="margin:0;min-width:0;">
+
+                        <a href="assets/images/process/Step1-PowerBI-GetData-Menu.png"
+                           target="_blank"
+                           rel="noopener noreferrer"
+                           aria-label="Open Step 1 Power BI Get Data screenshot">
+
+                            <img
+                                src="assets/images/process/Step1-PowerBI-GetData-Menu.png"
+                                alt="Step 1: Opening the Get Data menu in Power BI"
+                                loading="lazy"
+                                style="
+                                    display:block;
+                                    width:100%;
+                                    height:160px;
+                                    object-fit:contain;
+                                    background:#f4f6fa;
+                                    border-radius:8px;
+                                ">
+                        </a>
+
+                        <figcaption style="font-size:12px;margin-top:8px;">
+                            <strong>Step 1:</strong>
+                            Opening Get Data
+                        </figcaption>
+
+                    </figure>
+
+
+                    <!-- STEP 2 -->
+
+                    <figure style="margin:0;min-width:0;">
+
+                        <a href="assets/images/process/Step2-FileExplorer-SelectingDataset.png"
+                           target="_blank"
+                           rel="noopener noreferrer"
+                           aria-label="Open Step 2 dataset selection screenshot">
+
+                            <img
+                                src="assets/images/process/Step2-FileExplorer-SelectingDataset.png"
+                                alt="Step 2: Selecting the dataset in File Explorer"
+                                loading="lazy"
+                                style="
+                                    display:block;
+                                    width:100%;
+                                    height:160px;
+                                    object-fit:contain;
+                                    background:#f4f6fa;
+                                    border-radius:8px;
+                                ">
+                        </a>
+
+                        <figcaption style="font-size:12px;margin-top:8px;">
+                            <strong>Step 2:</strong>
+                            Selecting the Dataset
+                        </figcaption>
+
+                    </figure>
+
+
+                    <!-- STEP 3 -->
+
+                    <figure style="margin:0;min-width:0;">
+
+                        <a href="assets/images/process/Step3-PowerBI-ConnectingToExcel.png"
+                           target="_blank"
+                           rel="noopener noreferrer"
+                           aria-label="Open Step 3 Power BI Excel connection screenshot">
+
+                            <img
+                                src="assets/images/process/Step3-PowerBI-ConnectingToExcel.png"
+                                alt="Step 3: Connecting Power BI to an Excel workbook"
+                                loading="lazy"
+                                style="
+                                    display:block;
+                                    width:100%;
+                                    height:160px;
+                                    object-fit:contain;
+                                    background:#f4f6fa;
+                                    border-radius:8px;
+                                ">
+                        </a>
+
+                        <figcaption style="font-size:12px;margin-top:8px;">
+                            <strong>Step 3:</strong>
+                            Connecting to Excel
+                        </figcaption>
+
+                    </figure>
+
+
+                    <!-- STEP 4 -->
+
+                    <figure style="margin:0;min-width:0;">
+
+                        <a href="assets/images/process/Step4-Navigator-PreviewRawData.png"
+                           target="_blank"
+                           rel="noopener noreferrer"
+                           aria-label="Open Step 4 raw data preview screenshot">
+
+                            <img
+                                src="assets/images/process/Step4-Navigator-PreviewRawData.png"
+                                alt="Step 4: Previewing raw data in the Power BI Navigator"
+                                loading="lazy"
+                                style="
+                                    display:block;
+                                    width:100%;
+                                    height:160px;
+                                    object-fit:contain;
+                                    background:#f4f6fa;
+                                    border-radius:8px;
+                                ">
+                        </a>
+
+                        <figcaption style="font-size:12px;margin-top:8px;">
+                            <strong>Step 4:</strong>
+                            Inspecting Raw Data
+                        </figcaption>
+
+                    </figure>
+
+
+                    <!-- STEP 5 -->
+
+                    <figure style="margin:0;min-width:0;">
+
+                        <a href="assets/images/process/Step5-PowerQuery-TwoQueriesLoaded.png"
+                           target="_blank"
+                           rel="noopener noreferrer"
+                           aria-label="Open Step 5 Power Query screenshot">
+
+                            <img
+                                src="assets/images/process/Step5-PowerQuery-TwoQueriesLoaded.png"
+                                alt="Step 5: Viewing loaded queries in Power Query"
+                                loading="lazy"
+                                style="
+                                    display:block;
+                                    width:100%;
+                                    height:160px;
+                                    object-fit:contain;
+                                    background:#f4f6fa;
+                                    border-radius:8px;
+                                ">
+                        </a>
+
+                        <figcaption style="font-size:12px;margin-top:8px;">
+                            <strong>Step 5:</strong>
+                            Loading Queries
+                        </figcaption>
+
+                    </figure>
+
+
+                    <!-- STEP 6 -->
+
+                    <figure style="margin:0;min-width:0;">
+
+                        <a href="assets/images/process/Step6-PowerQuery-DataCleaning.png"
+                           target="_blank"
+                           rel="noopener noreferrer"
+                           aria-label="Open Step 6 data cleaning screenshot">
+
+                            <img
+                                src="assets/images/process/Step6-PowerQuery-DataCleaning.png"
+                                alt="Step 6: Cleaning and preparing data in Power Query"
+                                loading="lazy"
+                                style="
+                                    display:block;
+                                    width:100%;
+                                    height:160px;
+                                    object-fit:contain;
+                                    background:#f4f6fa;
+                                    border-radius:8px;
+                                ">
+                        </a>
+
+                        <figcaption style="font-size:12px;margin-top:8px;">
+                            <strong>Step 6:</strong>
+                            Data Cleaning
+                        </figcaption>
+
+                    </figure>
+
+                </div>
+
+                <p class="project-node-desc" style="margin-top:18px;">
+                    <i class="fas fa-search-plus"></i>
+                    Select any screenshot to open the full-size image.
+                </p>
+
+            </div>
+
+
+            <!-- PROJECT 4: DASHBOARDS AND PERFORMANCE REPORTING -->
+
+            <div class="portfolio-card portfolio-item-node"
+                 data-category="dashboards">
+
+                <div class="card-geometric-corner"></div>
+
+                <div class="card-folder-badge">
+                    <i class="fas fa-chart-column"></i>
+                    Dashboards
+                </div>
+
+                <h4 class="project-node-title">
+                    Dashboards and Performance Reporting
+                </h4>
+
+                <p class="project-node-desc">
+                    Dashboard and reporting work demonstrating
+                    how business data can be organized and
+                    presented for performance monitoring,
+                    comparison, and decision support.
+                </p>
+
+                <a href="projects/sales-performance.html"
+                   class="node-redirect-link">
+                    <span>View Sales Performance Dashboard</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+
+            </div>
+
+
+            <!-- PROJECT 5: ANALYTICAL REPORTS AND PRESENTATIONS -->
+
+            <div class="portfolio-card portfolio-item-node"
+                 data-category="documents">
+
+                <div class="card-geometric-corner"></div>
+
+                <div class="card-folder-badge">
+                    <i class="fas fa-file-lines"></i>
+                    Documents &amp; Reports
+                </div>
+
+                <h4 class="project-node-title">
+                    Analytical Reports and Presentations
+                </h4>
+
+                <p class="project-node-desc">
+                    Reporting and presentation work designed
+                    to communicate analytical findings,
+                    performance information, methods,
+                    and recommendations clearly.
+                </p>
+
+                <a href="assets/documents/Sales_Performance_Analysis_Case_Study.md"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="node-redirect-link">
+                    <span>Read Analytical Case Study</span>
+                    <i class="fas fa-file-lines"></i>
+                </a>
+
+            </div>
+
+
+            <!-- PROJECT 6: CAMPAIGN AND EVENT DESIGN -->
+
+            <div class="portfolio-card portfolio-item-node"
+                 data-category="creative">
+
+                <div class="card-geometric-corner"></div>
+
+                <div class="card-folder-badge">
+                    <i class="fas fa-palette"></i>
+                    Creative Design
+                </div>
+
+                <h4 class="project-node-title">
+                    Campaign and Event Design
+                </h4>
+
+                <p class="project-node-desc">
+                    Selected campaign and event design work
+                    demonstrating visual communication,
+                    promotional design, and creative
+                    presentation of information.
+                </p>
+
+                <p class="project-node-desc">
+                    Project images will be displayed directly
+                    in this portfolio as the relevant design
+                    assets are added to the website.
+                </p>
+
+            </div>
+
+
+            <!-- PROJECT 7: BRAND IDENTITY AND CORPORATE DESIGN -->
+
+            <div class="portfolio-card portfolio-item-node"
+                 data-category="creative">
+
+                <div class="card-geometric-corner"></div>
+
+                <div class="card-folder-badge">
+                    <i class="fas fa-swatchbook"></i>
+                    Creative Design
+                </div>
+
+                <h4 class="project-node-title">
+                    Brand Identity and Corporate Design
+                </h4>
+
+                <p class="project-node-desc">
+                    Brand identity and corporate design work
+                    covering visual identity, branding
+                    applications, and professional
+                    communication materials.
+                </p>
+
+                <p class="project-node-desc">
+                    Supporting design assets will be presented
+                    directly on this website as they are added.
+                </p>
+
+            </div>
+
+
+            <!-- PROJECT 8: EDUCATIONAL AND TRAINING MATERIALS -->
+
+            <div class="portfolio-card portfolio-item-node"
+                 data-category="creative">
+
+                <div class="card-geometric-corner"></div>
+
+                <div class="card-folder-badge">
+                    <i class="fas fa-graduation-cap"></i>
+                    Education &amp; Training
+                </div>
+
+                <h4 class="project-node-title">
+                    Educational and Training Materials
+                </h4>
+
+                <p class="project-node-desc">
+                    Educational content, learning resources,
+                    training presentations, and visual
+                    materials designed to explain technical
+                    and professional concepts.
+                </p>
+
+                <p class="project-node-desc">
+                    Selected materials will be showcased
+                    directly on this website.
+                </p>
+
+            </div>
+
+
+            <!-- PROJECT 9: PRODUCT AND PACKAGING DESIGN -->
+
+            <div class="portfolio-card portfolio-item-node"
+                 data-category="creative">
+
+                <div class="card-geometric-corner"></div>
+
+                <div class="card-folder-badge">
+                    <i class="fas fa-box-open"></i>
+                    Creative Design
+                </div>
+
+                <h4 class="project-node-title">
+                    Product and Packaging Design
+                </h4>
+
+                <p class="project-node-desc">
+                    Product presentation and packaging design
+                    work focused on visual hierarchy,
+                    presentation, and brand communication.
+                </p>
+
+                <p class="project-node-desc">
+                    Selected product and packaging images
+                    will be displayed directly in this portfolio.
+                </p>
+
+            </div>
+
+
+            <!-- PROJECT 10: SOCIAL MEDIA AND DIGITAL CONTENT -->
+
+            <div class="portfolio-card portfolio-item-node"
+                 data-category="creative">
+
+                <div class="card-geometric-corner"></div>
+
+                <div class="card-folder-badge">
+                    <i class="fas fa-photo-film"></i>
+                    Creative Design
+                </div>
+
+                <h4 class="project-node-title">
+                    Social Media and Digital Content
+                </h4>
+
+                <p class="project-node-desc">
+                    Digital content and social media design
+                    work created to communicate messages,
+                    support campaigns, and maintain
+                    consistent visual presentation.
+                </p>
+
+                <p class="project-node-desc">
+                    Selected graphics and digital content
+                    will be showcased directly on this website.
+                </p>
+
+            </div>
+
         </div>
 
-        <div class="portfolio-card portfolio-item-node"
-             data-category="creative">
 
-            <div class="card-geometric-corner"></div>
+        <!-- ANALYTICS APPROACH -->
 
-            <div class="card-folder-badge">
-                <i class="fas fa-graduation-cap"></i>
-                Creative Design
+        <div class="philosophy-callout-wrapper">
+
+            <div class="diagonal-slash-accent"></div>
+
+            <div class="philosophy-content">
+
+                <span class="philosophy-label">
+                    My Analytics Approach
+                </span>
+
+                <h4 class="philosophy-text">
+                    Evidence-Based Analytics Case Studies
+                </h4>
+
+                <p class="philosophy-subtext">
+                    My case studies document the business
+                    question, dataset, preparation and validation
+                    steps, analytical methods, tools, findings,
+                    recommendations, and limitations.
+                </p>
+
+                <p class="philosophy-subtext">
+                    I distinguish recorded results from
+                    assumptions and recommendations. Where
+                    a dataset does not contain cost information,
+                    I do not claim that sales value represents profit.
+                </p>
+
             </div>
 
-            <h4 class="project-node-title">
-                Educational and Training Materials
-            </h4>
-
-            <p class="project-node-desc">
-                Selected visual and educational resources
-                connected to communication, learning, and
-                skills development.
-            </p>
-
-            <a href="https://drive.google.com/drive/folders/1NZrTz_7pAjaP7IJEy933JbB1DHR5Y1-5"
-               target="_blank"
-               rel="noopener noreferrer"
-               class="node-redirect-link">
-                <span>View Educational Designs</span>
-                <i class="fas fa-external-link-alt"></i>
-            </a>
-        </div>
-
-        <div class="portfolio-card portfolio-item-node"
-             data-category="creative">
-
-            <div class="card-geometric-corner"></div>
-
-            <div class="card-folder-badge">
-                <i class="fas fa-box-open"></i>
-                Creative Design
-            </div>
-
-            <h4 class="project-node-title">
-                Product and Packaging Design
-            </h4>
-
-            <p class="project-node-desc">
-                Selected product presentation, packaging,
-                and visual communication resources.
-            </p>
-
-            <a href="https://drive.google.com/drive/folders/168CDw0LgI2-dqZZb-Wl9VMCwCspzsND0"
-               target="_blank"
-               rel="noopener noreferrer"
-               class="node-redirect-link">
-                <span>View Packaging Work</span>
-                <i class="fas fa-external-link-alt"></i>
-            </a>
-        </div>
-
-        <div class="portfolio-card portfolio-item-node"
-             data-category="creative">
-
-            <div class="card-geometric-corner"></div>
-
-            <div class="card-folder-badge">
-                <i class="fas fa-photo-film"></i>
-                Creative Design
-            </div>
-
-            <h4 class="project-node-title">
-                Social Media and Digital Content
-            </h4>
-
-            <p class="project-node-desc">
-                Selected social media graphics and sequential
-                digital content resources.
-            </p>
-
-            <a href="https://drive.google.com/drive/folders/1oxx18rA0sE2VA5bMRNcmLapsAdmSTnJV"
-               target="_blank"
-               rel="noopener noreferrer"
-               class="node-redirect-link">
-                <span>View Digital Content</span>
-                <i class="fas fa-external-link-alt"></i>
-            </a>
         </div>
 
     </div>
-
-    <div class="philosophy-callout-wrapper">
-        <div class="diagonal-slash-accent"></div>
-
-        <div class="philosophy-content">
-            <span class="philosophy-label">My Analytics Approach</span>
-
-            <h4 class="philosophy-text">
-                Evidence-Based Analytics Case Studies
-            </h4>
-
-            <p class="philosophy-subtext">
-                My case studies document the business question,
-                dataset, preparation and validation steps,
-                analytical methods, tools, findings,
-                recommendations, and limitations.
-            </p>
-
-            <p class="philosophy-subtext">
-                I distinguish recorded results from assumptions
-                and recommendations. Where a dataset does not
-                contain cost information, I do not claim that
-                sales value represents profit.
-            </p>
-        </div>
-    </div>
-
-</div>
-```
 
 </section>
+```
+
 
 <!-- =====================================================
      LEADERSHIP
