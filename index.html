@@ -1,29 +1,33 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="description" content="Chukwuemeka David Udezue is a Data Analyst, Business Intelligence and Reporting Specialist, Digital Skills Trainer, and Creative Designer specializing in Excel, SQL, Power BI, data visualization, business reporting, and professional skills development.">
-    <meta name="author" content="Chukwuemeka David Udezue">
-    <meta name="theme-color" content="#0C1A3A">
+```
+<meta name="description" content="Chukwuemeka David Udezue is a Data Analyst, Business Intelligence and Reporting Specialist, Digital Skills Trainer, and Creative Designer specializing in Excel, SQL, Power BI, data visualization, business reporting, and professional skills development.">
+<meta name="author" content="Chukwuemeka David Udezue">
+<meta name="theme-color" content="#0C1A3A">
 
-    <meta property="og:title" content="Chukwuemeka David Udezue | Data Analyst &amp; Business Intelligence Specialist">
-    <meta property="og:description" content="Explore analytics projects, business intelligence dashboards, reporting, digital skills training, and creative work by Chukwuemeka David Udezue.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://davidudezue-web.github.io/Blossom-portfolio/">
+<meta property="og:title" content="Chukwuemeka David Udezue | Data Analyst &amp; Business Intelligence Specialist">
+<meta property="og:description" content="Explore analytics projects, business intelligence dashboards, reporting, digital skills training, and creative work by Chukwuemeka David Udezue.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://davidudezue-web.github.io/Blossom-portfolio/">
 
-    <title>Chukwuemeka David Udezue | Data Analyst, BI Specialist &amp; Creative Designer</title>
+<title>Chukwuemeka David Udezue | Data Analyst, BI Specialist &amp; Creative Designer</title>
 
-    <link rel="canonical" href="https://davidudezue-web.github.io/Blossom-portfolio/">
+<link rel="canonical" href="https://davidudezue-web.github.io/Blossom-portfolio/">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="style.css">
+```
+
 </head>
 
 <body>
@@ -31,49 +35,67 @@
 <header class="master-header">
     <div class="header-container">
 
+```
+    <a href="#home"
+       class="logo-wrapper"
+       onclick="switchView('home'); return false;"
+       aria-label="Chukwuemeka David Udezue - Home">
+        <span class="logo-text">David Udezue</span>
+    </a>
+
+    <button class="mobile-toggle"
+            type="button"
+            aria-label="Toggle navigation"
+            aria-expanded="false"
+            aria-controls="navMenu"
+            onclick="toggleMobileMenu()">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <!-- MAIN NAVIGATION: ONE LINK PER VIEW -->
+    <nav class="nav-menu" id="navMenu" aria-label="Main navigation">
+
         <a href="#home"
-           class="logo-wrapper"
-           onclick="switchView('home'); return false;"
-           aria-label="Chukwuemeka David Udezue - Home">
-            <span class="logo-text">David Udezue</span>
-        </a>
+           class="nav-link active"
+           aria-current="page"
+           onclick="switchView('home'); return false;">Home</a>
 
-        <button class="mobile-toggle"
-                aria-label="Toggle navigation"
-                aria-expanded="false"
-                aria-controls="navMenu"
-                onclick="toggleMobileMenu()">
-            <i class="fas fa-bars"></i>
-        </button>
+        <a href="#authority"
+           class="nav-link"
+           onclick="switchView('authority'); return false;">About Me</a>
 
-        <nav class="nav-menu" id="navMenu" aria-label="Main navigation">
+        <a href="#services"
+           class="nav-link"
+           onclick="switchView('services'); return false;">Data Analytics / Skills</a>
 
-            <a href="#home" class="nav-link active"
-               onclick="switchView('home'); return false;">Home</a>
+        <a href="#portfolio"
+           class="nav-link"
+           onclick="switchView('portfolio'); return false;">Projects</a>
 
-            <a href="#authority" class="nav-link"
-               onclick="switchView('authority'); return false;">About Me</a>
+        <a href="#academy"
+           class="nav-link"
+           onclick="switchView('academy'); return false;">Leadership</a>
 
-            <a href="#services" class="nav-link"
-               onclick="switchView('services'); return false;">Data Analytics / Skills</a>
+        <a href="#brands"
+           class="nav-link"
+           onclick="switchView('brands'); return false;">Academy &amp; Brands</a>
 
-            <a href="#portfolio" class="nav-link"
-               onclick="switchView('portfolio'); return false;">Projects</a>
+        <a href="#resume"
+           class="nav-link"
+           onclick="switchView('resume'); return false;">CV / Resume</a>
 
-            <a href="#academy" class="nav-link"
-               onclick="switchView('academy'); return false;">Leadership</a>
+        <a href="#consultation"
+           class="nav-link"
+           onclick="switchView('consultation'); return false;">Services &amp; Consultation</a>
 
-            <a href="#resume" class="nav-link"
-               onclick="switchView('resume'); return false;">CV / Resume</a>
+        <a href="#contact"
+           class="nav-link"
+           onclick="switchView('contact'); return false;">Contact</a>
 
-            <a href="#consultation" class="nav-link"
-               onclick="switchView('consultation'); return false;">Services &amp; Consultation</a>
+    </nav>
+</div>
+```
 
-            <a href="#contact" class="nav-link"
-               onclick="switchView('contact'); return false;">Contact</a>
-
-        </nav>
-    </div>
 </header>
 
 <main class="main-content">
@@ -84,84 +106,88 @@
 
 <section id="home-view" class="view-section active-view">
 
-    <div class="hero-geometric-bg"></div>
+```
+<div class="hero-geometric-bg"></div>
 
-    <div class="container hero-container">
+<div class="container hero-container">
 
-        <div class="hero-profile-photo">
-            <img
-                src="assets/images/david-udezue-profile.jpg.png"
-                alt="Chukwuemeka David Udezue — Data Analyst and Business Intelligence Professional"
-                loading="eager">
-        </div>
-
-        <div class="hero-content">
-
-            <span class="hero-badge">
-                Data Analyst | Business Intelligence &amp; Reporting Specialist | Digital Skills Trainer | Creative Designer
-            </span>
-
-            <h1 class="hero-headline">
-                Turning Business Data Into Clear Insights and Better Decisions
-            </h1>
-
-            <p class="hero-subheadline">
-                I am Chukwuemeka David Udezue, a Data Analyst,
-                Business Intelligence and Reporting Specialist,
-                Digital Skills Trainer, and Creative Designer.
-                I use Microsoft Excel, SQL, Power BI, data
-                visualization, and business reporting to transform
-                data into meaningful insights that support informed
-                business decisions.
-            </p>
-
-            <p class="hero-subheadline">
-                With an academic background in Mathematics and
-                Statistics, practical analytics projects, business
-                experience, and professional training, I combine
-                analytical thinking, clear communication, and
-                creative problem-solving to support business
-                performance and professional growth.
-            </p>
-
-            <div class="hero-cta-group">
-
-                <button class="btn btn-primary"
-                        onclick="switchView('portfolio')">
-                    <span>Explore My Projects</span>
-                    <i class="fas fa-arrow-right"></i>
-                </button>
-
-                <button class="btn btn-secondary"
-                        onclick="switchView('authority')">
-                    <span>About My Experience</span>
-                    <i class="fas fa-user"></i>
-                </button>
-
-            </div>
-
-            <div class="hero-cta-group">
-
-                <a href="https://www.linkedin.com/in/udezue-david-732843246/"
-                   target="_blank"
-                   rel="noopener noreferrer"
-                   class="btn btn-secondary">
-                    <span>Connect on LinkedIn</span>
-                    <i class="fab fa-linkedin"></i>
-                </a>
-
-                <a href="mailto:davidudezue@gmail.com?subject=Professional%20Opportunity"
-                   class="btn btn-secondary">
-                    <span>Contact Me</span>
-                    <i class="fas fa-envelope"></i>
-                </a>
-
-            </div>
-
-        </div>
+    <div class="hero-profile-photo">
+        <img
+            src="assets/images/david-udezue-profile.jpg.png"
+            alt="Chukwuemeka David Udezue — Data Analyst and Business Intelligence Professional"
+            loading="eager">
     </div>
-</section>
 
+    <div class="hero-content">
+
+        <span class="hero-badge">
+            Data Analyst | Business Intelligence &amp; Reporting Specialist | Digital Skills Trainer | Creative Designer
+        </span>
+
+        <h1 class="hero-headline">
+            Turning Business Data Into Clear Insights and Better Decisions
+        </h1>
+
+        <p class="hero-subheadline">
+            I am Chukwuemeka David Udezue, a Data Analyst,
+            Business Intelligence and Reporting Specialist,
+            Digital Skills Trainer, and Creative Designer.
+            I use Microsoft Excel, SQL, Power BI, data
+            visualization, and business reporting to transform
+            data into meaningful insights that support informed
+            business decisions.
+        </p>
+
+        <p class="hero-subheadline">
+            With an academic background in Mathematics and
+            Statistics, practical analytics projects, business
+            experience, and professional training, I combine
+            analytical thinking, clear communication, and
+            creative problem-solving to support business
+            performance and professional growth.
+        </p>
+
+        <div class="hero-cta-group">
+
+            <button class="btn btn-primary"
+                    type="button"
+                    onclick="switchView('portfolio')">
+                <span>Explore My Projects</span>
+                <i class="fas fa-arrow-right"></i>
+            </button>
+
+            <button class="btn btn-secondary"
+                    type="button"
+                    onclick="switchView('authority')">
+                <span>About My Experience</span>
+                <i class="fas fa-user"></i>
+            </button>
+
+        </div>
+
+        <div class="hero-cta-group">
+
+            <a href="https://www.linkedin.com/in/udezue-david-732843246/"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="btn btn-secondary">
+                <span>Connect on LinkedIn</span>
+                <i class="fab fa-linkedin"></i>
+            </a>
+
+            <a href="mailto:davidudezue@gmail.com?subject=Professional%20Opportunity"
+               class="btn btn-secondary">
+                <span>Contact Me</span>
+                <i class="fas fa-envelope"></i>
+            </a>
+
+        </div>
+
+    </div>
+</div>
+```
+
+</section>
 
 <!-- =====================================================
      ABOUT ME
@@ -169,179 +195,181 @@
 
 <section id="authority-view" class="view-section">
 
-    <div class="container">
+```
+<div class="container">
 
-        <div class="section-header-block">
-            <span class="section-pretitle">Professional Profile</span>
-            <h2 class="section-title">About Me</h2>
-            <div class="accent-line"></div>
+    <div class="section-header-block">
+        <span class="section-pretitle">Professional Profile</span>
+        <h2 class="section-title">About Me</h2>
+        <div class="accent-line"></div>
+    </div>
+
+    <div class="split-profile-layout">
+
+        <div class="profile-image-wrapper">
+            <div class="geometric-border-accent"></div>
+
+            <img
+                src="assets/images/david-udezue-profile.jpg.png"
+                alt="Chukwuemeka David Udezue"
+                class="profile-img">
         </div>
 
-        <div class="split-profile-layout">
+        <div class="profile-info-content">
 
-            <div class="profile-image-wrapper">
-                <div class="geometric-border-accent"></div>
+            <h3 class="profile-name">Chukwuemeka David Udezue</h3>
 
-                <img
-                    src="assets/images/david-udezue-profile.jpg.png"
-                    alt="Chukwuemeka David Udezue"
-                    class="profile-img">
-            </div>
-
-            <div class="profile-info-content">
-
-                <h3 class="profile-name">Chukwuemeka David Udezue</h3>
-
-                <p class="profile-role">
-                    Data Analyst | Business Intelligence &amp; Reporting Specialist |
-                    Digital Skills Trainer | Creative Designer
-                </p>
-
-                <blockquote class="story-hook-quote">
-                    <i class="fas fa-quote-left quote-icon"></i>
-                    I believe data becomes valuable when it helps
-                    people understand a problem, evaluate their
-                    performance, and decide what to do next.
-                </blockquote>
-
-                <p>
-                    My academic background is in Mathematics and
-                    Statistics. I apply structured thinking to
-                    business questions, data preparation,
-                    performance measurement, and communicating
-                    findings through reports and visualizations.
-                </p>
-
-                <p>
-                    My professional focus includes data analytics,
-                    business intelligence, reporting, dashboard
-                    development, data visualization, and business
-                    analysis. I am particularly interested in work
-                    where analytical evidence supports operational
-                    improvement, commercial performance, and
-                    informed decision-making.
-                </p>
-
-                <p>
-                    I also have interests and experience in digital
-                    skills training and creative communication.
-                    Through Blossom Graphviz Concept and
-                    BlossomViz Academy, I support initiatives
-                    spanning analytics, design, business support,
-                    and practical digital skills development.
-                </p>
-
-            </div>
-        </div>
-
-        <div class="hybrid-ecosystem-block">
-
-            <h3 class="block-title">My Professional Focus</h3>
-
-            <p class="block-description">
-                I approach analytics by defining the business
-                question, preparing and validating the data,
-                examining the evidence, and communicating
-                findings clearly. The objective is to make
-                information useful to the people who need to act.
+            <p class="profile-role">
+                Data Analyst | Business Intelligence &amp; Reporting Specialist |
+                Digital Skills Trainer | Creative Designer
             </p>
 
-            <div class="ecosystem-pillars">
+            <blockquote class="story-hook-quote">
+                <i class="fas fa-quote-left quote-icon"></i>
+                I believe data becomes valuable when it helps
+                people understand a problem, evaluate their
+                performance, and decide what to do next.
+            </blockquote>
 
-                <div class="pillar-node">
-                    <div class="pillar-header">
-                        <i class="fas fa-database"></i>
-                        <h4>Data Preparation</h4>
-                    </div>
-                    <p>
-                        Organizing datasets, identifying data
-                        quality issues, cleaning records, and
-                        preparing information for analysis.
-                    </p>
-                </div>
+            <p>
+                My academic background is in Mathematics and
+                Statistics. I apply structured thinking to
+                business questions, data preparation,
+                performance measurement, and communicating
+                findings through reports and visualizations.
+            </p>
 
-                <div class="pillar-node">
-                    <div class="pillar-header">
-                        <i class="fas fa-chart-column"></i>
-                        <h4>Business Intelligence</h4>
-                    </div>
-                    <p>
-                        Examining business performance through
-                        measures, KPIs, comparisons, and
-                        interactive reporting.
-                    </p>
-                </div>
+            <p>
+                My professional focus includes data analytics,
+                business intelligence, reporting, dashboard
+                development, data visualization, and business
+                analysis. I am particularly interested in work
+                where analytical evidence supports operational
+                improvement, commercial performance, and
+                informed decision-making.
+            </p>
 
-                <div class="pillar-node">
-                    <div class="pillar-header">
-                        <i class="fas fa-chart-pie"></i>
-                        <h4>Data Visualization</h4>
-                    </div>
-                    <p>
-                        Presenting analytical information through
-                        appropriate charts, dashboards, and
-                        visual summaries.
-                    </p>
-                </div>
+            <p>
+                I also have interests and experience in digital
+                skills training and creative communication.
+                Through Blossom Graphviz Concept and
+                BlossomViz Academy, I support initiatives
+                spanning analytics, design, business support,
+                and practical digital skills development.
+            </p>
 
-                <div class="pillar-node">
-                    <div class="pillar-header">
-                        <i class="fas fa-lightbulb"></i>
-                        <h4>Business Insight</h4>
-                    </div>
-                    <p>
-                        Connecting analytical findings to business
-                        questions and identifying opportunities
-                        for further investigation or action.
-                    </p>
-                </div>
-
-            </div>
         </div>
-
-        <div class="philosophy-callout-wrapper">
-            <div class="diagonal-slash-accent"></div>
-
-            <div class="philosophy-content">
-                <span class="philosophy-label">Academic Background</span>
-                <h4 class="philosophy-text">Mathematics and Statistics</h4>
-
-                <p class="philosophy-subtext">
-                    Higher National Diploma (HND) and National
-                    Diploma (ND), Mathematics and Statistics,
-                    Federal Polytechnic Oko, Anambra State, Nigeria.
-                </p>
-
-                <p class="philosophy-subtext">
-                    My quantitative background supports my
-                    approach to statistical reasoning, structured
-                    problem-solving, numerical analysis, and
-                    business performance measurement.
-                </p>
-            </div>
-        </div>
-
-        <div class="philosophy-callout-wrapper">
-            <div class="diagonal-slash-accent"></div>
-
-            <div class="philosophy-content">
-                <span class="philosophy-label">Career Direction</span>
-                <h4 class="philosophy-text">
-                    Data Analytics and Business Intelligence
-                </h4>
-
-                <p class="philosophy-subtext">
-                    I am interested in suitable remote and
-                    international opportunities in data analysis,
-                    business intelligence, reporting, dashboard
-                    development, and related analytical roles.
-                </p>
-            </div>
-        </div>
-
     </div>
-</section>
 
+    <div class="hybrid-ecosystem-block">
+
+        <h3 class="block-title">My Professional Focus</h3>
+
+        <p class="block-description">
+            I approach analytics by defining the business
+            question, preparing and validating the data,
+            examining the evidence, and communicating
+            findings clearly. The objective is to make
+            information useful to the people who need to act.
+        </p>
+
+        <div class="ecosystem-pillars">
+
+            <div class="pillar-node">
+                <div class="pillar-header">
+                    <i class="fas fa-database"></i>
+                    <h4>Data Preparation</h4>
+                </div>
+                <p>
+                    Organizing datasets, identifying data
+                    quality issues, cleaning records, and
+                    preparing information for analysis.
+                </p>
+            </div>
+
+            <div class="pillar-node">
+                <div class="pillar-header">
+                    <i class="fas fa-chart-column"></i>
+                    <h4>Business Intelligence</h4>
+                </div>
+                <p>
+                    Examining business performance through
+                    measures, KPIs, comparisons, and
+                    interactive reporting.
+                </p>
+            </div>
+
+            <div class="pillar-node">
+                <div class="pillar-header">
+                    <i class="fas fa-chart-pie"></i>
+                    <h4>Data Visualization</h4>
+                </div>
+                <p>
+                    Presenting analytical information through
+                    appropriate charts, dashboards, and
+                    visual summaries.
+                </p>
+            </div>
+
+            <div class="pillar-node">
+                <div class="pillar-header">
+                    <i class="fas fa-lightbulb"></i>
+                    <h4>Business Insight</h4>
+                </div>
+                <p>
+                    Connecting analytical findings to business
+                    questions and identifying opportunities
+                    for further investigation or action.
+                </p>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="philosophy-callout-wrapper">
+        <div class="diagonal-slash-accent"></div>
+
+        <div class="philosophy-content">
+            <span class="philosophy-label">Academic Background</span>
+            <h4 class="philosophy-text">Mathematics and Statistics</h4>
+
+            <p class="philosophy-subtext">
+                Higher National Diploma (HND) and National
+                Diploma (ND), Mathematics and Statistics,
+                Federal Polytechnic Oko, Anambra State, Nigeria.
+            </p>
+
+            <p class="philosophy-subtext">
+                My quantitative background supports my
+                approach to statistical reasoning, structured
+                problem-solving, numerical analysis, and
+                business performance measurement.
+            </p>
+        </div>
+    </div>
+
+    <div class="philosophy-callout-wrapper">
+        <div class="diagonal-slash-accent"></div>
+
+        <div class="philosophy-content">
+            <span class="philosophy-label">Career Direction</span>
+            <h4 class="philosophy-text">
+                Data Analytics and Business Intelligence
+            </h4>
+
+            <p class="philosophy-subtext">
+                I am interested in suitable remote and
+                international opportunities in data analysis,
+                business intelligence, reporting, dashboard
+                development, and related analytical roles.
+            </p>
+        </div>
+    </div>
+
+</div>
+```
+
+</section>
 
 <!-- =====================================================
      DATA ANALYTICS / SKILLS
@@ -349,121 +377,124 @@
 
 <section id="services-view" class="view-section">
 
-    <div class="container">
+```
+<div class="container">
 
-        <div class="section-header-block">
-            <span class="section-pretitle">Technical Skills</span>
-            <h2 class="section-title">Data Analytics / Skills</h2>
-            <div class="accent-line"></div>
+    <div class="section-header-block">
+        <span class="section-pretitle">Technical Skills</span>
+        <h2 class="section-title">Data Analytics / Skills</h2>
+        <div class="accent-line"></div>
+    </div>
+
+    <p class="block-description">
+        My analytical workflow combines data preparation,
+        structured analysis, business intelligence,
+        visualization, and clear communication of findings.
+    </p>
+
+    <div class="services-master-grid">
+
+        <div class="service-unit-card">
+            <div class="unit-banner-accent"></div>
+            <div class="unit-icon-header">
+                <i class="fas fa-chart-line"></i>
+                <h3>Data Analytics</h3>
+            </div>
+            <p class="unit-summary">
+                Working with structured data to investigate
+                business questions, assess performance, and
+                communicate useful findings.
+            </p>
+            <ul class="unit-spec-list">
+                <li><i class="fas fa-check-circle"></i> Data Cleaning and Preparation</li>
+                <li><i class="fas fa-check-circle"></i> Exploratory Data Analysis</li>
+                <li><i class="fas fa-check-circle"></i> Business Performance Analysis</li>
+                <li><i class="fas fa-check-circle"></i> KPI Analysis and Reporting</li>
+                <li><i class="fas fa-check-circle"></i> Data Interpretation</li>
+            </ul>
         </div>
 
-        <p class="block-description">
-            My analytical workflow combines data preparation,
-            structured analysis, business intelligence,
-            visualization, and clear communication of findings.
-        </p>
-
-        <div class="services-master-grid">
-
-            <div class="service-unit-card">
-                <div class="unit-banner-accent"></div>
-                <div class="unit-icon-header">
-                    <i class="fas fa-chart-line"></i>
-                    <h3>Data Analytics</h3>
-                </div>
-                <p class="unit-summary">
-                    Working with structured data to investigate
-                    business questions, assess performance, and
-                    communicate useful findings.
-                </p>
-                <ul class="unit-spec-list">
-                    <li><i class="fas fa-check-circle"></i> Data Cleaning and Preparation</li>
-                    <li><i class="fas fa-check-circle"></i> Exploratory Data Analysis</li>
-                    <li><i class="fas fa-check-circle"></i> Business Performance Analysis</li>
-                    <li><i class="fas fa-check-circle"></i> KPI Analysis and Reporting</li>
-                    <li><i class="fas fa-check-circle"></i> Data Interpretation</li>
-                </ul>
+        <div class="service-unit-card">
+            <div class="unit-banner-accent"></div>
+            <div class="unit-icon-header">
+                <i class="fas fa-laptop-code"></i>
+                <h3>Analytics Tools</h3>
             </div>
-
-            <div class="service-unit-card">
-                <div class="unit-banner-accent"></div>
-                <div class="unit-icon-header">
-                    <i class="fas fa-laptop-code"></i>
-                    <h3>Analytics Tools</h3>
-                </div>
-                <p class="unit-summary">
-                    Tools for spreadsheet analysis, database
-                    querying, data transformation, and business
-                    intelligence reporting.
-                </p>
-                <ul class="unit-spec-list">
-                    <li><i class="fas fa-check-circle"></i> Microsoft Excel</li>
-                    <li><i class="fas fa-check-circle"></i> SQL</li>
-                    <li><i class="fas fa-check-circle"></i> Microsoft Power BI</li>
-                    <li><i class="fas fa-check-circle"></i> Power Query</li>
-                    <li><i class="fas fa-check-circle"></i> DAX and Data Modeling</li>
-                </ul>
-            </div>
-
-            <div class="service-unit-card">
-                <div class="unit-banner-accent"></div>
-                <div class="unit-icon-header">
-                    <i class="fas fa-file-lines"></i>
-                    <h3>Reporting and Communication</h3>
-                </div>
-                <p class="unit-summary">
-                    Communicating results in a structured,
-                    understandable format that helps stakeholders
-                    assess performance and identify next steps.
-                </p>
-                <ul class="unit-spec-list">
-                    <li><i class="fas fa-check-circle"></i> Dashboard Design</li>
-                    <li><i class="fas fa-check-circle"></i> Data Visualization</li>
-                    <li><i class="fas fa-check-circle"></i> Business Reports</li>
-                    <li><i class="fas fa-check-circle"></i> Presentation Design</li>
-                    <li><i class="fas fa-check-circle"></i> Analytical Documentation</li>
-                </ul>
-            </div>
-
-            <div class="service-unit-card">
-                <div class="unit-banner-accent"></div>
-                <div class="unit-icon-header">
-                    <i class="fas fa-briefcase"></i>
-                    <h3>Business, Training and Design</h3>
-                </div>
-                <p class="unit-summary">
-                    Combining business thinking, professional
-                    development, digital skills education, and
-                    visual communication.
-                </p>
-                <ul class="unit-spec-list">
-                    <li><i class="fas fa-check-circle"></i> Business Performance Thinking</li>
-                    <li><i class="fas fa-check-circle"></i> Digital Skills Training</li>
-                    <li><i class="fas fa-check-circle"></i> Creative Design</li>
-                    <li><i class="fas fa-check-circle"></i> Learning Material Development</li>
-                    <li><i class="fas fa-check-circle"></i> Business Communication</li>
-                </ul>
-            </div>
-
+            <p class="unit-summary">
+                Tools for spreadsheet analysis, database
+                querying, data transformation, and business
+                intelligence reporting.
+            </p>
+            <ul class="unit-spec-list">
+                <li><i class="fas fa-check-circle"></i> Microsoft Excel</li>
+                <li><i class="fas fa-check-circle"></i> SQL</li>
+                <li><i class="fas fa-check-circle"></i> Microsoft Power BI</li>
+                <li><i class="fas fa-check-circle"></i> Power Query</li>
+                <li><i class="fas fa-check-circle"></i> DAX and Data Modeling</li>
+            </ul>
         </div>
 
-        <div class="portfolio-architecture-intro">
-            <p>
-                Explore my projects to see examples of analytical
-                workflows, dashboards, business reporting, and
+        <div class="service-unit-card">
+            <div class="unit-banner-accent"></div>
+            <div class="unit-icon-header">
+                <i class="fas fa-file-lines"></i>
+                <h3>Reporting and Communication</h3>
+            </div>
+            <p class="unit-summary">
+                Communicating results in a structured,
+                understandable format that helps stakeholders
+                assess performance and identify next steps.
+            </p>
+            <ul class="unit-spec-list">
+                <li><i class="fas fa-check-circle"></i> Dashboard Design</li>
+                <li><i class="fas fa-check-circle"></i> Data Visualization</li>
+                <li><i class="fas fa-check-circle"></i> Business Reports</li>
+                <li><i class="fas fa-check-circle"></i> Presentation Design</li>
+                <li><i class="fas fa-check-circle"></i> Analytical Documentation</li>
+            </ul>
+        </div>
+
+        <div class="service-unit-card">
+            <div class="unit-banner-accent"></div>
+            <div class="unit-icon-header">
+                <i class="fas fa-briefcase"></i>
+                <h3>Business, Training and Design</h3>
+            </div>
+            <p class="unit-summary">
+                Combining business thinking, professional
+                development, digital skills education, and
                 visual communication.
             </p>
-
-            <button class="btn btn-primary"
-                    onclick="switchView('portfolio')">
-                <span>Explore Projects</span>
-                <i class="fas fa-arrow-right"></i>
-            </button>
+            <ul class="unit-spec-list">
+                <li><i class="fas fa-check-circle"></i> Business Performance Thinking</li>
+                <li><i class="fas fa-check-circle"></i> Digital Skills Training</li>
+                <li><i class="fas fa-check-circle"></i> Creative Design</li>
+                <li><i class="fas fa-check-circle"></i> Learning Material Development</li>
+                <li><i class="fas fa-check-circle"></i> Business Communication</li>
+            </ul>
         </div>
 
     </div>
-</section>
 
+    <div class="portfolio-architecture-intro">
+        <p>
+            Explore my projects to see examples of analytical
+            workflows, dashboards, business reporting, and
+            visual communication.
+        </p>
+
+        <button class="btn btn-primary"
+                type="button"
+                onclick="switchView('portfolio')">
+            <span>Explore Projects</span>
+            <i class="fas fa-arrow-right"></i>
+        </button>
+    </div>
+
+</div>
+```
+
+</section>
 
 <!-- =====================================================
      PROJECTS
@@ -471,658 +502,644 @@
 
 <section id="portfolio-view" class="view-section">
 
-    <div class="container">
+```
+<div class="container">
 
-        <div class="section-header-block">
-            <span class="section-pretitle">Selected Work and Case Studies</span>
-            <h2 class="section-title">Projects</h2>
-            <div class="accent-line"></div>
-        </div>
+    <div class="section-header-block">
+        <span class="section-pretitle">Selected Work and Case Studies</span>
+        <h2 class="section-title">Projects</h2>
+        <div class="accent-line"></div>
+    </div>
 
-        <div class="portfolio-architecture-intro">
+    <div class="portfolio-architecture-intro">
 
-            <p>
-                Explore selected analytical projects, business
-                performance reporting, supporting resources, and
-                creative work. Each category helps you find work
-                relevant to your interests.
-            </p>
+        <p>
+            Explore selected analytical projects, business
+            performance reporting, supporting resources, and
+            creative work. Each category helps you find work
+            relevant to your interests.
+        </p>
 
-            <p>
-                Project findings are based on the data and scope
-                described in each case study. Sales values are
-                not described as profit unless relevant cost data
-                is available to support that conclusion.
-            </p>
+        <p>
+            Project findings are based on the data and scope
+            described in each case study. Sales values are
+            not described as profit unless relevant cost data
+            is available to support that conclusion.
+        </p>
 
-        </div>
+    </div>
 
-        <!-- PROJECT CATEGORY FILTERS -->
+    <div class="portfolio-category-controls"
+         role="group"
+         aria-label="Filter projects by category"
+         style="display:flex;flex-wrap:wrap;gap:12px;margin:25px 0;">
 
-        <div class="portfolio-category-controls"
-             role="group"
-             aria-label="Filter projects by category"
-             style="display:flex;flex-wrap:wrap;gap:12px;margin:25px 0;">
+        <button type="button"
+                class="btn btn-primary"
+                data-project-filter="all"
+                aria-pressed="true"
+                onclick="filterPortfolio('all')">
+            All Projects
+        </button>
 
-            <button type="button"
-                    class="btn btn-primary"
-                    data-project-filter="all"
-                    aria-pressed="true"
-                    onclick="filterPortfolio('all', this)">
-                All Projects
-            </button>
+        <button type="button"
+                class="btn btn-secondary"
+                data-project-filter="analytics"
+                aria-pressed="false"
+                onclick="filterPortfolio('analytics')">
+            <i class="fas fa-chart-line"></i>
+            Data Analytics
+        </button>
 
-            <button type="button"
-                    class="btn btn-secondary"
-                    data-project-filter="analytics"
-                    aria-pressed="false"
-                    onclick="filterPortfolio('analytics', this)">
+        <button type="button"
+                class="btn btn-secondary"
+                data-project-filter="dashboards"
+                aria-pressed="false"
+                onclick="filterPortfolio('dashboards')">
+            <i class="fas fa-chart-column"></i>
+            Dashboards
+        </button>
+
+        <button type="button"
+                class="btn btn-secondary"
+                data-project-filter="creative"
+                aria-pressed="false"
+                onclick="filterPortfolio('creative')">
+            <i class="fas fa-palette"></i>
+            Creative Design
+        </button>
+
+        <button type="button"
+                class="btn btn-secondary"
+                data-project-filter="documents"
+                aria-pressed="false"
+                onclick="filterPortfolio('documents')">
+            <i class="fas fa-file-lines"></i>
+            Documents &amp; Reports
+        </button>
+
+    </div>
+
+    <div class="portfolio-display-grid" id="portfolioProjectsGrid">
+
+        <div class="portfolio-card portfolio-item-node"
+             data-category="analytics">
+
+            <div class="card-geometric-corner"></div>
+
+            <div class="card-folder-badge">
                 <i class="fas fa-chart-line"></i>
                 Data Analytics
-            </button>
+            </div>
 
-            <button type="button"
-                    class="btn btn-secondary"
-                    data-project-filter="dashboards"
-                    aria-pressed="false"
-                    onclick="filterPortfolio('dashboards', this)">
+            <h4 class="project-node-title">
+                Sales Performance Analysis
+            </h4>
+
+            <p class="project-node-desc">
+                A Power BI case study examining recorded sales
+                value, transaction activity, average transaction
+                value, branch performance, product contribution,
+                and customer segments using a dataset covering
+                3–17 January 2025.
+            </p>
+
+            <p class="project-node-desc">
+                Includes data validation, KPI reporting,
+                interactive visualizations, findings,
+                recommendations, and documented limitations.
+            </p>
+
+            <a href="projects/sales-performance.html"
+               class="node-redirect-link">
+                <span>View Full Case Study</span>
+                <i class="fas fa-arrow-right"></i>
+            </a>
+
+            <a href="assets/documents/Sales_Performance_Analysis_Case_Study.md"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="node-redirect-link">
+                <span>Read Case Study Documentation</span>
+                <i class="fas fa-file-lines"></i>
+            </a>
+        </div>
+
+        <div class="portfolio-card portfolio-item-node"
+             data-category="analytics">
+
+            <div class="card-geometric-corner"></div>
+
+            <div class="card-folder-badge">
+                <i class="fas fa-file-excel"></i>
+                Data Analytics
+            </div>
+
+            <h4 class="project-node-title">
+                Excel and Data Preparation
+            </h4>
+
+            <p class="project-node-desc">
+                Spreadsheet-based analytical resources,
+                data preparation work, formulas, and
+                workbook examples.
+            </p>
+
+            <a href="https://drive.google.com/drive/folders/1AcJqNCnnxQKcyMoun44z7VO_wBQoK1I8"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="node-redirect-link">
+                <span>View Excel Resources</span>
+                <i class="fas fa-external-link-alt"></i>
+            </a>
+        </div>
+
+        <div class="portfolio-card portfolio-item-node"
+             data-category="analytics">
+
+            <div class="card-geometric-corner"></div>
+
+            <div class="card-folder-badge">
+                <i class="fas fa-database"></i>
+                Data Analytics
+            </div>
+
+            <h4 class="project-node-title">
+                Analytical Processes and Documentation
+            </h4>
+
+            <p class="project-node-desc">
+                Analytical workflows, process documentation,
+                methodology resources, and supporting materials.
+            </p>
+
+            <a href="https://drive.google.com/drive/folders/1yeEClswCpHkbb9OJ3cfe0EXtWTYYu94r"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="node-redirect-link">
+                <span>View Process Resources</span>
+                <i class="fas fa-external-link-alt"></i>
+            </a>
+        </div>
+
+        <div class="portfolio-card portfolio-item-node"
+             data-category="dashboards">
+
+            <div class="card-geometric-corner"></div>
+
+            <div class="card-folder-badge">
                 <i class="fas fa-chart-column"></i>
                 Dashboards
-            </button>
+            </div>
 
-            <button type="button"
-                    class="btn btn-secondary"
-                    data-project-filter="creative"
-                    aria-pressed="false"
-                    onclick="filterPortfolio('creative', this)">
-                <i class="fas fa-palette"></i>
-                Creative Design
-            </button>
+            <h4 class="project-node-title">
+                Dashboards and Performance Reporting
+            </h4>
 
-            <button type="button"
-                    class="btn btn-secondary"
-                    data-project-filter="documents"
-                    aria-pressed="false"
-                    onclick="filterPortfolio('documents', this)">
+            <p class="project-node-desc">
+                Dashboard and reporting materials demonstrating
+                how data can be organized and presented for
+                business performance review.
+            </p>
+
+            <a href="https://drive.google.com/drive/folders/1NJAPUYzLM9tQXGdCX5R8gVyYoAhK8J3F"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="node-redirect-link">
+                <span>View Dashboard Resources</span>
+                <i class="fas fa-external-link-alt"></i>
+            </a>
+        </div>
+
+        <div class="portfolio-card portfolio-item-node"
+             data-category="documents">
+
+            <div class="card-geometric-corner"></div>
+
+            <div class="card-folder-badge">
                 <i class="fas fa-file-lines"></i>
                 Documents &amp; Reports
-            </button>
+            </div>
 
+            <h4 class="project-node-title">
+                Analytical Reports and Presentations
+            </h4>
+
+            <p class="project-node-desc">
+                Reporting and presentation resources for
+                communicating findings, performance
+                information, and analytical results.
+            </p>
+
+            <a href="https://drive.google.com/drive/folders/1AjArnPFYnwRwoY6xUV4SvKq4OHdR3Cgh"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="node-redirect-link">
+                <span>View Report Resources</span>
+                <i class="fas fa-external-link-alt"></i>
+            </a>
         </div>
 
-        <div class="portfolio-display-grid" id="portfolioProjectsGrid">
+        <div class="portfolio-card portfolio-item-node"
+             data-category="creative">
 
-            <!-- DATA ANALYTICS -->
+            <div class="card-geometric-corner"></div>
 
-            <div class="portfolio-card portfolio-item-node"
-                 data-category="analytics">
-
-                <div class="card-geometric-corner"></div>
-
-                <div class="card-folder-badge">
-                    <i class="fas fa-chart-line"></i>
-                    Data Analytics
-                </div>
-
-                <h4 class="project-node-title">
-                    Sales Performance Analysis
-                </h4>
-
-                <p class="project-node-desc">
-                    A Power BI case study examining recorded sales
-                    value, transaction activity, average transaction
-                    value, branch performance, product contribution,
-                    and customer segments using a dataset covering
-                    3–17 January 2025.
-                </p>
-
-                <p class="project-node-desc">
-                    Includes data validation, KPI reporting,
-                    interactive visualizations, findings,
-                    recommendations, and documented limitations.
-                </p>
-
-                <a href="projects/sales-performance.html"
-                   class="node-redirect-link">
-                    <span>View Full Case Study</span>
-                    <i class="fas fa-arrow-right"></i>
-                </a>
-
-                <a href="assets/documents/Sales_Performance_Analysis_Case_Study.md"
-                   target="_blank"
-                   rel="noopener noreferrer"
-                   class="node-redirect-link">
-                    <span>Read Case Study Documentation</span>
-                    <i class="fas fa-file-lines"></i>
-                </a>
+            <div class="card-folder-badge">
+                <i class="fas fa-palette"></i>
+                Creative Design
             </div>
 
-
-            <div class="portfolio-card portfolio-item-node"
-                 data-category="analytics">
-
-                <div class="card-geometric-corner"></div>
-
-                <div class="card-folder-badge">
-                    <i class="fas fa-file-excel"></i>
-                    Data Analytics
-                </div>
-
-                <h4 class="project-node-title">
-                    Excel and Data Preparation
-                </h4>
-
-                <p class="project-node-desc">
-                    Spreadsheet-based analytical resources,
-                    data preparation work, formulas, and
-                    workbook examples.
-                </p>
-
-                <a href="https://drive.google.com/drive/folders/1AcJqNCnnxQKcyMoun44z7VO_wBQoK1I8"
-                   target="_blank"
-                   rel="noopener noreferrer"
-                   class="node-redirect-link">
-                    <span>View Excel Resources</span>
-                    <i class="fas fa-external-link-alt"></i>
-                </a>
-            </div>
-
-
-            <div class="portfolio-card portfolio-item-node"
-                 data-category="analytics">
-
-                <div class="card-geometric-corner"></div>
-
-                <div class="card-folder-badge">
-                    <i class="fas fa-database"></i>
-                    Data Analytics
-                </div>
-
-                <h4 class="project-node-title">
-                    Analytical Processes and Documentation
-                </h4>
-
-                <p class="project-node-desc">
-                    Analytical workflows, process documentation,
-                    methodology resources, and supporting materials.
-                </p>
-
-                <a href="https://drive.google.com/drive/folders/1yeEClswCpHkbb9OJ3cfe0EXtWTYYu94r"
-                   target="_blank"
-                   rel="noopener noreferrer"
-                   class="node-redirect-link">
-                    <span>View Process Resources</span>
-                    <i class="fas fa-external-link-alt"></i>
-                </a>
-            </div>
-
-
-            <!-- DASHBOARDS -->
-
-            <div class="portfolio-card portfolio-item-node"
-                 data-category="dashboards">
-
-                <div class="card-geometric-corner"></div>
-
-                <div class="card-folder-badge">
-                    <i class="fas fa-chart-column"></i>
-                    Dashboards
-                </div>
-
-                <h4 class="project-node-title">
-                    Dashboards and Performance Reporting
-                </h4>
-
-                <p class="project-node-desc">
-                    Dashboard and reporting materials demonstrating
-                    how data can be organized and presented for
-                    business performance review.
-                </p>
-
-                <a href="https://drive.google.com/drive/folders/1NJAPUYzLM9tQXGdCX5R8gVyYoAhK8J3F"
-                   target="_blank"
-                   rel="noopener noreferrer"
-                   class="node-redirect-link">
-                    <span>View Dashboard Resources</span>
-                    <i class="fas fa-external-link-alt"></i>
-                </a>
-            </div>
-
-
-            <!-- DOCUMENTS AND REPORTS -->
-
-            <div class="portfolio-card portfolio-item-node"
-                 data-category="documents">
-
-                <div class="card-geometric-corner"></div>
-
-                <div class="card-folder-badge">
-                    <i class="fas fa-file-lines"></i>
-                    Documents &amp; Reports
-                </div>
-
-                <h4 class="project-node-title">
-                    Analytical Reports and Presentations
-                </h4>
-
-                <p class="project-node-desc">
-                    Reporting and presentation resources for
-                    communicating findings, performance
-                    information, and analytical results.
-                </p>
-
-                <a href="https://drive.google.com/drive/folders/1AjArnPFYnwRwoY6xUV4SvKq4OHdR3Cgh"
-                   target="_blank"
-                   rel="noopener noreferrer"
-                   class="node-redirect-link">
-                    <span>View Report Resources</span>
-                    <i class="fas fa-external-link-alt"></i>
-                </a>
-            </div>
-
-
-            <!-- CREATIVE DESIGN -->
-
-            <div class="portfolio-card portfolio-item-node"
-                 data-category="creative">
-
-                <div class="card-geometric-corner"></div>
-
-                <div class="card-folder-badge">
-                    <i class="fas fa-palette"></i>
-                    Creative Design
-                </div>
-
-                <h4 class="project-node-title">
-                    Campaign and Event Design
-                </h4>
-
-                <p class="project-node-desc">
-                    Selected campaign and event design resources,
-                    visual communication materials, and promotional assets.
-                </p>
-
-                <a href="https://drive.google.com/drive/folders/178WZbQuYTcW7eb2gEosgOouWNhBp50gq"
-                   target="_blank"
-                   rel="noopener noreferrer"
-                   class="node-redirect-link">
-                    <span>View Campaign Work</span>
-                    <i class="fas fa-external-link-alt"></i>
-                </a>
-            </div>
-
-
-            <div class="portfolio-card portfolio-item-node"
-                 data-category="creative">
-
-                <div class="card-geometric-corner"></div>
-
-                <div class="card-folder-badge">
-                    <i class="fas fa-swatchbook"></i>
-                    Creative Design
-                </div>
-
-                <h4 class="project-node-title">
-                    Brand Identity and Corporate Design
-                </h4>
-
-                <p class="project-node-desc">
-                    Selected brand identity, stationery,
-                    corporate communication, and visual identity designs.
-                </p>
-
-                <a href="https://drive.google.com/drive/folders/1Sj51XowCqIoUZinQFUNmQOcfdyh4ymsZ"
-                   target="_blank"
-                   rel="noopener noreferrer"
-                   class="node-redirect-link">
-                    <span>View Brand Design Work</span>
-                    <i class="fas fa-external-link-alt"></i>
-                </a>
-            </div>
-
-
-            <div class="portfolio-card portfolio-item-node"
-                 data-category="creative">
-
-                <div class="card-geometric-corner"></div>
-
-                <div class="card-folder-badge">
-                    <i class="fas fa-graduation-cap"></i>
-                    Creative Design
-                </div>
-
-                <h4 class="project-node-title">
-                    Educational and Training Materials
-                </h4>
-
-                <p class="project-node-desc">
-                    Selected visual and educational resources
-                    connected to communication, learning, and
-                    skills development.
-                </p>
-
-                <a href="https://drive.google.com/drive/folders/1NZrTz_7pAjaP7IJEy933JbB1DHR5Y1-5"
-                   target="_blank"
-                   rel="noopener noreferrer"
-                   class="node-redirect-link">
-                    <span>View Educational Designs</span>
-                    <i class="fas fa-external-link-alt"></i>
-                </a>
-            </div>
-
-
-            <div class="portfolio-card portfolio-item-node"
-                 data-category="creative">
-
-                <div class="card-geometric-corner"></div>
-
-                <div class="card-folder-badge">
-                    <i class="fas fa-box-open"></i>
-                    Creative Design
-                </div>
-
-                <h4 class="project-node-title">
-                    Product and Packaging Design
-                </h4>
-
-                <p class="project-node-desc">
-                    Selected product presentation, packaging,
-                    and visual communication resources.
-                </p>
-
-                <a href="https://drive.google.com/drive/folders/168CDw0LgI2-dqZZb-Wl9VMCwCspzsND0"
-                   target="_blank"
-                   rel="noopener noreferrer"
-                   class="node-redirect-link">
-                    <span>View Packaging Work</span>
-                    <i class="fas fa-external-link-alt"></i>
-                </a>
-            </div>
-
-
-            <div class="portfolio-card portfolio-item-node"
-                 data-category="creative">
-
-                <div class="card-geometric-corner"></div>
-
-                <div class="card-folder-badge">
-                    <i class="fas fa-photo-film"></i>
-                    Creative Design
-                </div>
-
-                <h4 class="project-node-title">
-                    Social Media and Digital Content
-                </h4>
-
-                <p class="project-node-desc">
-                    Selected social media graphics and sequential
-                    digital content resources.
-                </p>
-
-                <a href="https://drive.google.com/drive/folders/1oxx18rA0sE2VA5bMRNcmLapsAdmSTnJV"
-                   target="_blank"
-                   rel="noopener noreferrer"
-                   class="node-redirect-link">
-                    <span>View Digital Content</span>
-                    <i class="fas fa-external-link-alt"></i>
-                </a>
-            </div>
-
+            <h4 class="project-node-title">
+                Campaign and Event Design
+            </h4>
+
+            <p class="project-node-desc">
+                Selected campaign and event design resources,
+                visual communication materials, and promotional assets.
+            </p>
+
+            <a href="https://drive.google.com/drive/folders/178WZbQuYTcW7eb2gEosgOouWNhBp50gq"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="node-redirect-link">
+                <span>View Campaign Work</span>
+                <i class="fas fa-external-link-alt"></i>
+            </a>
         </div>
 
-        <div class="philosophy-callout-wrapper">
-            <div class="diagonal-slash-accent"></div>
+        <div class="portfolio-card portfolio-item-node"
+             data-category="creative">
 
-            <div class="philosophy-content">
-                <span class="philosophy-label">My Analytics Approach</span>
+            <div class="card-geometric-corner"></div>
 
-                <h4 class="philosophy-text">
-                    Evidence-Based Analytics Case Studies
-                </h4>
-
-                <p class="philosophy-subtext">
-                    My case studies document the business question,
-                    dataset, preparation and validation steps,
-                    analytical methods, tools, findings,
-                    recommendations, and limitations.
-                </p>
-
-                <p class="philosophy-subtext">
-                    I distinguish recorded results from assumptions
-                    and recommendations. Where a dataset does not
-                    contain cost information, I do not claim that
-                    sales value represents profit.
-                </p>
+            <div class="card-folder-badge">
+                <i class="fas fa-swatchbook"></i>
+                Creative Design
             </div>
+
+            <h4 class="project-node-title">
+                Brand Identity and Corporate Design
+            </h4>
+
+            <p class="project-node-desc">
+                Selected brand identity, stationery,
+                corporate communication, and visual identity designs.
+            </p>
+
+            <a href="https://drive.google.com/drive/folders/1Sj51XowCqIoUZinQFUNmQOcfdyh4ymsZ"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="node-redirect-link">
+                <span>View Brand Design Work</span>
+                <i class="fas fa-external-link-alt"></i>
+            </a>
+        </div>
+
+        <div class="portfolio-card portfolio-item-node"
+             data-category="creative">
+
+            <div class="card-geometric-corner"></div>
+
+            <div class="card-folder-badge">
+                <i class="fas fa-graduation-cap"></i>
+                Creative Design
+            </div>
+
+            <h4 class="project-node-title">
+                Educational and Training Materials
+            </h4>
+
+            <p class="project-node-desc">
+                Selected visual and educational resources
+                connected to communication, learning, and
+                skills development.
+            </p>
+
+            <a href="https://drive.google.com/drive/folders/1NZrTz_7pAjaP7IJEy933JbB1DHR5Y1-5"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="node-redirect-link">
+                <span>View Educational Designs</span>
+                <i class="fas fa-external-link-alt"></i>
+            </a>
+        </div>
+
+        <div class="portfolio-card portfolio-item-node"
+             data-category="creative">
+
+            <div class="card-geometric-corner"></div>
+
+            <div class="card-folder-badge">
+                <i class="fas fa-box-open"></i>
+                Creative Design
+            </div>
+
+            <h4 class="project-node-title">
+                Product and Packaging Design
+            </h4>
+
+            <p class="project-node-desc">
+                Selected product presentation, packaging,
+                and visual communication resources.
+            </p>
+
+            <a href="https://drive.google.com/drive/folders/168CDw0LgI2-dqZZb-Wl9VMCwCspzsND0"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="node-redirect-link">
+                <span>View Packaging Work</span>
+                <i class="fas fa-external-link-alt"></i>
+            </a>
+        </div>
+
+        <div class="portfolio-card portfolio-item-node"
+             data-category="creative">
+
+            <div class="card-geometric-corner"></div>
+
+            <div class="card-folder-badge">
+                <i class="fas fa-photo-film"></i>
+                Creative Design
+            </div>
+
+            <h4 class="project-node-title">
+                Social Media and Digital Content
+            </h4>
+
+            <p class="project-node-desc">
+                Selected social media graphics and sequential
+                digital content resources.
+            </p>
+
+            <a href="https://drive.google.com/drive/folders/1oxx18rA0sE2VA5bMRNcmLapsAdmSTnJV"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="node-redirect-link">
+                <span>View Digital Content</span>
+                <i class="fas fa-external-link-alt"></i>
+            </a>
         </div>
 
     </div>
+
+    <div class="philosophy-callout-wrapper">
+        <div class="diagonal-slash-accent"></div>
+
+        <div class="philosophy-content">
+            <span class="philosophy-label">My Analytics Approach</span>
+
+            <h4 class="philosophy-text">
+                Evidence-Based Analytics Case Studies
+            </h4>
+
+            <p class="philosophy-subtext">
+                My case studies document the business question,
+                dataset, preparation and validation steps,
+                analytical methods, tools, findings,
+                recommendations, and limitations.
+            </p>
+
+            <p class="philosophy-subtext">
+                I distinguish recorded results from assumptions
+                and recommendations. Where a dataset does not
+                contain cost information, I do not claim that
+                sales value represents profit.
+            </p>
+        </div>
+    </div>
+
+</div>
+```
+
 </section>
 
-
 <!-- =====================================================
-     LEADERSHIP — EXISTING SECTION PRESERVED
+     LEADERSHIP
 ===================================================== -->
 
 <section id="academy-view" class="view-section">
 
-    <div class="container">
+```
+<div class="container">
 
-        <div class="section-header-block">
-            <span class="section-pretitle">Leadership and Professional Experience</span>
-            <h2 class="section-title">Business, Training and Leadership</h2>
-            <div class="accent-line"></div>
-        </div>
+    <div class="section-header-block">
+        <span class="section-pretitle">Leadership and Professional Experience</span>
+        <h2 class="section-title">Business, Training and Leadership</h2>
+        <div class="accent-line"></div>
+    </div>
 
-        <div class="academy-premium-grid">
+    <div class="academy-premium-grid">
 
-            <div class="academy-info-pane">
+        <div class="academy-info-pane">
 
-                <span class="academy-badge">Founder and Business Leadership</span>
-                <h3>Blossom Graphviz Concept (BGC)</h3>
-
-                <p>
-                    Blossom Graphviz Concept is my business
-                    initiative spanning creative design, data
-                    analytics, business support, and digital
-                    skills development.
-                </p>
-
-                <p>
-                    Through BGC, our work brings together
-                    analytical thinking, visual communication,
-                    and practical business problem-solving.
-                    BGC operates as a separate business initiative
-                    alongside my personal analytics career.
-                </p>
-
-                <div class="curriculum-highlights">
-
-                    <div class="highlight-item">
-                        <div class="h-icon"><i class="fas fa-chart-column"></i></div>
-                        <div class="h-text">
-                            <strong>Analytics:</strong>
-                            Data analysis, business reporting, and performance visualization.
-                        </div>
-                    </div>
-
-                    <div class="highlight-item">
-                        <div class="h-icon"><i class="fas fa-palette"></i></div>
-                        <div class="h-text">
-                            <strong>Creative Services:</strong>
-                            Visual communication, branding, and design-related work.
-                        </div>
-                    </div>
-
-                    <div class="highlight-item">
-                        <div class="h-icon"><i class="fas fa-people-group"></i></div>
-                        <div class="h-text">
-                            <strong>Business Development:</strong>
-                            Practical digital skills, communication, and professional growth.
-                        </div>
-                    </div>
-
-                </div>
-
-                <a href="https://www.facebook.com/BlossomGraphvizConcept"
-                   target="_blank"
-                   rel="noopener noreferrer"
-                   class="btn btn-primary academy-cta">
-                    <span>Explore BGC</span>
-                    <i class="fas fa-arrow-up-right-from-square"></i>
-                </a>
-
-            </div>
-
-            <div class="academy-graphics-pane">
-                <div class="geometric-shape-box">
-                    <div class="inner-geometric-mesh"></div>
-                    <span class="mesh-center-text">Blossom Graphviz Concept</span>
-                </div>
-            </div>
-
-        </div>
-
-        <div class="academy-premium-grid">
-
-            <div class="academy-info-pane">
-
-                <span class="academy-badge">Education and Skills Development</span>
-                <h3>BlossomViz Academy</h3>
-
-                <p>
-                    BlossomViz Academy is an educational initiative
-                    powered by Blossom Graphviz Concept. It focuses
-                    on practical learning in data analytics and
-                    related digital skills.
-                </p>
-
-                <p>
-                    Our educational work includes developing
-                    teaching materials, explaining analytical
-                    concepts, supporting learners, and connecting
-                    technical knowledge with practical exercises
-                    and business examples.
-                </p>
-
-                <div class="curriculum-highlights">
-
-                    <div class="highlight-item">
-                        <div class="h-icon"><i class="fas fa-file-excel"></i></div>
-                        <div class="h-text">
-                            <strong>Data Analytics:</strong>
-                            Learning resources and practical exercises for analytical skills.
-                        </div>
-                    </div>
-
-                    <div class="highlight-item">
-                        <div class="h-icon"><i class="fas fa-database"></i></div>
-                        <div class="h-text">
-                            <strong>Technical Learning:</strong>
-                            Training in Excel, SQL, Power BI, and data visualization.
-                        </div>
-                    </div>
-
-                    <div class="highlight-item">
-                        <div class="h-icon"><i class="fas fa-chalkboard-teacher"></i></div>
-                        <div class="h-text">
-                            <strong>Teaching:</strong>
-                            Structured explanations, demonstrations, and learning activities.
-                        </div>
-                    </div>
-
-                </div>
-
-                <a href="https://www.facebook.com/BlossomGraphvizConcept"
-                   target="_blank"
-                   rel="noopener noreferrer"
-                   class="btn btn-primary academy-cta">
-                    <span>Explore Academy Information</span>
-                    <i class="fas fa-arrow-up-right-from-square"></i>
-                </a>
-
-            </div>
-
-            <div class="academy-graphics-pane">
-                <div class="geometric-shape-box">
-                    <div class="inner-geometric-mesh"></div>
-                    <span class="mesh-center-text">BlossomViz Academy</span>
-                </div>
-            </div>
-
-        </div>
-
-        <div class="testimonials-container-block">
-
-            <h3 class="testimonials-header">How I Approach My Work</h3>
-
-            <div class="testimonials-slider-grid">
-
-                <div class="testimonial-card">
-                    <i class="fas fa-quote-right card-quote-bg"></i>
-
-                    <p class="testimonial-body">
-                        I start by understanding the question a
-                        business needs to answer. I then consider
-                        the available data, its quality, the
-                        appropriate analytical method, and how
-                        the findings should be communicated.
-                    </p>
-
-                    <div class="testimonial-author">
-                        <div class="author-avatar">
-                            <i class="fas fa-magnifying-glass-chart"></i>
-                        </div>
-                        <div class="author-details">
-                            <h5>Analytical Thinking</h5>
-                            <span>Questions, evidence, and findings</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="testimonial-card">
-                    <i class="fas fa-quote-right card-quote-bg"></i>
-
-                    <p class="testimonial-body">
-                        Through business leadership and training,
-                        I focus on making technical information
-                        understandable, organizing work, and
-                        communicating ideas to different audiences.
-                    </p>
-
-                    <div class="testimonial-author">
-                        <div class="author-avatar">
-                            <i class="fas fa-users"></i>
-                        </div>
-                        <div class="author-details">
-                            <h5>Communication and Leadership</h5>
-                            <span>Business and educational initiatives</span>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-
-        <div class="portfolio-architecture-intro">
-            <h3>Explore Our Academy and Brands</h3>
+            <span class="academy-badge">Founder and Business Leadership</span>
+            <h3>Blossom Graphviz Concept (BGC)</h3>
 
             <p>
-                Discover the educational activities of BlossomViz
-                Academy and the services and initiatives delivered
-                through Blossom Graphviz Concept.
+                Blossom Graphviz Concept is my business
+                initiative spanning creative design, data
+                analytics, business support, and digital
+                skills development.
             </p>
 
-            <button class="btn btn-primary"
-                    onclick="switchView('brands')">
-                <span>Explore BlossomViz Academy &amp; Brands</span>
-                <i class="fas fa-arrow-right"></i>
-            </button>
+            <p>
+                Through BGC, our work brings together
+                analytical thinking, visual communication,
+                and practical business problem-solving.
+                BGC operates as a separate business initiative
+                alongside my personal analytics career.
+            </p>
+
+            <div class="curriculum-highlights">
+
+                <div class="highlight-item">
+                    <div class="h-icon"><i class="fas fa-chart-column"></i></div>
+                    <div class="h-text">
+                        <strong>Analytics:</strong>
+                        Data analysis, business reporting, and performance visualization.
+                    </div>
+                </div>
+
+                <div class="highlight-item">
+                    <div class="h-icon"><i class="fas fa-palette"></i></div>
+                    <div class="h-text">
+                        <strong>Creative Services:</strong>
+                        Visual communication, branding, and design-related work.
+                    </div>
+                </div>
+
+                <div class="highlight-item">
+                    <div class="h-icon"><i class="fas fa-people-group"></i></div>
+                    <div class="h-text">
+                        <strong>Business Development:</strong>
+                        Practical digital skills, communication, and professional growth.
+                    </div>
+                </div>
+
+            </div>
+
+            <a href="https://www.facebook.com/BlossomGraphvizConcept"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="btn btn-primary academy-cta">
+                <span>Explore BGC</span>
+                <i class="fas fa-arrow-up-right-from-square"></i>
+            </a>
+
+        </div>
+
+        <div class="academy-graphics-pane">
+            <div class="geometric-shape-box">
+                <div class="inner-geometric-mesh"></div>
+                <span class="mesh-center-text">Blossom Graphviz Concept</span>
+            </div>
         </div>
 
     </div>
-</section>
 
+    <div class="academy-premium-grid">
+
+        <div class="academy-info-pane">
+
+            <span class="academy-badge">Education and Skills Development</span>
+            <h3>BlossomViz Academy</h3>
+
+            <p>
+                BlossomViz Academy is an educational initiative
+                powered by Blossom Graphviz Concept. It focuses
+                on practical learning in data analytics and
+                related digital skills.
+            </p>
+
+            <p>
+                Our educational work includes developing
+                teaching materials, explaining analytical
+                concepts, supporting learners, and connecting
+                technical knowledge with practical exercises
+                and business examples.
+            </p>
+
+            <div class="curriculum-highlights">
+
+                <div class="highlight-item">
+                    <div class="h-icon"><i class="fas fa-file-excel"></i></div>
+                    <div class="h-text">
+                        <strong>Data Analytics:</strong>
+                        Learning resources and practical exercises for analytical skills.
+                    </div>
+                </div>
+
+                <div class="highlight-item">
+                    <div class="h-icon"><i class="fas fa-database"></i></div>
+                    <div class="h-text">
+                        <strong>Technical Learning:</strong>
+                        Training in Excel, SQL, Power BI, and data visualization.
+                    </div>
+                </div>
+
+                <div class="highlight-item">
+                    <div class="h-icon"><i class="fas fa-chalkboard-teacher"></i></div>
+                    <div class="h-text">
+                        <strong>Teaching:</strong>
+                        Structured explanations, demonstrations, and learning activities.
+                    </div>
+                </div>
+
+            </div>
+
+            <a href="https://www.facebook.com/BlossomGraphvizConcept"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="btn btn-primary academy-cta">
+                <span>Explore Academy Information</span>
+                <i class="fas fa-arrow-up-right-from-square"></i>
+            </a>
+
+        </div>
+
+        <div class="academy-graphics-pane">
+            <div class="geometric-shape-box">
+                <div class="inner-geometric-mesh"></div>
+                <span class="mesh-center-text">BlossomViz Academy</span>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="testimonials-container-block">
+
+        <h3 class="testimonials-header">How I Approach My Work</h3>
+
+        <div class="testimonials-slider-grid">
+
+            <div class="testimonial-card">
+                <i class="fas fa-quote-right card-quote-bg"></i>
+
+                <p class="testimonial-body">
+                    I start by understanding the question a
+                    business needs to answer. I then consider
+                    the available data, its quality, the
+                    appropriate analytical method, and how
+                    the findings should be communicated.
+                </p>
+
+                <div class="testimonial-author">
+                    <div class="author-avatar">
+                        <i class="fas fa-magnifying-glass-chart"></i>
+                    </div>
+                    <div class="author-details">
+                        <h5>Analytical Thinking</h5>
+                        <span>Questions, evidence, and findings</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <i class="fas fa-quote-right card-quote-bg"></i>
+
+                <p class="testimonial-body">
+                    Through business leadership and training,
+                    I focus on making technical information
+                    understandable, organizing work, and
+                    communicating ideas to different audiences.
+                </p>
+
+                <div class="testimonial-author">
+                    <div class="author-avatar">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="author-details">
+                        <h5>Communication and Leadership</h5>
+                        <span>Business and educational initiatives</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="portfolio-architecture-intro">
+        <h3>Explore Our Academy and Brands</h3>
+
+        <p>
+            Discover the educational activities of BlossomViz
+            Academy and the services and initiatives delivered
+            through Blossom Graphviz Concept.
+        </p>
+
+        <button class="btn btn-primary"
+                type="button"
+                onclick="switchView('brands')">
+            <span>Explore BlossomViz Academy &amp; Brands</span>
+            <i class="fas fa-arrow-right"></i>
+        </button>
+    </div>
+
+</div>
+```
+
+</section>
 
 <!-- =====================================================
      BLOSSOMVIZ ACADEMY AND BRANDS
@@ -1130,182 +1147,184 @@
 
 <section id="brands-view" class="view-section">
 
-    <div class="container">
+```
+<div class="container">
 
-        <div class="section-header-block">
-            <span class="section-pretitle">Our Educational and Business Initiatives</span>
-            <h2 class="section-title">BlossomViz Academy &amp; Brands</h2>
-            <div class="accent-line"></div>
-        </div>
+    <div class="section-header-block">
+        <span class="section-pretitle">Our Educational and Business Initiatives</span>
+        <h2 class="section-title">BlossomViz Academy &amp; Brands</h2>
+        <div class="accent-line"></div>
+    </div>
 
-        <div class="academy-premium-grid">
+    <div class="academy-premium-grid">
 
-            <div class="academy-info-pane">
+        <div class="academy-info-pane">
 
-                <span class="academy-badge">Parent Business</span>
-                <h3>Blossom Graphviz Concept (BGC)</h3>
+            <span class="academy-badge">Parent Business</span>
+            <h3>Blossom Graphviz Concept (BGC)</h3>
 
-                <p>
-                    Blossom Graphviz Concept brings together
-                    creative design, data analytics, business
-                    support, and practical digital skills
-                    development.
-                </p>
+            <p>
+                Blossom Graphviz Concept brings together
+                creative design, data analytics, business
+                support, and practical digital skills
+                development.
+            </p>
 
-                <p>
-                    Our focus is on combining visual excellence
-                    with data-driven thinking to help individuals
-                    and businesses communicate clearly, understand
-                    information, and pursue growth.
-                </p>
+            <p>
+                Our focus is on combining visual excellence
+                with data-driven thinking to help individuals
+                and businesses communicate clearly, understand
+                information, and pursue growth.
+            </p>
 
-                <div class="curriculum-highlights">
+            <div class="curriculum-highlights">
 
-                    <div class="highlight-item">
-                        <div class="h-icon"><i class="fas fa-chart-line"></i></div>
-                        <div class="h-text">
-                            <strong>Data and Business Intelligence:</strong>
-                            Analytics, dashboards, reporting, and business insight.
-                        </div>
+                <div class="highlight-item">
+                    <div class="h-icon"><i class="fas fa-chart-line"></i></div>
+                    <div class="h-text">
+                        <strong>Data and Business Intelligence:</strong>
+                        Analytics, dashboards, reporting, and business insight.
                     </div>
-
-                    <div class="highlight-item">
-                        <div class="h-icon"><i class="fas fa-palette"></i></div>
-                        <div class="h-text">
-                            <strong>Creative Design:</strong>
-                            Branding, graphic design, and visual communication.
-                        </div>
-                    </div>
-
-                    <div class="highlight-item">
-                        <div class="h-icon"><i class="fas fa-graduation-cap"></i></div>
-                        <div class="h-text">
-                            <strong>Skills Development:</strong>
-                            Practical digital education and professional development.
-                        </div>
-                    </div>
-
                 </div>
 
-                <a href="https://www.facebook.com/BlossomGraphvizConcept"
-                   target="_blank"
-                   rel="noopener noreferrer"
-                   class="btn btn-primary academy-cta">
-                    <span>Visit BGC on Facebook</span>
-                    <i class="fas fa-arrow-up-right-from-square"></i>
-                </a>
+                <div class="highlight-item">
+                    <div class="h-icon"><i class="fas fa-palette"></i></div>
+                    <div class="h-text">
+                        <strong>Creative Design:</strong>
+                        Branding, graphic design, and visual communication.
+                    </div>
+                </div>
+
+                <div class="highlight-item">
+                    <div class="h-icon"><i class="fas fa-graduation-cap"></i></div>
+                    <div class="h-text">
+                        <strong>Skills Development:</strong>
+                        Practical digital education and professional development.
+                    </div>
+                </div>
 
             </div>
 
-            <div class="academy-graphics-pane">
-                <div class="geometric-shape-box">
-                    <div class="inner-geometric-mesh"></div>
-                    <span class="mesh-center-text">Blossom Graphviz Concept</span>
-                </div>
-            </div>
+            <a href="https://www.facebook.com/BlossomGraphvizConcept"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="btn btn-primary academy-cta">
+                <span>Visit BGC on Facebook</span>
+                <i class="fas fa-arrow-up-right-from-square"></i>
+            </a>
 
         </div>
 
-
-        <div class="academy-premium-grid">
-
-            <div class="academy-info-pane">
-
-                <span class="academy-badge">Learning and Development</span>
-                <h3>BlossomViz Academy</h3>
-
-                <p>
-                    BlossomViz Academy, powered by Blossom Graphviz
-                    Concept, focuses on practical learning in data
-                    analytics, digital skills, technology, creative
-                    communication, and career development.
-                </p>
-
-                <p>
-                    Our learning approach emphasizes structured
-                    teaching, practical exercises, real-world
-                    examples, and the application of knowledge
-                    to business and professional situations.
-                </p>
-
-                <div class="curriculum-highlights">
-
-                    <div class="highlight-item">
-                        <div class="h-icon"><i class="fas fa-file-excel"></i></div>
-                        <div class="h-text">
-                            <strong>Excel and Data Analytics:</strong>
-                            Practical learning in data preparation, analysis, and reporting.
-                        </div>
-                    </div>
-
-                    <div class="highlight-item">
-                        <div class="h-icon"><i class="fas fa-chart-column"></i></div>
-                        <div class="h-text">
-                            <strong>Business Intelligence:</strong>
-                            Learning resources for Power BI, visualization, and business insight.
-                        </div>
-                    </div>
-
-                    <div class="highlight-item">
-                        <div class="h-icon"><i class="fas fa-chalkboard-teacher"></i></div>
-                        <div class="h-text">
-                            <strong>Professional Development:</strong>
-                            Guided exercises, training materials, and practical skill development.
-                        </div>
-                    </div>
-
-                </div>
-
-                <a href="https://www.facebook.com/BlossomGraphvizConcept"
-                   target="_blank"
-                   rel="noopener noreferrer"
-                   class="btn btn-primary academy-cta">
-                    <span>Explore Academy Information</span>
-                    <i class="fas fa-arrow-up-right-from-square"></i>
-                </a>
-
-            </div>
-
-            <div class="academy-graphics-pane">
-                <div class="geometric-shape-box">
-                    <div class="inner-geometric-mesh"></div>
-                    <span class="mesh-center-text">BlossomViz Academy</span>
-                </div>
-            </div>
-
-        </div>
-
-        <div class="philosophy-callout-wrapper">
-            <div class="diagonal-slash-accent"></div>
-
-            <div class="philosophy-content">
-                <span class="philosophy-label">Our Brand Promise</span>
-
-                <h4 class="philosophy-text">
-                    Visual Excellence. Data-Driven Growth.
-                </h4>
-
-                <p class="philosophy-subtext">
-                    We aim to combine clear visual communication,
-                    analytical thinking, practical learning, and
-                    business-focused execution.
-                </p>
-
-                <p class="philosophy-subtext">
-                    We design. We analyse. We empower.
-                </p>
+        <div class="academy-graphics-pane">
+            <div class="geometric-shape-box">
+                <div class="inner-geometric-mesh"></div>
+                <span class="mesh-center-text">Blossom Graphviz Concept</span>
             </div>
         </div>
-
-        <button class="btn btn-secondary"
-                onclick="switchView('academy')">
-            <i class="fas fa-arrow-left"></i>
-            <span>Return to Leadership</span>
-        </button>
 
     </div>
-</section>
 
+    <div class="academy-premium-grid">
+
+        <div class="academy-info-pane">
+
+            <span class="academy-badge">Learning and Development</span>
+            <h3>BlossomViz Academy</h3>
+
+            <p>
+                BlossomViz Academy, powered by Blossom Graphviz
+                Concept, focuses on practical learning in data
+                analytics, digital skills, technology, creative
+                communication, and career development.
+            </p>
+
+            <p>
+                Our learning approach emphasizes structured
+                teaching, practical exercises, real-world
+                examples, and the application of knowledge
+                to business and professional situations.
+            </p>
+
+            <div class="curriculum-highlights">
+
+                <div class="highlight-item">
+                    <div class="h-icon"><i class="fas fa-file-excel"></i></div>
+                    <div class="h-text">
+                        <strong>Excel and Data Analytics:</strong>
+                        Practical learning in data preparation, analysis, and reporting.
+                    </div>
+                </div>
+
+                <div class="highlight-item">
+                    <div class="h-icon"><i class="fas fa-chart-column"></i></div>
+                    <div class="h-text">
+                        <strong>Business Intelligence:</strong>
+                        Learning resources for Power BI, visualization, and business insight.
+                    </div>
+                </div>
+
+                <div class="highlight-item">
+                    <div class="h-icon"><i class="fas fa-chalkboard-teacher"></i></div>
+                    <div class="h-text">
+                        <strong>Professional Development:</strong>
+                        Guided exercises, training materials, and practical skill development.
+                    </div>
+                </div>
+
+            </div>
+
+            <a href="https://www.facebook.com/BlossomGraphvizConcept"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="btn btn-primary academy-cta">
+                <span>Explore Academy Information</span>
+                <i class="fas fa-arrow-up-right-from-square"></i>
+            </a>
+
+        </div>
+
+        <div class="academy-graphics-pane">
+            <div class="geometric-shape-box">
+                <div class="inner-geometric-mesh"></div>
+                <span class="mesh-center-text">BlossomViz Academy</span>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="philosophy-callout-wrapper">
+        <div class="diagonal-slash-accent"></div>
+
+        <div class="philosophy-content">
+            <span class="philosophy-label">Our Brand Promise</span>
+
+            <h4 class="philosophy-text">
+                Visual Excellence. Data-Driven Growth.
+            </h4>
+
+            <p class="philosophy-subtext">
+                We aim to combine clear visual communication,
+                analytical thinking, practical learning, and
+                business-focused execution.
+            </p>
+
+            <p class="philosophy-subtext">
+                We design. We analyse. We empower.
+            </p>
+        </div>
+    </div>
+
+    <button class="btn btn-secondary"
+            type="button"
+            onclick="switchView('academy')">
+        <i class="fas fa-arrow-left"></i>
+        <span>Return to Leadership</span>
+    </button>
+
+</div>
+```
+
+</section>
 
 <!-- =====================================================
      CV / RESUME
@@ -1313,71 +1332,75 @@
 
 <section id="resume-view" class="view-section">
 
-    <div class="container">
+```
+<div class="container">
 
-        <div class="section-header-block">
-            <span class="section-pretitle">Professional Documents</span>
-            <h2 class="section-title">CV / Resume</h2>
-            <div class="accent-line"></div>
-        </div>
+    <div class="section-header-block">
+        <span class="section-pretitle">Professional Documents</span>
+        <h2 class="section-title">CV / Resume</h2>
+        <div class="accent-line"></div>
+    </div>
 
-        <div class="philosophy-callout-wrapper">
-            <div class="diagonal-slash-accent"></div>
+    <div class="philosophy-callout-wrapper">
+        <div class="diagonal-slash-accent"></div>
 
-            <div class="philosophy-content">
+        <div class="philosophy-content">
 
-                <span class="philosophy-label">Professional Profile</span>
+            <span class="philosophy-label">Professional Profile</span>
 
-                <h3 class="philosophy-text">
-                    Chukwuemeka David Udezue
-                </h3>
+            <h3 class="philosophy-text">
+                Chukwuemeka David Udezue
+            </h3>
 
-                <p class="philosophy-subtext">
-                    Data Analyst | Business Intelligence and Reporting
-                    Specialist | Power BI Developer | Digital Skills Trainer
-                </p>
-
-                <p class="philosophy-subtext">
-                    This section will contain my professional CV,
-                    highlighting my technical skills, analytical
-                    projects, education, professional experience,
-                    and career profile.
-                </p>
-
-                <p class="philosophy-subtext">
-                    My CV document is being prepared and will be
-                    published here when it is ready.
-                </p>
-
-                <button class="btn btn-primary"
-                        onclick="switchView('contact')">
-                    <span>Request Professional Information</span>
-                    <i class="fas fa-envelope"></i>
-                </button>
-
-            </div>
-        </div>
-
-        <div class="portfolio-architecture-intro">
-            <h3>Explore My Work in the Meantime</h3>
-
-            <p>
-                You can review my sales performance analysis
-                case study and other portfolio resources while
-                the downloadable CV is being prepared.
+            <p class="philosophy-subtext">
+                Data Analyst | Business Intelligence and Reporting
+                Specialist | Power BI Developer | Digital Skills Trainer
             </p>
 
-            <button class="btn btn-secondary"
-                    onclick="switchView('portfolio')">
-                <span>View Projects</span>
-                <i class="fas fa-arrow-right"></i>
+            <p class="philosophy-subtext">
+                This section will contain my professional CV,
+                highlighting my technical skills, analytical
+                projects, education, professional experience,
+                and career profile.
+            </p>
+
+            <p class="philosophy-subtext">
+                My CV document is being prepared and will be
+                published here when it is ready.
+            </p>
+
+            <button class="btn btn-primary"
+                    type="button"
+                    onclick="switchView('contact')">
+                <span>Request Professional Information</span>
+                <i class="fas fa-envelope"></i>
             </button>
 
         </div>
+    </div>
+
+    <div class="portfolio-architecture-intro">
+        <h3>Explore My Work in the Meantime</h3>
+
+        <p>
+            You can review my sales performance analysis
+            case study and other portfolio resources while
+            the downloadable CV is being prepared.
+        </p>
+
+        <button class="btn btn-secondary"
+                type="button"
+                onclick="switchView('portfolio')">
+            <span>View Projects</span>
+            <i class="fas fa-arrow-right"></i>
+        </button>
 
     </div>
-</section>
 
+</div>
+```
+
+</section>
 
 <!-- =====================================================
      SERVICES AND CONSULTATION
@@ -1385,138 +1408,138 @@
 
 <section id="consultation-view" class="view-section">
 
-    <div class="container">
+```
+<div class="container">
 
-        <div class="section-header-block">
-            <span class="section-pretitle">Professional Services</span>
-            <h2 class="section-title">Services &amp; Consultation</h2>
-            <div class="accent-line"></div>
+    <div class="section-header-block">
+        <span class="section-pretitle">Professional Services</span>
+        <h2 class="section-title">Services &amp; Consultation</h2>
+        <div class="accent-line"></div>
+    </div>
+
+    <div class="services-master-grid">
+
+        <div class="service-unit-card">
+            <div class="unit-banner-accent"></div>
+
+            <div class="unit-icon-header">
+                <i class="fas fa-chart-line"></i>
+                <h3>Data Analytics</h3>
+            </div>
+
+            <p class="unit-summary">
+                Analytical support for organizing data,
+                answering business questions, and understanding
+                performance.
+            </p>
+
+            <ul class="unit-spec-list">
+                <li><i class="fas fa-check-circle"></i> Data Cleaning and Preparation</li>
+                <li><i class="fas fa-check-circle"></i> Exploratory Analysis</li>
+                <li><i class="fas fa-check-circle"></i> Business Performance Analysis</li>
+                <li><i class="fas fa-check-circle"></i> KPI Interpretation</li>
+            </ul>
         </div>
 
-        <div class="services-master-grid">
+        <div class="service-unit-card">
+            <div class="unit-banner-accent"></div>
 
-            <div class="service-unit-card">
-                <div class="unit-banner-accent"></div>
-
-                <div class="unit-icon-header">
-                    <i class="fas fa-chart-line"></i>
-                    <h3>Data Analytics</h3>
-                </div>
-
-                <p class="unit-summary">
-                    Analytical support for organizing data,
-                    answering business questions, and understanding
-                    performance.
-                </p>
-
-                <ul class="unit-spec-list">
-                    <li><i class="fas fa-check-circle"></i> Data Cleaning and Preparation</li>
-                    <li><i class="fas fa-check-circle"></i> Exploratory Analysis</li>
-                    <li><i class="fas fa-check-circle"></i> Business Performance Analysis</li>
-                    <li><i class="fas fa-check-circle"></i> KPI Interpretation</li>
-                </ul>
+            <div class="unit-icon-header">
+                <i class="fas fa-chart-column"></i>
+                <h3>Dashboards and Reporting</h3>
             </div>
 
+            <p class="unit-summary">
+                Business reporting and visual summaries designed
+                to help stakeholders monitor results and assess
+                performance.
+            </p>
 
-            <div class="service-unit-card">
-                <div class="unit-banner-accent"></div>
-
-                <div class="unit-icon-header">
-                    <i class="fas fa-chart-column"></i>
-                    <h3>Dashboards and Reporting</h3>
-                </div>
-
-                <p class="unit-summary">
-                    Business reporting and visual summaries designed
-                    to help stakeholders monitor results and assess
-                    performance.
-                </p>
-
-                <ul class="unit-spec-list">
-                    <li><i class="fas fa-check-circle"></i> Power BI Reporting</li>
-                    <li><i class="fas fa-check-circle"></i> Excel Reporting</li>
-                    <li><i class="fas fa-check-circle"></i> KPI Dashboards</li>
-                    <li><i class="fas fa-check-circle"></i> Data Visualization</li>
-                </ul>
-            </div>
-
-
-            <div class="service-unit-card">
-                <div class="unit-banner-accent"></div>
-
-                <div class="unit-icon-header">
-                    <i class="fas fa-palette"></i>
-                    <h3>Creative Design</h3>
-                </div>
-
-                <p class="unit-summary">
-                    Visual communication and design support for
-                    businesses, educational initiatives, and
-                    professional content.
-                </p>
-
-                <ul class="unit-spec-list">
-                    <li><i class="fas fa-check-circle"></i> Brand Identity</li>
-                    <li><i class="fas fa-check-circle"></i> Graphic Design</li>
-                    <li><i class="fas fa-check-circle"></i> Digital Content</li>
-                    <li><i class="fas fa-check-circle"></i> Presentation Design</li>
-                </ul>
-            </div>
-
-
-            <div class="service-unit-card">
-                <div class="unit-banner-accent"></div>
-
-                <div class="unit-icon-header">
-                    <i class="fas fa-graduation-cap"></i>
-                    <h3>Training and Skills Development</h3>
-                </div>
-
-                <p class="unit-summary">
-                    Practical learning and educational support
-                    focused on digital skills and analytical thinking.
-                </p>
-
-                <ul class="unit-spec-list">
-                    <li><i class="fas fa-check-circle"></i> Microsoft Excel</li>
-                    <li><i class="fas fa-check-circle"></i> Data Analytics Fundamentals</li>
-                    <li><i class="fas fa-check-circle"></i> SQL and Power BI Learning</li>
-                    <li><i class="fas fa-check-circle"></i> Learning Materials</li>
-                </ul>
-            </div>
-
+            <ul class="unit-spec-list">
+                <li><i class="fas fa-check-circle"></i> Power BI Reporting</li>
+                <li><i class="fas fa-check-circle"></i> Excel Reporting</li>
+                <li><i class="fas fa-check-circle"></i> KPI Dashboards</li>
+                <li><i class="fas fa-check-circle"></i> Data Visualization</li>
+            </ul>
         </div>
 
-        <div class="philosophy-callout-wrapper">
-            <div class="diagonal-slash-accent"></div>
+        <div class="service-unit-card">
+            <div class="unit-banner-accent"></div>
 
-            <div class="philosophy-content">
-
-                <span class="philosophy-label">Start a Conversation</span>
-
-                <h3 class="philosophy-text">
-                    Discuss Your Project or Training Needs
-                </h3>
-
-                <p class="philosophy-subtext">
-                    Share your business question, reporting
-                    requirements, design needs, or training goals.
-                    We can review the scope and discuss the
-                    appropriate next steps.
-                </p>
-
-                <button class="btn btn-primary"
-                        onclick="switchView('contact')">
-                    <span>Make an Enquiry</span>
-                    <i class="fas fa-paper-plane"></i>
-                </button>
-
+            <div class="unit-icon-header">
+                <i class="fas fa-palette"></i>
+                <h3>Creative Design</h3>
             </div>
+
+            <p class="unit-summary">
+                Visual communication and design support for
+                businesses, educational initiatives, and
+                professional content.
+            </p>
+
+            <ul class="unit-spec-list">
+                <li><i class="fas fa-check-circle"></i> Brand Identity</li>
+                <li><i class="fas fa-check-circle"></i> Graphic Design</li>
+                <li><i class="fas fa-check-circle"></i> Digital Content</li>
+                <li><i class="fas fa-check-circle"></i> Presentation Design</li>
+            </ul>
+        </div>
+
+        <div class="service-unit-card">
+            <div class="unit-banner-accent"></div>
+
+            <div class="unit-icon-header">
+                <i class="fas fa-graduation-cap"></i>
+                <h3>Training and Skills Development</h3>
+            </div>
+
+            <p class="unit-summary">
+                Practical learning and educational support
+                focused on digital skills and analytical thinking.
+            </p>
+
+            <ul class="unit-spec-list">
+                <li><i class="fas fa-check-circle"></i> Microsoft Excel</li>
+                <li><i class="fas fa-check-circle"></i> Data Analytics Fundamentals</li>
+                <li><i class="fas fa-check-circle"></i> SQL and Power BI Learning</li>
+                <li><i class="fas fa-check-circle"></i> Learning Materials</li>
+            </ul>
         </div>
 
     </div>
-</section>
 
+    <div class="philosophy-callout-wrapper">
+        <div class="diagonal-slash-accent"></div>
+
+        <div class="philosophy-content">
+
+            <span class="philosophy-label">Start a Conversation</span>
+
+            <h3 class="philosophy-text">
+                Discuss Your Project or Training Needs
+            </h3>
+
+            <p class="philosophy-subtext">
+                Share your business question, reporting
+                requirements, design needs, or training goals.
+                We can review the scope and discuss the
+                appropriate next steps.
+            </p>
+
+            <button class="btn btn-primary"
+                    type="button"
+                    onclick="switchView('contact')">
+                <span>Make an Enquiry</span>
+                <i class="fas fa-paper-plane"></i>
+            </button>
+
+        </div>
+    </div>
+
+</div>
+```
+
+</section>
 
 <!-- =====================================================
      CONTACT
@@ -1524,231 +1547,232 @@
 
 <section id="contact-view" class="view-section">
 
-    <div class="container">
+```
+<div class="container">
 
-        <div class="section-header-block">
-            <span class="section-pretitle">Professional Networking</span>
-            <h2 class="section-title">Contact Me</h2>
-            <div class="accent-line"></div>
-        </div>
+    <div class="section-header-block">
+        <span class="section-pretitle">Professional Networking</span>
+        <h2 class="section-title">Contact Me</h2>
+        <div class="accent-line"></div>
+    </div>
 
-        <div class="contact-master-split">
+    <div class="contact-master-split">
 
-            <div class="contact-details-panel">
+        <div class="contact-details-panel">
 
-                <h3>Let's Connect</h3>
+            <h3>Let's Connect</h3>
 
-                <p>
-                    I welcome relevant conversations about
-                    data analytics, business intelligence,
-                    reporting, dashboard development,
-                    professional collaboration, training,
-                    and suitable career opportunities.
-                </p>
+            <p>
+                I welcome relevant conversations about
+                data analytics, business intelligence,
+                reporting, dashboard development,
+                professional collaboration, training,
+                and suitable career opportunities.
+            </p>
 
-                <div class="communication-channels">
+            <div class="communication-channels">
 
-                    <a href="mailto:davidudezue@gmail.com"
-                       class="channel-card">
-                        <div class="channel-icon">
-                            <i class="fas fa-envelope"></i>
-                        </div>
-                        <div class="channel-text">
-                            <span>Professional Email</span>
-                            <strong>davidudezue@gmail.com</strong>
-                        </div>
-                    </a>
+                <a href="mailto:davidudezue@gmail.com"
+                   class="channel-card">
+                    <div class="channel-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="channel-text">
+                        <span>Professional Email</span>
+                        <strong>davidudezue@gmail.com</strong>
+                    </div>
+                </a>
+
+                <a href="https://www.linkedin.com/in/udezue-david-732843246/"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="channel-card">
+                    <div class="channel-icon">
+                        <i class="fab fa-linkedin"></i>
+                    </div>
+                    <div class="channel-text">
+                        <span>LinkedIn Profile</span>
+                        <strong>Connect with David Udezue</strong>
+                    </div>
+                </a>
+
+                <a href="mailto:blossomgraphvizconcept@gmail.com"
+                   class="channel-card">
+                    <div class="channel-icon">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <div class="channel-text">
+                        <span>BGC Business Enquiries</span>
+                        <strong>blossomgraphvizconcept@gmail.com</strong>
+                    </div>
+                </a>
+
+            </div>
+
+            <div class="social-architecture-block">
+
+                <h4>Find Me Online</h4>
+
+                <div class="social-icon-row">
 
                     <a href="https://www.linkedin.com/in/udezue-david-732843246/"
                        target="_blank"
                        rel="noopener noreferrer"
-                       class="channel-card">
-                        <div class="channel-icon">
-                            <i class="fab fa-linkedin"></i>
-                        </div>
-                        <div class="channel-text">
-                            <span>LinkedIn Profile</span>
-                            <strong>Connect with David Udezue</strong>
-                        </div>
+                       class="social-node-link"
+                       aria-label="LinkedIn Profile">
+                        <i class="fab fa-linkedin-in"></i>
                     </a>
 
-                    <a href="mailto:blossomgraphvizconcept@gmail.com"
-                       class="channel-card">
-                        <div class="channel-icon">
-                            <i class="fas fa-building"></i>
-                        </div>
-                        <div class="channel-text">
-                            <span>BGC Business Enquiries</span>
-                            <strong>blossomgraphvizconcept@gmail.com</strong>
-                        </div>
+                    <a href="https://www.facebook.com/share/18sk3JVreZ/"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       class="social-node-link"
+                       aria-label="Facebook Profile">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+
+                    <a href="https://instagram.com/Davidudezue"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       class="social-node-link"
+                       aria-label="Instagram Profile">
+                        <i class="fab fa-instagram"></i>
                     </a>
 
                 </div>
-
-                <div class="social-architecture-block">
-
-                    <h4>Find Me Online</h4>
-
-                    <div class="social-icon-row">
-
-                        <a href="https://www.linkedin.com/in/udezue-david-732843246/"
-                           target="_blank"
-                           rel="noopener noreferrer"
-                           class="social-node-link"
-                           aria-label="LinkedIn Profile">
-                            <i class="fab fa-linkedin-in"></i>
-                        </a>
-
-                        <a href="https://www.facebook.com/share/18sk3JVreZ/"
-                           target="_blank"
-                           rel="noopener noreferrer"
-                           class="social-node-link"
-                           aria-label="Facebook Profile">
-                            <i class="fab fa-facebook-f"></i>
-                        </a>
-
-                        <a href="https://instagram.com/Davidudezue"
-                           target="_blank"
-                           rel="noopener noreferrer"
-                           class="social-node-link"
-                           aria-label="Instagram Profile">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-
-                    </div>
-                </div>
-
             </div>
 
+        </div>
 
-            <div class="contact-form-panel">
+        <div class="contact-form-panel">
 
-                <h3>Send a Professional Enquiry</h3>
+            <h3>Send a Professional Enquiry</h3>
 
-                <p>
-                    Complete the form to prepare an email
-                    with your details and message.
-                </p>
+            <p>
+                Complete the form to prepare an email
+                with your details and message.
+            </p>
 
-                <form id="portfolioInquiryForm"
-                      onsubmit="handleFormSubmit(event)">
+            <form id="portfolioInquiryForm"
+                  onsubmit="handleFormSubmit(event)">
 
-                    <div class="form-group-row">
-
-                        <div class="form-field">
-                            <label for="clientName">Your Name</label>
-
-                            <input
-                                type="text"
-                                id="clientName"
-                                name="name"
-                                autocomplete="name"
-                                required
-                                placeholder="Enter your name">
-                        </div>
-
-                        <div class="form-field">
-                            <label for="clientEmail">Your Email</label>
-
-                            <input
-                                type="email"
-                                id="clientEmail"
-                                name="email"
-                                autocomplete="email"
-                                required
-                                placeholder="you@example.com">
-                        </div>
-
-                    </div>
+                <div class="form-group-row">
 
                     <div class="form-field">
-                        <label for="inquiryType">Reason for Contact</label>
+                        <label for="clientName">Your Name</label>
 
-                        <select id="inquiryType"
-                                name="inquiry"
-                                required>
-
-                            <option value="" disabled selected>
-                                Select an enquiry type
-                            </option>
-
-                            <option value="Remote job opportunity">
-                                Remote Job Opportunity
-                            </option>
-
-                            <option value="Data analytics project">
-                                Data Analytics Project
-                            </option>
-
-                            <option value="Business intelligence and reporting">
-                                Business Intelligence and Reporting
-                            </option>
-
-                            <option value="Creative design project">
-                                Creative Design Project
-                            </option>
-
-                            <option value="Consultation">
-                                Consultation
-                            </option>
-
-                            <option value="Professional collaboration">
-                                Professional Collaboration
-                            </option>
-
-                            <option value="Training and education">
-                                Training and Education
-                            </option>
-
-                            <option value="BGC business enquiry">
-                                BGC Business Enquiry
-                            </option>
-
-                            <option value="Other professional enquiry">
-                                Other
-                            </option>
-
-                        </select>
-                    </div>
-
-                    <div class="form-field">
-                        <label for="clientMessage">Your Message</label>
-
-                        <textarea
-                            id="clientMessage"
-                            name="message"
-                            rows="5"
+                        <input
+                            type="text"
+                            id="clientName"
+                            name="name"
+                            autocomplete="name"
                             required
-                            placeholder="Write your message here..."></textarea>
+                            placeholder="Enter your name">
                     </div>
 
-                    <button type="submit"
-                            class="btn btn-primary submit-form-btn">
-                        <span>Prepare Email</span>
-                        <i class="fas fa-paper-plane"></i>
-                    </button>
+                    <div class="form-field">
+                        <label for="clientEmail">Your Email</label>
 
-                </form>
-
-                <div id="formSuccessFeedback"
-                     class="form-success-feedback hidden-element"
-                     role="status"
-                     aria-live="polite">
-
-                    Your email application should open with the
-                    message prepared. Review it and press Send to
-                    deliver your enquiry.
+                        <input
+                            type="email"
+                            id="clientEmail"
+                            name="email"
+                            autocomplete="email"
+                            required
+                            placeholder="you@example.com">
+                    </div>
 
                 </div>
+
+                <div class="form-field">
+                    <label for="inquiryType">Reason for Contact</label>
+
+                    <select id="inquiryType"
+                            name="inquiry"
+                            required>
+
+                        <option value="" disabled selected>
+                            Select an enquiry type
+                        </option>
+
+                        <option value="Remote job opportunity">
+                            Remote Job Opportunity
+                        </option>
+
+                        <option value="Data analytics project">
+                            Data Analytics Project
+                        </option>
+
+                        <option value="Business intelligence and reporting">
+                            Business Intelligence and Reporting
+                        </option>
+
+                        <option value="Creative design project">
+                            Creative Design Project
+                        </option>
+
+                        <option value="Consultation">
+                            Consultation
+                        </option>
+
+                        <option value="Professional collaboration">
+                            Professional Collaboration
+                        </option>
+
+                        <option value="Training and education">
+                            Training and Education
+                        </option>
+
+                        <option value="BGC business enquiry">
+                            BGC Business Enquiry
+                        </option>
+
+                        <option value="Other professional enquiry">
+                            Other
+                        </option>
+
+                    </select>
+                </div>
+
+                <div class="form-field">
+                    <label for="clientMessage">Your Message</label>
+
+                    <textarea
+                        id="clientMessage"
+                        name="message"
+                        rows="5"
+                        required
+                        placeholder="Write your message here..."></textarea>
+                </div>
+
+                <button type="submit"
+                        class="btn btn-primary submit-form-btn">
+                    <span>Prepare Email</span>
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+
+            </form>
+
+            <div id="formSuccessFeedback"
+                 class="form-success-feedback hidden-element"
+                 role="status"
+                 aria-live="polite">
+
+                Your email application should open with the
+                message prepared. Review it and press Send to
+                deliver your enquiry.
 
             </div>
 
         </div>
+
     </div>
+</div>
+```
+
 </section>
 
 </main>
-
 
 <!-- =====================================================
      FOOTER
@@ -1756,54 +1780,55 @@
 
 <footer class="footer-meta">
 
-    <div class="container footer-meta-container">
+```
+<div class="container footer-meta-container">
 
-        <p>
-            &copy; <span id="currentYear">2026</span>
-            Chukwuemeka David Udezue. All Rights Reserved.
-        </p>
+    <p>
+        &copy; <span id="currentYear">2026</span>
+        Chukwuemeka David Udezue. All Rights Reserved.
+    </p>
 
-        <p class="tagline-signature">
-            Visual Excellence. Data-Driven Growth.
-        </p>
+    <p class="tagline-signature">
+        Visual Excellence. Data-Driven Growth.
+    </p>
 
-    </div>
+</div>
+```
 
 </footer>
-
 
 <!-- =====================================================
      WHATSAPP CONTACT
 ===================================================== -->
 
 <a href="https://wa.me/2348133742166"
-   target="_blank"
-   rel="noopener noreferrer"
-   class="persistent-whatsapp-node"
-   aria-label="Contact Chukwuemeka David Udezue on WhatsApp">
+target="_blank"
+rel="noopener noreferrer"
+class="persistent-whatsapp-node"
+aria-label="Contact Chukwuemeka David Udezue on WhatsApp">
 
-    <div class="whatsapp-badge-label">
-        <span class="label-status-dot"></span>
-        <span class="label-text-string">Contact Me on WhatsApp</span>
-    </div>
+```
+<div class="whatsapp-badge-label">
+    <span class="label-status-dot"></span>
+    <span class="label-text-string">Contact Me on WhatsApp</span>
+</div>
 
-    <div class="whatsapp-icon-circle">
-        <i class="fab fa-whatsapp"></i>
-    </div>
+<div class="whatsapp-icon-circle">
+    <i class="fab fa-whatsapp"></i>
+</div>
+```
 
 </a>
-
 
 <!-- =====================================================
      INTERACTIVE FUNCTIONS
 ===================================================== -->
 
 <script>
-
     /*
      * Main section navigation.
-     * Every view listed here must have a matching
-     * HTML section ID ending in "-view".
+     * Each view name maps to an HTML section ID
+     * ending in "-view".
      */
 
     function switchView(viewName) {
@@ -1824,51 +1849,37 @@
             return;
         }
 
+        const targetView = document.getElementById(viewName + '-view');
+
+        if (!targetView) {
+            console.warn('Portfolio view not found:', viewName);
+            return;
+        }
+
         document.querySelectorAll('.view-section').forEach(view => {
             view.classList.remove('active-view');
         });
 
-        document.querySelectorAll('.nav-link').forEach(link => {
-            link.classList.remove('active');
-        });
-
-        const targetView = document.getElementById(viewName + '-view');
-
-        if (targetView) {
-
-            targetView.classList.add('active-view');
-
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        }
-
-        /*
-         * Highlight the selected navigation item.
-         * The Brands section is accessible through the
-         * Leadership section rather than the main menu.
-         */
+        targetView.classList.add('active-view');
 
         document.querySelectorAll('.nav-link').forEach(link => {
+            const isActive = link.getAttribute('href') === '#' + viewName;
 
-            if (link.getAttribute('href') === '#' + viewName) {
-                link.classList.add('active');
+            link.classList.toggle('active', isActive);
+
+            if (isActive) {
+                link.setAttribute('aria-current', 'page');
+            } else {
+                link.removeAttribute('aria-current');
             }
-
         });
 
-        const navMenu = document.getElementById('navMenu');
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
 
-        if (navMenu) {
-            navMenu.classList.remove('mobile-active');
-        }
-
-        const mobileToggle = document.querySelector('.mobile-toggle');
-
-        if (mobileToggle) {
-            mobileToggle.setAttribute('aria-expanded', 'false');
-        }
+        closeMobileMenu();
 
         if (window.location.hash !== '#' + viewName) {
             history.replaceState(null, '', '#' + viewName);
@@ -1877,7 +1888,7 @@
 
 
     /*
-     * Mobile navigation menu.
+     * Mobile navigation controls.
      */
 
     function toggleMobileMenu() {
@@ -1889,9 +1900,7 @@
             return;
         }
 
-        navMenu.classList.toggle('mobile-active');
-
-        const isOpen = navMenu.classList.contains('mobile-active');
+        const isOpen = navMenu.classList.toggle('mobile-active');
 
         if (mobileToggle) {
             mobileToggle.setAttribute('aria-expanded', String(isOpen));
@@ -1899,13 +1908,38 @@
     }
 
 
+    function closeMobileMenu() {
+
+        const navMenu = document.getElementById('navMenu');
+        const mobileToggle = document.querySelector('.mobile-toggle');
+
+        if (navMenu) {
+            navMenu.classList.remove('mobile-active');
+        }
+
+        if (mobileToggle) {
+            mobileToggle.setAttribute('aria-expanded', 'false');
+        }
+    }
+
+
     /*
      * Project category filtering.
-     * Supported categories:
-     * all, analytics, dashboards, creative, documents.
      */
 
-    function filterPortfolio(category, clickedButton) {
+    function filterPortfolio(category) {
+
+        const validCategories = [
+            'all',
+            'analytics',
+            'dashboards',
+            'creative',
+            'documents'
+        ];
+
+        if (!validCategories.includes(category)) {
+            return;
+        }
 
         const projectCards = document.querySelectorAll(
             '#portfolioProjectsGrid [data-category]'
@@ -1915,39 +1949,26 @@
 
             const cardCategory = card.getAttribute('data-category');
 
-            if (category === 'all' || cardCategory === category) {
-                card.classList.remove('hidden-track');
-                card.style.display = '';
-            } else {
-                card.classList.add('hidden-track');
-                card.style.display = 'none';
-            }
+            const shouldShow =
+                category === 'all' || cardCategory === category;
+
+            card.style.display = shouldShow ? '' : 'none';
+            card.classList.toggle('hidden-track', !shouldShow);
 
         });
 
-        const filterButtons = document.querySelectorAll(
-            '[data-project-filter]'
-        );
-
-        filterButtons.forEach(button => {
+        document.querySelectorAll('[data-project-filter]').forEach(button => {
 
             const isActive =
                 button.getAttribute('data-project-filter') === category;
 
             button.classList.toggle('active', isActive);
-
             button.setAttribute('aria-pressed', String(isActive));
 
-            if (isActive) {
-                button.classList.remove('btn-secondary');
-                button.classList.add('btn-primary');
-            } else {
-                button.classList.remove('btn-primary');
-                button.classList.add('btn-secondary');
-            }
+            button.classList.toggle('btn-primary', isActive);
+            button.classList.toggle('btn-secondary', !isActive);
 
         });
-
     }
 
 
@@ -1995,7 +2016,7 @@
 
 
     /*
-     * Initialize the page.
+     * Initialize the portfolio.
      */
 
     window.addEventListener('DOMContentLoaded', function () {
@@ -2026,29 +2047,22 @@
             yearElement.textContent = new Date().getFullYear();
         }
 
-        /*
-         * Close the mobile menu when Escape is pressed.
-         */
-
         document.addEventListener('keydown', function (event) {
 
             if (event.key === 'Escape') {
-
-                const navMenu = document.getElementById('navMenu');
-                const mobileToggle = document.querySelector('.mobile-toggle');
-
-                if (navMenu) {
-                    navMenu.classList.remove('mobile-active');
-                }
-
-                if (mobileToggle) {
-                    mobileToggle.setAttribute('aria-expanded', 'false');
-                }
+                closeMobileMenu();
             }
         });
 
-    });
+        document.querySelectorAll('.nav-link').forEach(link => {
 
+            link.addEventListener('click', function () {
+                closeMobileMenu();
+            });
+
+        });
+
+    });
 </script>
 
 </body>
