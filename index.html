@@ -2311,44 +2311,107 @@ aria-label="Contact Chukwuemeka David Udezue on WhatsApp">
     }
 
 
-    /*
-     * Contact form.
-     * This prepares an email in the visitor's email application.
-     * It does not send an email automatically.
-     */
+    ```javascript
+/*
+ * Contact form.
+ * Sends consultation enquiries through FormSubmit.
+ */
 
-    function handleFormSubmit(event) {
+async function handleFormSubmit(event) {
+    event.preventDefault();
 
-        event.preventDefault();
+    const form = event.target;
+    const name = document.getElementById('clientName').value.trim();
+    const email = document.getElementById('clientEmail').value.trim();
+    const inquiry = document.getElementById('inquiryType').value;
+    const message = document.getElementById('clientMessage').value.trim();
 
-        const name = document.getElementById('clientName').value.trim();
-        const email = document.getElementById('clientEmail').value.trim();
-        const inquiry = document.getElementById('inquiryType').value;
-        const message = document.getElementById('clientMessage').value.trim();
+    const submitButton = form.querySelector('button[type="submit"]');
+    const feedback = document.getElementById('formSuccessFeedback');
 
-        if (!name || !email || !inquiry || !message) {
-            alert('Please complete all required fields.');
-            return;
+    if (!name || !email || !inquiry || !message) {
+        alert('Please complete all required fields.');
+        return;
+    }
+
+    const originalButtonText = submitButton
+        ? submitButton.innerHTML
+        : '';
+
+    if (submitButton) {
+        submitButton.disabled = true;
+        submitButton.innerHTML = 'Sending Enquiry...';
+    }
+
+    if (feedback) {
+        feedback.classList.remove('hidden-element');
+        feedback.textContent = 'Sending your enquiry. Please wait.';
+    }
+
+    try {
+        const response = await fetch(
+            'https://formsubmit.co/ajax/davidudezue@gmail.com',
+            {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: JSON.stringify({
+                    name: name,
+                    email: email,
+                    inquiry: inquiry,
+                    message: message,
+                    _subject: 'Portfolio Enquiry: ' + inquiry,
+                    _template: 'table',
+                    _replyto: email
+                })
+            }
+        );
+
+        const result = await response.json();
+
+        if (
+            !response.ok ||
+            result.success === false ||
+            result.success === 'false'
+        ) {
+            throw new Error(
+                result.message || 'Submission failed.'
+            );
         }
-
-        const subject = 'Portfolio Enquiry: ' + inquiry;
-
-        const body =
-            'Name: ' + name + '\n' +
-            'Email: ' + email + '\n' +
-            'Enquiry Type: ' + inquiry + '\n\n' +
-            'Message:\n' + message;
-
-        const mailtoLink =
-            'mailto:davidudezue@gmail.com' +
-            '?subject=' + encodeURIComponent(subject) +
-            '&body=' + encodeURIComponent(body);
-
-        const feedback = document.getElementById('formSuccessFeedback');
 
         if (feedback) {
-            feedback.classList.remove('hidden-element');
+            feedback.textContent =
+                'Thank you! Your enquiry has been submitted successfully. ' +
+                'I will review your message and get back to you.';
         }
+
+        form.reset();
+
+    } catch (error) {
+        console.error('Enquiry submission error:', error);
+
+        if (feedback) {
+            feedback.textContent =
+                'We could not submit your enquiry. Please email ' +
+                'davidudezue@gmail.com directly.';
+        } else {
+            alert(
+                'Enquiry submission failed. Please email ' +
+                'davidudezue@gmail.com directly.'
+            );
+        }
+
+    } finally {
+        if (submitButton) {
+            submitButton.disabled = false;
+            submitButton.innerHTML = originalButtonText;
+        }
+    }
+}
+```
+
 
         window.location.href = mailtoLink;
     }
