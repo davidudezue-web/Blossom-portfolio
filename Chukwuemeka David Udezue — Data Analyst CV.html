@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+<title>Chukwuemeka David Udezue — Data Analyst CV</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<style>
+  :root {
+    --bg: #0b0d12;
+    --surface: #13161f;
+    --surface2: #1a1e2b;
+    --surface3: #1f2435;
+    --border: #262b3d;
+    --border2: #2f3550;
+    --gold: #c9952a;
+    --gold-lt: #e8b84b;
+    --teal: #3acfb4;
+    --blue: #5b8af0;
+    --red: #e05c5c;
+    --purple: #a88bfb;
+    --text: #eceef4;
+    --muted: #7a849a;
+    --faint: #3d4460;
+    --mono: 'DM Mono', monospace;
+    --serif: 'DM Serif Display', serif;
+    --sans: 'Outfit', sans-serif;
+    color-scheme: dark;
+  }
+  *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--sans);
+    font-size: 14.5px;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── PRINT CONTROLS ── */
+  .print-btn {
+    position: fixed; bottom: 28px; right: 28px; z-index: 100;
+    background: var(--gold);
+    color: #0b0d12;
+    border: none; border-radius: 999px;
+    padding: 10px 22px;
+    font-family: var(--mono); font-size: 12px; font-weight: 500;
+    cursor: pointer; letter-spacing: 0.04em;
+    box-shadow: 0 4px 20px rgba(201,149,42,0.35);
+    display: flex; align-items: center; gap: 8px;
+    transition: opacity .2s;
+  }
+  .print-btn:hover { opacity: .85; }
+  @media print {
+    .print-btn { display: none; }
+    body { background: #fff; color: #111; }
+    :root { --bg:#fff; --surface:#f9f9f9; --surface2:#f4f4f4; --surface3:#eee;
+            --border:#ddd; --border2:#ccc; --text:#111; --muted:#555; --faint:#aaa;
+            --gold:#8a6200; --gold-lt:#a07c10; --teal:#076b5a; --blue:#1a3c9c;
+            --red:#9b1e1e; --purple:#5c3d9b; }
+  }
+
+  /* ── LAYOUT ── */
+  .page { max-width: 960px; margin: 0 auto; padding: 0 24px 80px; }
+
+  /* ── HERO ── */
+  .hero {
+    padding: 56px 0 44px;
+    border-bottom: 1px solid var(--border);
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 24px;
+    align-items: end;
+  }
+  .hero-name {
+    font-family: var(--serif);
+    font-size: clamp(32px, 5vw, 56px);
+    line-height: 1.05;
+    letter-spacing: -0.01em;
+    color: var(--text);
+  }
+  .hero-name em {
+    font-style: italic;
+    color: var(--gold-lt);
+  }
+  .hero-title {
+    margin-top: 12px;
+    font-size: 12px;
+    font-family: var(--mono);
+    letter-spacing: 0.12em;
+    color: var(--teal);
+    display: flex; flex-wrap: wrap; gap: 0;
+  }
+  .hero-title span + span::before {
+    content: ' · ';
+    color: var(--faint);
+    margin: 0 6px;
+  }
+  .hero-contact {
+    text-align: right;
+    display: flex; flex-direction: column; gap: 5px;
+  }
+  .contact-row {
+    font-family: var(--mono); font-size: 11.5px;
+    color: var(--muted); display: flex; align-items: center;
+    gap: 7px; justify-content: flex-end;
+  }
+  .contact-row a { color: var(--blue); text-decoration: none; }
+  .contact-row a:hover { text-decoration: underline; }
+  .contact-dot {
+    width: 5px; height: 5px; border-radius: 50%;
+    background: var(--faint); flex-shrink: 0;
+  }
+
+  /* ── BRAND BAR ── */
+  .brand-bar {
+    display: flex; align-items: center; gap: 16px;
+    padding: 14px 20px;
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-top: none;
+    font-family: var(--mono); font-size: 11.5px; color: var(--muted);
+    flex-wrap: wrap;
+  }
+  .brand-bar strong { color: var(--gold-lt); }
+  .brand-bar .sep { color: var(--faint); }
+
+  /* ── SECTION ── */
+  .section { margin-top: 44px; }
+  .section-head {
+    display: flex; align-items: center; gap: 12px;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border);
+  }
+  .section-label {
+    font-family: var(--mono); font-size: 10.5px;
+    letter-spacing: 0.1em; color: var(--gold);
+    text-transform: uppercase;
+  }
+  .section-title {
+    font-family: var(--serif);
+    font-size: 21px; color: var(--text);
+  }
+  .section-line {
+    flex: 1; height: 1px;
+    background: linear-gradient(to right, var(--border2), transparent);
+  }
+
+  /* ── SUMMARY ── */
+  .summary-block {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--gold);
+    border-radius: 0 10px 10px 0;
+    padding: 22px 26px;
+    font-size: 14px;
+    color: var(--text);
+    line-height: 1.8;
+  }
+  .summary-block p + p { margin-top: 12px; }
+  .summary-block strong { color: var(--gold-lt); }
+
+  /* ── COMPETENCIES GRID ── */
+  .comp-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 8px;
+  }
+  .comp-item {
+    display: flex; align-items: flex-start; gap: 10px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 10px 14px;
+    font-size: 13.5px;
+  }
+  .comp-item::before {
+    content: '';
+    width: 6px; height: 6px;
+    border-radius: 2px;
+    background: var(--teal);
+    flex-shrink: 0;
+    margin-top: 6px;
+  }
+
+  /* ── SKILLS TABLE ── */
+  .skills-list { display: flex; flex-direction: column; gap: 10px; }
+  .skill-row {
+    display: grid;
+    grid-template-columns: 160px 1fr;
+    gap: 16px;
+    align-items: start;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 12px 18px;
+  }
+  .skill-name {
+    font-family: var(--mono); font-size: 12px;
+    color: var(--teal); font-weight: 500;
+    padding-top: 1px;
+  }
+  .skill-desc { font-size: 13.5px; color: var(--text); }
+
+  /* ── EXPERIENCE ── */
+  .exp-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 26px 28px;
+    margin-bottom: 14px;
+    position: relative; overflow: hidden;
+  }
+  .exp-card::before {
+    content: '';
+    position: absolute; top: 0; left: 0; bottom: 0;
+    width: 3px;
+    background: linear-gradient(to bottom, var(--gold), var(--teal));
+  }
+  .exp-top {
+    display: flex; justify-content: space-between; align-items: flex-start;
+    flex-wrap: wrap; gap: 8px; margin-bottom: 4px;
+  }
+  .exp-role {
+    font-family: var(--serif); font-size: 18px; color: var(--text);
+  }
+  .exp-badge {
+    font-family: var(--mono); font-size: 10.5px;
+    background: rgba(201,149,42,0.10); color: var(--gold);
+    border: 1px solid rgba(201,149,42,0.2);
+    border-radius: 999px; padding: 3px 12px;
+    letter-spacing: 0.05em;
+  }
+  .exp-org {
+    font-size: 13px; color: var(--muted);
+    margin-bottom: 16px; font-family: var(--mono);
+  }
+  .exp-org strong { color: var(--teal); }
+  .exp-bullets { list-style: none; display: flex; flex-direction: column; gap: 7px; }
+  .exp-bullets li {
+    font-size: 13.5px; color: var(--text);
+    padding-left: 16px; position: relative; line-height: 1.65;
+  }
+  .exp-bullets li::before {
+    content: '▸';
+    position: absolute; left: 0;
+    color: var(--gold); font-size: 10px; top: 3px;
+  }
+
+  /* ── PROJECT ── */
+  .project-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 26px 28px;
+    position: relative; overflow: hidden;
+  }
+  .project-card::before {
+    content: '';
+    position: absolute; top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(to right, var(--blue), var(--purple));
+  }
+  .project-title {
+    font-family: var(--serif); font-size: 18px; color: var(--text);
+    margin-bottom: 4px;
+  }
+  .project-meta {
+    font-family: var(--mono); font-size: 11.5px;
+    color: var(--muted); margin-bottom: 14px;
+  }
+  .project-meta a { color: var(--blue); text-decoration: none; }
+  .project-meta a:hover { text-decoration: underline; }
+
+  /* ── METRICS ROW ── */
+  .metrics-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 1px;
+    background: var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 16px 0;
+  }
+  .metric-cell {
+    background: var(--surface2);
+    padding: 14px 18px;
+    display: flex; flex-direction: column; gap: 3px;
+  }
+  .metric-label { font-size: 10.5px; color: var(--muted); letter-spacing: 0.06em; }
+  .metric-val { font-family: var(--serif); font-size: 21px; color: var(--gold-lt); }
+
+  /* ── EDUCATION ── */
+  .edu-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  @media (max-width: 600px) { .edu-grid { grid-template-columns: 1fr; } }
+  .edu-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 20px 22px;
+  }
+  .edu-degree {
+    font-family: var(--serif); font-size: 16px; color: var(--text);
+    margin-bottom: 4px;
+  }
+  .edu-field { font-size: 13px; color: var(--teal); margin-bottom: 8px; }
+  .edu-inst { font-family: var(--mono); font-size: 11.5px; color: var(--muted); }
+  .edu-year {
+    display: inline-block; margin-top: 8px;
+    font-family: var(--mono); font-size: 10.5px;
+    background: rgba(58,207,180,0.10); color: var(--teal);
+    border: 1px solid rgba(58,207,180,0.2);
+    border-radius: 4px; padding: 2px 8px;
+  }
+
+  /* ── STRENGTHS ── */
+  .strength-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+    gap: 10px;
+  }
+  .strength-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 14px 18px;
+    display: flex; align-items: flex-start; gap: 10px;
+    font-size: 13.5px; color: var(--text);
+  }
+  .strength-icon {
+    font-size: 18px; flex-shrink: 0; margin-top: -1px;
+  }
+
+  /* ── FOOTER INFO ── */
+  .info-strip {
+    margin-top: 44px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1px;
+    background: var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  .info-cell {
+    background: var(--surface2);
+    padding: 16px 20px;
+    display: flex; flex-direction: column; gap: 4px;
+  }
+  .info-cell .lbl { font-family: var(--mono); font-size: 10.5px; color: var(--muted); letter-spacing: 0.07em; }
+  .info-cell .val { font-size: 13.5px; color: var(--text); }
+  .info-cell a { color: var(--blue); text-decoration: none; }
+
+  /* ── FOOTER ── */
+  .footer {
+    margin-top: 48px;
+    border-top: 1px solid var(--border);
+    padding-top: 20px;
+    display: flex; justify-content: space-between; align-items: center;
+    flex-wrap: wrap; gap: 12px;
+  }
+  .footer-brand { font-family: var(--serif); font-size: 16px; color: var(--gold); }
+  .footer-note { font-family: var(--mono); font-size: 11px; color: var(--muted); text-align: right; }
+
+  @media (max-width: 640px) {
+    .hero { grid-template-columns: 1fr; }
+    .hero-contact { text-align: left; align-items: flex-start; }
+    .contact-row { justify-content: flex-start; }
+    .skill-row { grid-template-columns: 1fr; gap: 4px; }
+  }
+</style>
+</head>
+<body>
+
+<button class="print-btn" onclick="window.print()">⬇ Save as PDF</button>
+
+<div class="page">
+
+  <!-- ═══ HERO ═══ -->
+  <header class="hero">
+    <div>
+      <h1 class="hero-name">Chukwuemeka<br/><em>David Udezue</em></h1>
+      <div class="hero-title">
+        <span>Data Analyst</span>
+        <span>Business Intelligence Specialist</span>
+        <span>Power BI Developer</span>
+      </div>
+    </div>
+    <div class="hero-contact">
+      <div class="contact-row"><span class="contact-dot"></span>Nigeria</div>
+      <div class="contact-row"><span class="contact-dot"></span><a href="mailto:davidudezue@gmail.com">davidudezue@gmail.com</a></div>
+      <div class="contact-row"><span class="contact-dot"></span>08133742166 / 09025414097</div>
+      <div class="contact-row"><span class="contact-dot"></span><a href="https://www.linkedin.com/in/udezue-david-732843246/" target="_blank">LinkedIn Profile</a></div>
+      <div class="contact-row"><span class="contact-dot"></span><a href="https://davidudezue-web.github.io/Blossom-portfolio/" target="_blank">Portfolio Website</a></div>
+    </div>
+  </header>
+
+  <div class="brand-bar">
+    <span>Founder &amp; President</span>
+    <span class="sep">·</span>
+    <strong>Blossom Graphviz Concept</strong>
+    <span class="sep">+</span>
+    <strong>BlossomViz Academy</strong>
+    <span class="sep">·</span>
+    <span>"Visual Excellence, Data Driven Growth"</span>
+    <span class="sep">·</span>
+    <span>Remote-Ready</span>
+  </div>
+
+
+  <!-- ═══ PROFESSIONAL SUMMARY ═══ -->
+  <section class="section">
+    <div class="section-head">
+      <span class="section-label">01</span>
+      <h2 class="section-title">Professional Summary</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="summary-block">
+      <p>Data Analyst and Business Intelligence professional with an academic background in <strong>Mathematics and Statistics</strong> and practical experience in business operations, data analysis, reporting, digital skills training, and business performance evaluation.</p>
+      <p>Proficient in using <strong>Microsoft Excel, SQL, and Power BI</strong> to organise and analyse data, validate records, calculate key performance indicators (KPIs), develop dashboards, and communicate business insights. Experienced in developing practical analytics projects and applying structured problem-solving to improve reporting accuracy and support informed decision-making.</p>
+      <p>As the founder of <strong>Blossom Graphviz Concept</strong> and <strong>BlossomViz Academy</strong>, I combine analytical thinking, business understanding, technology, and professional training to deliver data-driven solutions and practical digital skills development.</p>
+    </div>
+  </section>
+
+
+  <!-- ═══ CORE COMPETENCIES ═══ -->
+  <section class="section">
+    <div class="section-head">
+      <span class="section-label">02</span>
+      <h2 class="section-title">Core Competencies</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="comp-grid">
+      <div class="comp-item">Data Analysis &amp; Interpretation</div>
+      <div class="comp-item">Microsoft Excel &amp; Data Processing</div>
+      <div class="comp-item">SQL &amp; Structured Data Analysis</div>
+      <div class="comp-item">Power BI Dashboard Development</div>
+      <div class="comp-item">Data Cleaning &amp; Validation</div>
+      <div class="comp-item">Data Reconciliation &amp; Quality Checks</div>
+      <div class="comp-item">KPI Monitoring &amp; Performance Reporting</div>
+      <div class="comp-item">Data Visualisation &amp; Business Intelligence</div>
+      <div class="comp-item">Sales &amp; Business Performance Analysis</div>
+      <div class="comp-item">Data Modelling &amp; DAX</div>
+      <div class="comp-item">Business Operations &amp; Problem-Solving</div>
+      <div class="comp-item">Technical Training &amp; Knowledge Transfer</div>
+    </div>
+  </section>
+
+
+  <!-- ═══ TECHNICAL SKILLS ═══ -->
+  <section class="section">
+    <div class="section-head">
+      <span class="section-label">03</span>
+      <h2 class="section-title">Technical Skills</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="skills-list">
+      <div class="skill-row">
+        <span class="skill-name">Microsoft Excel</span>
+        <span class="skill-desc">Spreadsheet analysis, data organisation, calculations, reporting, and data validation across complex business datasets.</span>
+      </div>
+      <div class="skill-row">
+        <span class="skill-name">Power BI</span>
+        <span class="skill-desc">Interactive dashboards, KPI cards, data visualisation, data modelling, and DAX measures for business performance reporting.</span>
+      </div>
+      <div class="skill-row">
+        <span class="skill-name">SQL</span>
+        <span class="skill-desc">Structured data querying and analysis for extracting, filtering, and aggregating business data from relational sources.</span>
+      </div>
+      <div class="skill-row">
+        <span class="skill-name">Power Query</span>
+        <span class="skill-desc">Data transformation, cleaning, and preparation — automating ETL steps for reproducible analysis workflows.</span>
+      </div>
+      <div class="skill-row">
+        <span class="skill-name">Business Intelligence</span>
+        <span class="skill-desc">Performance monitoring, analytical reporting, and translating raw data into business insight through visual and narrative formats.</span>
+      </div>
+      <div class="skill-row">
+        <span class="skill-name">Reporting</span>
+        <span class="skill-desc">Presenting numerical findings and KPIs in clear, business-focused formats for management and non-technical stakeholders.</span>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══ PROFESSIONAL EXPERIENCE ═══ -->
+  <section class="section">
+    <div class="section-head">
+      <span class="section-label">04</span>
+      <h2 class="section-title">Professional Experience</h2>
+      <div class="section-line"></div>
+    </div>
+
+    <div class="exp-card">
+      <div class="exp-top">
+        <h3 class="exp-role">Founder &amp; Business Consultant</h3>
+        <span class="exp-badge">CURRENT</span>
+      </div>
+      <div class="exp-org"><strong>Blossom Graphviz Concept (BGC)</strong> &nbsp;·&nbsp; Nigeria</div>
+      <ul class="exp-bullets">
+        <li>Lead business and consulting activities focused on creative solutions, technology, and data-driven growth across client engagements.</li>
+        <li>Apply analytical thinking to business performance evaluation, KPI tracking, and decision support for business clients.</li>
+        <li>Develop data analytics and business intelligence projects using Excel, SQL, and Power BI — covering dashboards, KPI reporting, and data visualisation.</li>
+        <li>Coordinate service delivery, manage client relationships, and contribute to the company's professional and digital presence.</li>
+        <li>Design and deploy data-driven solutions that connect business objectives with measurable performance indicators.</li>
+      </ul>
+    </div>
+
+    <div class="exp-card">
+      <div class="exp-top">
+        <h3 class="exp-role">Founder &amp; Digital Skills Trainer</h3>
+        <span class="exp-badge">CURRENT</span>
+      </div>
+      <div class="exp-org"><strong>BlossomViz Academy</strong> &nbsp;·&nbsp; Nigeria</div>
+      <ul class="exp-bullets">
+        <li>Develop and deliver practical digital skills training in data analytics and professional technology tools to aspiring data professionals.</li>
+        <li>Teach learners to approach data tasks systematically — from organising and cleaning information to analysing results and communicating findings.</li>
+        <li>Design instructional materials, practical exercises, and project-based learning activities to support real-world skill development.</li>
+        <li>Guide learners through analytical concepts, spreadsheet operations, reporting workflows, and business intelligence fundamentals.</li>
+        <li>Promote the application of digital skills to real-world business and career development challenges, including portfolio development and job readiness.</li>
+      </ul>
+    </div>
+  </section>
+
+
+  <!-- ═══ SELECTED PROJECT ═══ -->
+  <section class="section">
+    <div class="section-head">
+      <span class="section-label">05</span>
+      <h2 class="section-title">Selected Analytics Project</h2>
+      <div class="section-line"></div>
+    </div>
+
+    <div class="project-card">
+      <h3 class="project-title">Sales Performance Analysis — Tofred Global Building Materials</h3>
+      <div class="project-meta">
+        Period analysed: <strong style="color:var(--text)">3–17 January 2025</strong>
+        &nbsp;·&nbsp; Tools: Power BI · Excel · DAX · Data Validation
+        &nbsp;·&nbsp; <a href="https://davidudezue-web.github.io/Blossom-portfolio/" target="_blank">View Portfolio ↗</a>
+      </div>
+
+      <p style="font-size:13.5px;color:var(--muted);margin-bottom:12px;">
+        Analysed and validated 30 sales transactions for a building materials company operating across two branch locations. Cleaned a messy raw dataset, standardised inconsistent fields, and produced a Power BI dashboard presenting executive-level performance metrics.
+      </p>
+
+      <div class="metrics-row">
+        <div class="metric-cell">
+          <span class="metric-label">Total Revenue</span>
+          <span class="metric-val">₦3,339,100</span>
+        </div>
+        <div class="metric-cell">
+          <span class="metric-label">Transactions</span>
+          <span class="metric-val">30</span>
+        </div>
+        <div class="metric-cell">
+          <span class="metric-label">Avg. Transaction</span>
+          <span class="metric-val">₦111,303</span>
+        </div>
+        <div class="metric-cell">
+          <span class="metric-label">Units Sold</span>
+          <span class="metric-val">434</span>
+        </div>
+      </div>
+
+      <ul class="exp-bullets">
+        <li>Cleaned and standardised a raw Excel dataset containing six date formats, mixed-type quantity fields, text-formula totals, and systematic branch misspellings.</li>
+        <li>Built pivot tables analysing revenue by date, branch location, product, and customer type, confirming Masaka branch at 59.3% revenue share.</li>
+        <li>Developed a Power BI dashboard with KPI cards, branch comparison visuals, product performance ranking, and customer segment analysis.</li>
+        <li>Verified all transaction totals against Quantity × Unit Price calculations to confirm data accuracy across all 30 records.</li>
+        <li>Structured findings into an executive summary suitable for management review and business decision-making.</li>
+      </ul>
+    </div>
+  </section>
+
+
+  <!-- ═══ EDUCATION ═══ -->
+  <section class="section">
+    <div class="section-head">
+      <span class="section-label">06</span>
+      <h2 class="section-title">Education</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="edu-grid">
+      <div class="edu-card">
+        <div class="edu-degree">Higher National Diploma (HND)</div>
+        <div class="edu-field">Mathematics &amp; Statistics</div>
+        <div class="edu-inst">Federal Polytechnic Oko, Anambra State</div>
+        <span class="edu-year">Completed 2022</span>
+      </div>
+      <div class="edu-card">
+        <div class="edu-degree">National Diploma (ND)</div>
+        <div class="edu-field">Mathematics &amp; Statistics</div>
+        <div class="edu-inst">Federal Polytechnic Oko, Anambra State</div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══ PROFESSIONAL STRENGTHS ═══ -->
+  <section class="section">
+    <div class="section-head">
+      <span class="section-label">07</span>
+      <h2 class="section-title">Professional Strengths</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="strength-grid">
+      <div class="strength-card"><span class="strength-icon">🔢</span>Strong numerical and analytical reasoning</div>
+      <div class="strength-card"><span class="strength-icon">🔍</span>Attention to detail and data accuracy</div>
+      <div class="strength-card"><span class="strength-icon">🧩</span>Structured problem-solving approach</div>
+      <div class="strength-card"><span class="strength-icon">📊</span>Business-focused interpretation of data</div>
+      <div class="strength-card"><span class="strength-icon">💬</span>Clear communication of analytical findings</div>
+      <div class="strength-card"><span class="strength-icon">🎓</span>Practical training and knowledge-sharing</div>
+      <div class="strength-card"><span class="strength-icon">🚀</span>Commitment to continuous learning</div>
+    </div>
+  </section>
+
+
+  <!-- ═══ ADDITIONAL INFO ═══ -->
+  <div class="info-strip">
+    <div class="info-cell">
+      <span class="lbl">WORK ARRANGEMENT</span>
+      <span class="val">Remote (Preferred)</span>
+    </div>
+    <div class="info-cell">
+      <span class="lbl">LOCATION</span>
+      <span class="val">Abuja, Nigeria</span>
+    </div>
+    <div class="info-cell">
+      <span class="lbl">PORTFOLIO</span>
+      <span class="val"><a href="https://davidudezue-web.github.io/Blossom-portfolio/" target="_blank">View Online ↗</a></span>
+    </div>
+    <div class="info-cell">
+      <span class="lbl">LINKEDIN</span>
+      <span class="val"><a href="https://www.linkedin.com/in/udezue-david-732843246/" target="_blank">Connect ↗</a></span>
+    </div>
+    <div class="info-cell">
+      <span class="lbl">REFERENCES</span>
+      <span class="val">Available upon request</span>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <div class="footer-brand">Chukwuemeka David Udezue</div>
+    <div class="footer-note">
+      Data Analyst · BI Specialist · Power BI Developer<br/>
+      BlossomViz Academy &amp; Blossom Graphviz Concept
+    </div>
+  </div>
+
+</div><!-- /page -->
+</body>
+</html>
